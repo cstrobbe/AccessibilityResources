@@ -21,7 +21,7 @@
     </p>
     <p><strong>Note</strong>: most <abbr>WCAG</abbr> success criteria cannot be evaluated automatically.
     </p>
-    <h3>Lists of Tools</h3>
+    <h2>Lists of Tools</h2>
     <ul>
       <li><a href="http://www.w3.org/WAI/ER/tools/">Web Accessibility Evaluation Tools List</a>
         provided by the Web Accesssibility Initiative (<abbr>WAI</abbr>) of the 
@@ -55,7 +55,8 @@
       </li>
     </ul>
 
-    <h3>Individual Tools</h3>
+    <h2>Individual Tools</h2>
+    <h3>Code Checkers</h3>
     <ul>
       <li>
         <a href="https://github.com/yargalot/grunt-accessibility">Grunt Accessibility</a>,
@@ -91,6 +92,162 @@
         (Licence: <a href="https://github.com/nature/pa11y/blob/master/LICENSE.txt"><abbr>GNU</abbr> <abbr title="General Public License">GPL</abbr> 3.0</a>.)
       </li>
     </ul>
+
+    <h3>Contrast Checkers</h3>
+    <p>Whether foreground and background colous have sufficient contrast is not 
+      something that you should try to &ldquo;eyeball&rdquo;. For example,
+      red and green are strongly contrastly contrasting colour for people with
+      normal colour vision but not for most people with colour vision deficiencies.
+      There are many free tools that can help you check contrast, find colours with 
+      sufficient contrast or simulate certain colour vision deficiencies. 
+    </p>
+    <p>Most contrast analysis tools now support the 
+      <a href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#contrast-ratiodef">contrast algorithm</a>
+      defined in the 
+      Web Content Accessibility Guidelines (<abbr>WCAG</abbr>) 2.0 and will tell
+      you whether the contrast ratio pass at 
+      <a href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-contrast"
+      title="success criterion 1.4.3 for minimum contrast">Level AA</a>
+      or at
+      <a href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast7"
+      title="success criterion 1.4.7 for enhanced contrast">Level AAA</a>.
+      Some tools will also tell you whether the contrast meets the 
+      <a href="http://www.w3.org/WAI/ER/WD-AERT/#color-contrast"
+      title="checkpoint 2.2">requirements</a> 
+      defined in the 
+      <a href="http://www.w3.org/WAI/ER/WD-AERT/">Techniques For Accessibility Evaluation And Repair Tools (<abbr>AERT</abbr>)</a>
+      (August 2000).
+      However, this document never went beyond the <abbr>W3C</abbr> working draft stage,
+      and its contrast algorithm is explicitly marked as 
+      <q cite="http://www.w3.org/WAI/ER/WD-AERT/#test-color-contrast">open to change</q>.
+    </p>
+    <p>Tools that simulate colour blindness try to <em>approximate</em> what people with 
+      colour vision deficiencies see; the output of these tools should not be 
+      interpreted as exact renditions of what these people see.
+    </p>
+    <ul>
+      <li>The <strong><a href="http://www.paciellogroup.com/resources/contrastanalyser/">Colour 
+        Contrast Analyser</a></strong>
+        is a free and open source tool for Windows and Mac OS X developed by 
+        The Paciello Group (<abbr>TPG</abbr>). 
+        <br />The tool has two main functions:
+        <ul>
+          <li>Checking whether two colours pass the contrast requirements
+            defined in the Web Content Accessibility Guidelines (<abbr>WCAG</abbr>) 2.0.
+            You can identify colours using a &ldquo;eye dropper&rdquo; tool
+            or using 
+            <a href="https://en.wikipedia.org/wiki/Web_colors#Hex_triplet"
+            title="Wikipedia article about web colours">hexadecimal 
+            <abbr title="red, green blue">RGB</abbr> colour codes</a>.
+          </li>
+          <li>Simulate certain colour vision deficiencies.
+            (The visual simulation is only available in the Windows version.)
+          </li>
+        </ul>
+        &ldquo;<a href="http://www.spotless.co.uk/insights/colour-contrast-analyser">Working
+        with the colour contrast analyser by the Paciello group</a>&rdquo; (February 2009)
+        explains how to use this tool, even though this should be rather straightforward.
+        <br />The contrast analyser is available in several languages (including 
+        English, German, French, Hindi and traditional Chinese). 
+        The source code is available on 
+        <a href="https://github.com/ThePacielloGroup/CCA">GitHub</a>
+        under the <span lang="en-US"><abbr>GNU</abbr> General Public License 2.0</span>.
+      </li>
+      <li><a href="http://www.vischeck.com/vischeck/">Vischeck</a> is a tool that simulates
+        colour vision deficiencies (&ldquo;colour-blind vision&rdquo;).
+        The tool was developed as Stanford University; the
+        <a href="http://www.vischeck.com/info/">Info &amp; Links</a> page
+        provides information about the algorithms in the code and 
+        points to other interesting web pages about colour blindness.
+        <br />
+        <a href="http://www.vischeck.com/daltonize/">Daltonize</a> is a tool that
+        <q cite="http://www.vischeck.com/" lang="en-US">corrects images for colorblind viewers</q>.
+      </li>
+      <li>Joe Dolson's 
+        <strong><a href="https://www.joedolson.com/tools/color-contrast-tester.php" lang="en-CA">Color 
+        Contrast Spectrum Tester</a></strong>
+        is an online tool that helps you find colours that provide sufficient contrast
+        with a colour of your choice. You can choose a colour using a colour picker
+        or a hexadecimal code and then let the tool generate a number of colours.
+        Each of the generated colours will be tested against <abbr>WCAG</abbr> 2.0's
+        contrast requirements; those that pass <abbr>WCAG</abbr> 2.0 will be displayed
+        with their luminosity ratio.
+        <br />The tool is also available in several languages, namely English,
+        French, Dutch, Portuguese and traditional Chinese.
+      </li>
+      <li><span lang="it">Giacomo Mazzocato</span>&rsquo;s 
+        <strong><a href="http://gmazzocato.altervista.org/colorwheel/wheel.php"
+        lang="en-US">Accessibility Color Wheel</a></strong>
+        is a web-based tool that helps you identify accessible colour pairs
+        that you can use in web content. 
+        It <a href="http://gmazzocato.altervista.org/colorwheel/algo.php">implements</a> 
+        both <abbr>WCAG</abbr> 2.0&rsquo;s contrast algorithm and the older
+        <abbr>AERT</abbr> algorithms (which it identifies as the <abbr>WCAG</abbr> 1.0
+        algorithm, even though 
+        <a href="http://www.w3.org/TR/WCAG10/#tech-color-contrast"><abbr>WCAG</abbr> 1.0
+        did not specify a contrast algorithm</a>). 
+      </li>
+      <li><span lang="it">Giovanni Scala</span>&rsquo;s 
+        <strong><a href="http://www.checkmycolours.com/">Check My Colours</a></strong>
+        is a web-based tool for checking contrast in existing web pages.
+        You can enter the <abbr>URL</abbr> of a web page to check the 
+        <q cite="http://www.checkmycolours.com/" lang="en-US">foreground and background
+        combinations of all <abbr>DOM</abbr> elements</q>.
+        The tool uses both <abbr>WCAG</abbr> 2.0&rsquo;s contrast algorithm and 
+        the older <abbr>AERT</abbr> algorithms. Its output is a table where 
+        each row represents a <abbr>DOM</abbr> node, its foreground and background
+        colour (as hexadecimal <abbr>RGB</abbr> codes), a sample, and the output of
+        three algorithms: <abbr>WCAG</abbr> 2.0&rsquo;s algorithm, 
+        <abbr>AERT</abbr>&rsquo;s brightness difference algorithm and
+        <abbr>AERT</abbr>&rsquo;s brightness colour difference algorithm.
+        <br />The tool is available under the 
+        <a href="">Creative Commons Attribution-ShareAlike 2.5 Italy 
+        (<abbr>CC BY-SA</abbr> 2.5 <abbr title="Italian">IT</abbr>) Licence</a>.
+      </li>
+      <li><span lang="de">Annika Hamann&rsquo;s</span> 
+        <a href="http://www.dasplankton.de/ContrastA/">Contrast-A</a> is another
+        tool for identifying accessible colour combinations. Like 
+        <span lang="it">Giacomo Mazzocato</span>&rsquo;s colour wheel, it supports
+        both <abbr>WCAG</abbr> 2.0&rsquo;s contrast algorithm and the older 
+        <abbr>AERT</abbr> algorithm. 
+        <br />Warning: this tool is developed in Adobe Flash and is not keyboard
+        accessible.
+      </li>
+      <li><a href="http://colororacle.org/" lang="en-US">Color Oracle</a> is a free
+        and open source tool that simulates colour blindness.
+        <span lang="en-US">Color Oracle&rsquo;s</span> website also provides 
+        <a href="http://colororacle.org/design.html">design tips</a> for maps and
+        information graphics that are accessible for colour-impaired readers.
+        <br />The tool is written in Java and works on Windows, Mac OS X and Linux.
+        <a href="https://github.com/nvkelso/color-oracle-java"><span lang="en-US">Color Oracle&rsquo;s</span> 
+        source code</a> is available on GitHub under the <span lang="en-US"><abbr>MIT</abbr> License</span>.
+      </li>
+      <li>Lea Verou&rsquo;s
+        <a href="http://leaverou.github.io/contrast-ratio/">Contrast Ratio</a>
+        is another tool for checking the contrast of web colours.
+        Lea Verou&rsquo;s article 
+        &ldquo;<a href="http://lea.verou.me/2012/10/easy-color-contrast-ratios/">Easy 
+        color contrast ratios</a>&rdquo; (October 2012) gave the tool a wider visibility in the
+        web development communit.
+        (See also Scott Gilbertson&rsquo;s article 
+        &ldquo;<a href="http://www.webmonkey.com/2012/10/create-more-accessible-color-schemes-with-contrast-ratio/">Create 
+        More Accessible Color Schemes With ‘Contrast Ratio’</a>&rdquo;.)
+        <br />The <a href="https://github.com/LeaVerou/contrast-ratio">source code</a> 
+        is available on GitHub under the <span lang="en-US"><abbr>MIT</abbr> License</span>.
+      </li>
+      <li><a href="http://www.color-blindness.com/coblis-color-blindness-simulator/" lang="en-US">Coblis 
+        — Color Blindness Simulator</a> is a colour blindness simulator where you
+        can upload images and see what they look like through eight different
+        simulations of colour blindness.
+      </li>
+      <li><a href="http://registry.gimp.org/node/24885" lang="en-US">Color Vision 
+        Deficiency</a> is a 
+        <a href="http://www.gimp.org/"><abbr title="GNU Image Manipulation Program">GIMP</abbr></a> 
+        plugin that simulates different colour vision 
+        deficiencies. 
+      </li>
+    </ul>
+    
 
   </div><!-- end #main -->
 
