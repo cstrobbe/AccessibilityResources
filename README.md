@@ -12,3 +12,6 @@ Public Domain
 ([Anna Frodesiak](https://commons.wikimedia.org/wiki/User:Anna_Frodesiak), 2009); 
 see [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Longji_terrace_-_03.JPG).
 
+How to clone this repository on the command line:
+    `git clone https://github.com/cstrobbe/AccessibilityResources.git`
+
