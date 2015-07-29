@@ -28,9 +28,9 @@ a {
   height: 40px;
   padding: 20px 0 70px 0;
 
-  background: #2d6360 50% 0 url('./StuttgartBib.jpg') no-repeat; /* old IE fallback */
+  background: #5583B5 50% 0 url('./StuttgartBib.jpg') no-repeat; /* old IE fallback */
 
-  /*background: #2d6360 50% 0 ;
+  /*background: #5583B5 50% 0 ;
   background-image: linear-gradient(#2d6360, #6C9875);*/
   text-align: left;
 }
