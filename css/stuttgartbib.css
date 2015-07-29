@@ -10,6 +10,7 @@ body {
   font-family: 'Libre Baskerville', 'Trebuchet MS', Verdana, Helvetica, sans-serif;
   font-size: 1em;
   line-height: 1.4em; letter-spacing: .01em; word-spacing: 0.1em;
+  max-width: 1710px; /* 20 px less than width of StuttgartBib.jpg*/
 }
 
 a {
@@ -25,10 +26,12 @@ a {
   }
 
 #header {
-  height: 40px;
-  padding: 20px 0 70px 0;
+  height: 133px; /* height and width of StuttgartBib.jpg*/
+  width: 1730px;
+  padding: 0;
 
-  background: #5583B5 50% 0 url('./StuttgartBib.jpg') no-repeat; /* old IE fallback */
+  background: #5583B5 50% 0 url('./StuttgartBib.jpg') repeat-x; /* old IE fallback */
+  background-position: left;
 
   /*background: #5583B5 50% 0 ;
   background-image: linear-gradient(#2d6360, #6C9875);*/
@@ -36,8 +39,8 @@ a {
 }
 
 h1 {
-  padding: 0;
-  margin: 0 0 0 20px;
+  padding: 20px 0 0 20px;
+  margin: 0 0 0 0;
   color: #fff;
   background-color: transparent;
   font-weight: normal;
@@ -45,6 +48,9 @@ h1 {
 
   font-family: 'Julius Sans One', 'Trebuchet MS', Verdana, sans-serif;
   /*text-transform: uppercase;*/
+
+  background: rgba(0, 0, 0, 0.2);
+  height: 113px; /* height of #header minus h1's top padding */
 }
 
 h1 { font-size: 2.8em; }
