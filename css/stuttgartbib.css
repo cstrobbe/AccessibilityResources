@@ -15,7 +15,6 @@ body {
 
 a {
   color: #0A6879;
-  /*text-decoration: none;*/
 }
   a:visited {
     color: #325050;
@@ -29,12 +28,8 @@ a {
   height: 133px; /* height and width of StuttgartBib.jpg*/
   width: 1730px;
   padding: 0;
-
   background: #5583B5 50% 0 url('./StuttgartBib.jpg') repeat-x; /* old IE fallback */
   background-position: left;
-
-  /*background: #5583B5 50% 0 ;
-  background-image: linear-gradient(#2d6360, #6C9875);*/
   text-align: left;
 }
 
@@ -47,9 +42,7 @@ h1 {
   line-height: 1.1em; /* CS: added to prevent overlapping text on browser zoom */
 
   font-family: 'Julius Sans One', 'Trebuchet MS', Verdana, sans-serif;
-  /*text-transform: uppercase;*/
 
-  /*background: rgba(0, 0, 0, 0.2);*/
   height: 113px; /* height of #header minus h1's top padding */
 }
 
@@ -66,13 +59,12 @@ h1 .h1txt {
   margin-left: 20px;
 }
 
-h2 { /* h3 in David Shea's CSS */
+h2 {
   margin: 28px 0 0 0;
   color: #2e484c;
   font-family: 'Julius Sans One', 'Trebuchet MS', Verdana, sans-serif;
   font-size: 1.8em;
   font-weight: normal;
-  /*text-transform: uppercase;*/
 }
 
 p {
