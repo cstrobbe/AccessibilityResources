@@ -31,6 +31,11 @@
           Essential Accessibility Programming Practices</a></strong>
           (<abbr>IBM</abbr> developerWorks, 2014)
         </li>
+        <li>
+          <a href="http://blog.thismagpie.com/2015/06/java-atk-wrapper-making-use-of-atk.html">Java
+          <abbr>ATK</abbr> Wrapper: Making Use of <abbr>ATK</abbr> Function Pointers</a>
+          (thisMagpie, 29 June 2015)
+        </li>
       </ul>
 
     <h2>Qt</h2>
@@ -47,6 +52,34 @@
         Plasma Next Accessibility</a> (7 July 2014). 
       </li>
     </ul>
+
+    <h2>GTK+</h2>
+    <p>GTK+ <q cite="http://www.gtk.org/">is a multi-platform toolkit for 
+      creating graphical user interfaces</q>. 
+      The GNOME developer documentation explains the relationship between 
+      GTK+ and <abbr>ATK</abbr> as follows:
+      <q cite="https://developer.gnome.org/accessibility-devel-guide/stable/dev-start-5.html.en"><abbr>GAIL</abbr> 
+      (GNOME Accessibility Implementation Library) is an implementation of the 
+      accessibility interfaces defined by <abbr>ATK</abbr>. 
+      GTK is a toolkit which is already mapped to <abbr>ATK</abbr> by the <abbr>GAIL</abbr> 
+      module.</q>
+      Note that this applies only to GNOME. According to 
+      <a href="http://permalink.gmane.org/gmane.comp.gnome.gtk%2B.devel.general/22284">this
+      message to the GTK-devel mailing list (April 2012)</a> and
+      <a href="https://bugzilla.gnome.org/show_bug.cgi?id=303304">GNOME
+      bug 303304</a>, GTK+ does not support <abbr>MSAA</abbr> or any other
+      accessibility <abbr>API</abbr> that works on Windows
+      (IAccessible2, Windows <abbr>UI</abbr> Automation).
+      <!-- @@augment/improve text -->
+      <!-- GTK+ 2.0 Tutorial https://developer.gnome.org/gtk-tutorial/stable/ -->
+      <!-- ATK - Accessibility Toolkit (for ATK 2.18.0) : https://developer.gnome.org/atk/stable/ -->
+      <!-- Introducing ATK, AT-SPI, GAIL and GTK+ : https://developer.gnome.org/accessibility-devel-guide/stable/dev-start-5.html.en -->
+      <!-- GTK+ for Windows (MinGW) (no updates since 2012): http://sourceforge.net/projects/gtk-mingw/ -->
+      <!-- GTK+ for Windows Runtime Environment Installer: http://gtk-win.sourceforge.net/home/index.php -->
+      <!-- Gtk# (Graphical User Interface Toolkit for mono and .Net)
+        claims to be "Accessible via the ATK accessibility toolkit", i.e. only on Linux, not Windows.
+      -->
+    </p>
 
     <h2>wxWidgets</h2>
     <p>Julian Smart: 
