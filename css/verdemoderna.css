@@ -1,3 +1,5 @@
+@import url("righthand_fixed_navigation_layout.css");
+
 /* Inspired by Dave Shea's 'Verde Moderna', CSS Zen Garden submission 214 : http://www.csszengarden.com/214/214.css 
   but without the graphics, which are copyrighted, with more contrasting colours, etc.
   In fact, there's not much left of Shea's original design.
@@ -27,7 +29,7 @@ a {
     text-decoration: underline;
   }
 
-#header {
+header {
   height: 60px;
   padding: 20px 0 70px 0;
 
@@ -56,7 +58,7 @@ h1 .h1txt {
   padding: 4px;
 }
 
-#main, #footer {
+main, footer {
   margin-right: 20px;
   margin-left: 20px;
 }
@@ -74,7 +76,7 @@ p {
   line-height: 1.3;
 }
 
-#footer {
+footer {
   border-top: 1px solid #2e484c;
   margin-top: 60px;
 }
