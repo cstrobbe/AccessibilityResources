@@ -56,6 +56,69 @@ h1 .h1txt {
 }
 
 
+nav {
+  background-color: #2e484c;
+  color: inherit;
+}
+
+nav h2 {
+  background-color: transparent;
+  color: white;
+  margin-bottom: 6px;
+}
+
+nav > ul {
+  color: #41409A;
+  background-color: transparent;
+}
+
+nav > ul > li {
+  color: inherit;
+  background-color: transparent; 
+}
+
+nav > ul > li > ul {
+  color: inherit;
+  background-color: transparent;
+}
+
+nav > ul > li.active a, nav > ul > li > ul > li.active a {
+  border-left: 10px solid red;
+}
+
+nav a:link,
+nav a:visited, 
+nav a:hover, nav a:focus,
+nav a:active {
+  font-size: 1em;
+  text-decoration: none;
+  padding-left: 2px;
+}
+
+nav a:link,
+nav a:visited {
+  border-top: /*none;*/ 1px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: /*none;*/ 1px solid transparent;
+  border-left: 10px solid transparent;
+  background-color: #98A8BF;
+  color: black;
+}
+
+nav a:hover, nav a:focus,
+nav a:active {
+  border-top: /*none;*/ 1px solid red;
+  border-right: 10px solid red;
+  border-bottom: /*none;*/ 1px solid red;
+  border-left: 10px solid red;
+}
+
+a:link, a:visited {
+  background-color: transparent;
+  color: #052452;
+}
+
+
 h2 {
   color: #2e484c;
   font-family: 'Julius Sans One', 'Trebuchet MS', Verdana, sans-serif;
