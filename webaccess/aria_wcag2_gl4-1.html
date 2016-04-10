@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:dct="http://purl.org/dc/terms/" xmlns:cc="http://creativecommons.org/ns#" xml:lang="en-GB" lang="en-GB">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <title>WAI-ARIA and WCAG 2.0 Guideline 4.1</title>
+  <meta name="generator" content="Créé artisanalement à la main ;-)" lang="fr" />
+  <link rel="stylesheet" type="text/css" media="screen" href="../css/stuttgartbib.css" title="default" />
+  <link rel="stylesheet" type="text/css" media="screen" href="../css/verdemoderna.css" title="alternative stylesheet (green)" />
+</head>
+
+<body>
+  <header>
+    <h1><span class="h1txt">
+      <abbr title="Web Accessibility Initiative">WAI</abbr>-<abbr title="Accessible Rich Internet Applications">ARIA</abbr> 
+      and 
+      <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> Guideline 4.1</span>
+    </h1>
+  </header>
+  <main>
+    <p>Auhor and date: <span lang="nl-BE">Christophe Strobbe</span>, 03.02.2016.</p>
+
+    <!--  
+    <h2 id="summary">Summary</h2>
+    <p>TODO</p>
+    -->
+    <h2 id="background">Background</h2>
+
+    <p>In January 2016, members of the <abbr>WCAG</abbr> Working Group started a
+    discussion on how errors related to the use of
+    <abbr>WAI</abbr>-<abbr>ARIA</abbr> relate to the two success criteria in
+    <a href="https://www.w3.org/TR/2008/REC-WCAG20-20081211/#ensure-compat"><abbr>WCAG</abbr> 2.0's Guideline 4.1</a>. 
+    More specifically, the question was whether any <abbr>ARIA</abbr>-related errors
+    could be considered as violations of <abbr>WCAG</abbr> Success Criterion (<abbr>SC</abbr>) 4.1.1.
+    This document responds to that discussion.
+    </p>
+
+    <h2 id="wcag-gl4"><abbr>WCAG</abbr> 2.0 Guideline 4</h2>
+
+    <p><a href="https://www.w3.org/TR/2008/REC-WCAG20-20081211/#ensure-compat-parses"><abbr>SC</abbr> 4.1</a> says the following</p>
+    <blockquote>
+      <p><strong class="sc-handle">4.1.1 Parsing:</strong> 
+        In content implemented using markup languages, 
+        elements have complete start and end tags, 
+        elements are nested according to their specifications, 
+        elements do not contain duplicate attributes, 
+        and any IDs are unique, 
+        except where the specifications allow these features. 
+        (Level A)      
+      </p>
+      <p class="note"><em>Note: </em>
+        Start and end tags that are missing a critical character in their formation, 
+        such as a closing angle bracket or a mismatched attribute value quotation mark are not complete.
+      </p>
+      <p class="copyright">(Copyright <abbr>W3C</abbr>.)</p>
+    </blockquote>
+
+    <p>The success criterion was written in order to protect assistive technologies (<abbr>AT</abbr>),
+    especially screen readers, against markup errors that would require automatic repair functionality.
+    Assistive technologies rely on the data exposed through the browser's accessibility <abbr>API</abbr>
+    but perform additional parsing on top of that. This additional burden should not be made heavier
+    by errors that are fairly easy to fix in the markup (<abbr>i.e.</abbr> by web site authors)
+    but much harder to fix automatically (<abbr>i.e.</abbr> by <abbr>AT</abbr>).</p>
+
+    <p>The <abbr>SC</abbr> was written <a href="https://www.w3.org/TR/html401/"><abbr>HTML</abbr> 4.01</a> 
+      (published in December 1999) was still the most
+     up-to-date non-<abbr>XML</abbr> version of <abbr>HTML</abbr>, and 
+     <a href="https://www.w3.org/TR/xhtml1/"><abbr>XHTML</abbr> 1.0 (Second Edition, August 2002)</a> and 
+     <a href="https://www.w3.org/TR/2001/REC-xhtml11-20010531/"><abbr>XHTML</abbr> 1.1 - Module-based <abbr>XHTML</abbr> (May 2001)</a> 
+     were the most up-to-date <abbr>XML</abbr>-based versions of <abbr>HTML</abbr>,
+     the <abbr>W3C</abbr>'s Markup Activity was still working on 
+     <a href="https://www.w3.org/TR/2006/WD-xhtml2-20060726/"><abbr>XHMTL</abbr> 2.0</a>,
+     and the Protocols and Formats Working Group was still working on <abbr>WAI</abbr>-<abbr>ARIA</abbr>.
+     <abbr>SVG</abbr> and <abbr>SMIL</abbr>, both <abbr>XML</abbr>-based, had been around for a while.
+     (The <a href="https://www.w3.org/TR/2008/WD-html5-20080122/">first working draft of <abbr>HTML</abbr>5</a>
+     had not yet been published when
+     <abbr>WCAG</abbr> published it's
+     <a href="https://www.w3.org/TR/2007/WD-WCAG20-20071211/">second Last Call Working Draft</a>.)
+    </p>
+
+    <p><a href="https://www.w3.org/TR/WCAG10/#tech-identify-grammar"><abbr>WCAG</abbr> 1.0 checkpoint 3.2 required valid markup</a>, 
+      but this requirement seemed too strict. 
+      Many people felt that requiring valid markup would draw too many resources 
+      towards fixing markup errors that had no impact on accessibility.
+      (Sidenote: Back in 2005, 
+      <a href="http://lists.w3.org/Archives/Public/w3c-wai-gl/2005OctDec/0442.html">not all <abbr>W3C</abbr> specifications had a conformance section that required valid markup</a>.)
+      <!-- 
+      The <abbr>HTML</abbr> 4.01 specification defines 
+      <dfn><abbr>HTML</abbr> document</dfn> as 
+      <q cite="https://www.w3.org/TR/html401/conform.html#h-4.1">an <abbr>SGML</abbr> document that meets the constraints of this specification</q>
+      (see <cite><a href="https://www.w3.org/TR/html401/conform.html#h-4.1"><abbr>HTML</abbr> 4.01's conformance section</a></cite>),
+      but points out that 
+      <q cite="https://www.w3.org/TR/html401/sgml/intro.html#h-19.1">validation, although useful and highly recommended, does not guarantee that a document fully conforms to the HTML 4 specification</q>
+      (see <cite><a href="https://www.w3.org/TR/html401/sgml/intro.html#h-19.1">Document Validation</a></cite>).
+      -->
+    </p>
+    <p>Requiring well-formed markup was considered as an alternative requirement
+      but was rejected because well-formed markup is a concept that only applies to <abbr>XML</abbr>-based content.
+      Well-formed markup has no meaning in the context of <abbr title="Standard Generalised Markup Languages">SGML</abbr>-based languages
+      such as <abbr>HTML</abbr> 4.01 and its predecessors.
+      <!-- Attempt to come up with something like "well-formedness" for SGML-based HTML: http://lists.w3.org/Archives/Public/w3c-wai-gl/2005AprJun/0806.html -->
+      It would later also become meaningless to <abbr>HTML</abbr>5, which is not based on <abbr>SGML</abbr> or <abbr>XML</abbr>.
+    </p>
+    <p>For these reasons, the <abbr>WCAG</abbr> working group identified four requirements
+      that would apply to any web content that uses elements and attributes.
+      The next few paragraphs will discuss these four requirements in more detail.
+    </p>
+
+    <h2 id="gl4-wai-aira"><abbr>WAI</abbr>-<abbr>ARIA</abbr> and <abbr>WCAG</abbr> 2.0 Guideline 4.1</h2>
+    <p><abbr>WAI</abbr>-<abbr>ARIA</abbr> is not a markup language like
+      <abbr>HTML</abbr> or <abbr>SVG</abbr>. 
+      You cannot implement web content using only <abbr>ARIA</abbr>, so <abbr>WCAG</abbr> <abbr>SC</abbr> 4.1.1 does not apply to <abbr>ARIA</abbr> <em>directly</em>.
+      However, <abbr>WCAG</abbr> <abbr>SC</abbr> 4.1.1 does not identify requirements for web <em>standards</em>; it identifies requiremnts for web <em>content</em>.
+      <abbr>WAI</abbr>-<abbr>ARIA</abbr> is always used in web content that is implemented using other web standards
+      (<abbr>HTML</abbr>, <abbr>SVG</abbr>, &hellip;).
+      All of <abbr>WCAG</abbr> applies to content that uses <abbr>HTML</abbr> + <abbr>WAI</abbr>-<abbr>ARIA</abbr>,
+      even when that content is generated by means of client-side scripts.
+    </p>
+
+    <p>...</p>
+
+    <p>...</p>
+
+    <h2 id="disclaimer">Disclaimer</h2>
+    <p>This document represents the author's view only; the author does not represent the <abbr>WCAG</abbr> Working Group.
+    </p>
+  </main>
+  
+  <footer>
+    <p id="licence">
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+    <img alt="Creative Commons License Attribution-ShareAlike" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+    </a>
+    <br />
+    <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text">
+    <a href="http://cstrobbe.github.io/AccessibilityResources/">Accessibility
+    Resources</a></span> by <a xmlns:cc="http://creativecommons.org/ns#"
+    href="https://github.com/cstrobbe"
+    rel="cc:attributionURL">Christophe Strobbe</a> is licensed under a <a
+    xml:lang="en-US" lang="en-US" rel="license"
+    href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons
+    Attribution-ShareAlike 4.0 International License</a>. </p>
+    
+    <p>You can <a href="https://github.com/cstrobbe/AccessibilityResources">fork
+    the code</a> on GitHub.</p>
+  </footer>
+</body>
+</html>
