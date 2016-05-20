@@ -5,7 +5,6 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <title>GPII/Cloud4all for Developers</title>
-  <meta name="generator" content="Amaya, see http://www.w3.org/Amaya/" />
 </head>
 
 <body>
@@ -13,11 +12,10 @@
 
 <p>Author: Christophe Strobbe (strobbe[at]hdm-stuttgart[dot]de).</p>
 
-<p>Licence: Creative Commons Attribution-NonCommercial-ShareAlike 4.0
-International License (<a
-href="https://creativecommons.org/licenses/by-nc-sa/4.0/" xml:lang="en-US"
-lang="en-US"><abbr title="Creative Commons">CC</abbr> BY-<abbr
-title="NonCommercial">NC</abbr>-<abbr title="ShareAlike">SA</abbr> 4.0</a>).</p>
+<p>Licence: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License 
+(<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" xml:lang="en-US"
+lang="en-US"><abbr title="Creative Commons">CC</abbr> BY-<abbr title="NonCommercial">NC</abbr>-<abbr title="ShareAlike">SA</abbr> 4.0</a>).
+</p>
 
 <h2>Introduction</h2>
 
@@ -44,9 +42,9 @@ enable the user to use the device.</p>
 <p>This is one of the challenges addressed by <dfn><abbr>GPII</abbr></dfn>
 (Global Public Inclusive Infrastructure). Cloud4all was one of the projects
 that contributed to <abbr>GPII</abbr>. For an overview of the components of
-<abbr>GPII</abbr> and which projects contribute to these components, see the <a
-href="http://www.cloud4all.info/the-project/the-gpii/"><abbr>GPII</abbr> page
-on the Cloud4all website</a>.</p>
+<abbr>GPII</abbr> and which projects contribute to these components, see the 
+<a href="http://www.cloud4all.info/the-project/the-gpii/"><abbr>GPII</abbr> 
+page on the Cloud4all website</a>.</p>
 
 <p>This document does not explain all of Cloud4all or <abbr>GPII</abbr>; its
 goal is to explain how developers can “integrate” software programs
@@ -108,21 +106,23 @@ but not if you want to integrate a solution with <abbr>GPII</abbr>.)</p>
 drive or an <abbr>NFC</abbr> tag, to the <abbr>PC</abbr>. (On USB, the token is
 stored in a file with the name “<code>.gpii-user-token.txt</code>”. This
 file should not contain any other content. For <abbr>NFC</abbr>,
-<abbr>GPII</abbr> currently supports only <a
-href="https://en.wikipedia.org/wiki/MIFARE#MIFARE_Classic">MIFARE Classic</a>.)
+<abbr>GPII</abbr> currently supports only 
+<a href="https://en.wikipedia.org/wiki/MIFARE#MIFARE_Classic">MIFARE Classic</a>.)
 </p>
 
 <p>The token is simply a string that identifies the user’s needs &amp;
 preferences set (<abbr>NP</abbr> set), which is stored on the Preferences
 Server. For example, the token <code>olb_Carla</code> identifies the
-<abbr>NP</abbr> set <a
-href="https://preferences.gpii.net/preferences/olb_Carla">https://preferences.gpii.net/preferences/olb_Carla</a>.</p>
+<abbr>NP</abbr> set 
+<a href="https://preferences.gpii.net/preferences/olb_Carla">https://preferences.gpii.net/preferences/olb_Carla</a>.
+</p>
 
 <p>The User Listener component will detect the key and send it to the Flow
-Manager. (See the <a
-href="https://github.com/GPII/universal/blob/master/documentation/FlowManager.md">Flow
-Manager <abbr>API</abbr></a>; not the <a
-href="https://wiki.gpii.net/w/Flow_Manager">outdated wiki page</a>.) </p>
+Manager. (See the 
+<a href="https://github.com/GPII/universal/blob/master/documentation/FlowManager.md">Flow Manager <abbr>API</abbr></a>; 
+not the 
+<a href="https://wiki.gpii.net/w/Flow_Manager">outdated wiki page</a>.)
+</p>
 
 <h4>Device Reporter</h4>
 
@@ -133,8 +133,8 @@ device. This covers both installed solutions and built-in assistive
 technologies and accessibility features. For example, on <abbr>MS</abbr>
 Windows, the Device Reporter can report the presence of <abbr>MS</abbr>
 Windows’ built-in Magnifier and high-contrast features, and the screen reader
-<a href="http://www.nvaccess.org/"><abbr>NVDA</abbr></a> (an open source
-solution). </p>
+<a href="http://www.nvaccess.org/"><abbr>NVDA</abbr></a> 
+(an open source solution). </p>
 
 <p>Strictly speaking, the Device Reporter should only pass on information for
 which the user has given consent, but Cloud4all currently has no mechanism to
@@ -205,10 +205,11 @@ and two application-specific terms: </p>
   }
 }</code></pre>
 
-<p>(This is the <abbr>NP</abbr> set <a
-href="https://github.com/GPII/universal/blob/master/testData/preferences/olb_Carla.json">olb_Carla</a>.
-For an example containing only application-specific terms, see <a
-href="https://github.com/GPII/universal/blob/master/testData/preferences/acceptanceTests/olb_applicationSpecific_01.json">olb_applicationSpecific_01.json</a>.)</p>
+<p>(This is the <abbr>NP</abbr> set 
+<a href="https://github.com/GPII/universal/blob/master/testData/preferences/olb_Carla.json">olb_Carla</a>.
+For an example containing only application-specific terms, see 
+<a href="https://github.com/GPII/universal/blob/master/testData/preferences/acceptanceTests/olb_applicationSpecific_01.json">olb_applicationSpecific_01.json</a>.)
+</p>
 
 <p>How an <abbr>NP</abbr> set gets applied to the local system depends on which
 solutions are available on the local system (<abbr>cf.</abbr> the Device
@@ -234,14 +235,12 @@ Windows screen reader <abbr>NVDA</abbr> as an example):</p>
     to translate the common terms into application-specific settings. The
     output as then passed on to the Lifecycle Manager. </p>
     <p>(The Solution Registry currently consists of 4 <abbr>JSON</abbr> files,
-    one per platform: <a
-    href="https://github.com/GPII/universal/blob/master/testData/solutions/android.json">android.json</a>,
-    <a
-    href="https://github.com/GPII/universal/blob/master/testData/solutions/linux.json">linux.json</a>,
-    <a
-    href="https://github.com/GPII/universal/blob/master/testData/solutions/web.json">web.json</a>
-    and <a
-    href="https://github.com/GPII/universal/blob/master/testData/solutions/win32.json">win32.json</a>.)
+    one per platform: 
+    <a href="https://github.com/GPII/universal/blob/master/testData/solutions/android.json">android.json</a>,
+    <a href="https://github.com/GPII/universal/blob/master/testData/solutions/linux.json">linux.json</a>,
+    <a href="https://github.com/GPII/universal/blob/master/testData/solutions/web.json">web.json</a>
+    and 
+    <a href="https://github.com/GPII/universal/blob/master/testData/solutions/win32.json">win32.json</a>.)
     </p>
   </li>
   <li>The Device Reporter data says that <abbr>NVDA</abbr> is available on the
@@ -250,9 +249,8 @@ Windows screen reader <abbr>NVDA</abbr> as an example):</p>
     settings are application-specific settings that cannot be translated into
     <abbr>NVDA</abbr> settings by the Transformer. (The Transformer only
     transforms from common terms to application-specific terms. The reverse
-    process is not yet supported. The Transformer is based on <a
-    href="https://wiki.gpii.net/w/GPII_Architecture_Overview#The_Transformer_and_Data_Lensing">Benjamin
-    Pierce’s concept of lensing</a>.) 
+    process is not yet supported. The Transformer is based on 
+    <a href="https://wiki.gpii.net/w/GPII_Architecture_Overview#The_Transformer_and_Data_Lensing">Benjamin Pierce’s concept of lensing</a>.) 
     <p>In this case, we need a more intelligent component, <abbr>i.e.</abbr> a
     <a href="https://wiki.gpii.net/w/Matchmaking">matchmaker</a>, to transform
     the Orca settings into <abbr>NVDA</abbr> settings. Currently, only the
@@ -277,9 +275,9 @@ settings so these can be restored again when the user logs out. Then, it
 invokes the Lifecycle Actions and Settings Handlers, which are in charge of the
 actual launching of the solutions and the modification of their settings.</p>
 
-<p>(While the user is logged in, they may use the <a
-href="https://wiki.gpii.net/w/Personal_Control_Panel">Personal Control
-Panel</a> or <abbr>PCP</abbr> to adjust and refine some of the settings.
+<p>(While the user is logged in, they may use the 
+<a href="https://wiki.gpii.net/w/Personal_Control_Panel">Personal Control Panel</a> 
+or <abbr>PCP</abbr> to adjust and refine some of the settings.
 However, see <a href="#future-pcp">below</a> for issues related to the
 <abbr>PCP</abbr>.)</p>
 
@@ -324,13 +322,13 @@ information:</p>
 <p>Specify an identifier for your solution. The convention for the solution
 identifier is similar to the Java package naming conventions. For example, Orca
 (on <abbr>GNU</abbr>/Linux GNOME) is identified as <code>org.gnome.orca</code>,
-the browser extension <a
-href="http://www.cloud4all.info/join-the-effort/solutions/chrome-extension/">Cloud4Chrome</a>
+the browser extension 
+<a href="http://www.cloud4all.info/join-the-effort/solutions/chrome-extension/">Cloud4Chrome</a>
 (developed by Ilunion) is identified as <code>com.ilunion.cloud4chrome</code>,
-and the screen reader <a
-href="http://www.freedomscientific.com/Products/Blindness/Jaws"><abbr
-title="Job Access with Speech">JAWS</abbr></a> (developed by Freedom
-Scientific) is identified as <a></a><code>com.freedomscientific.jaws</code>.
+and the screen reader 
+<a href="http://www.freedomscientific.com/Products/Blindness/Jaws"><abbr
+title="Job Access with Speech">JAWS</abbr></a> 
+(developed by Freedom Scientific) is identified as <code>com.freedomscientific.jaws</code>.
 This ID becomes part of the namespace for your solution’s settings,
 <abbr>e.g.</abbr>
 <code>http://registry.gpii.net/applications/org.gnome.orca/</code> for Orca
@@ -343,22 +341,25 @@ solution is not included in a solutions registry. </p>
 <p>You also need to specify how the settings are stored and where. How the
 settings are stored is important because <abbr>GPII</abbr> already supports
 some very common types, <abbr>e.g.</abbr> <abbr>XML</abbr> files,
-<abbr>JSON</abbr> files, INI, <a
-href="https://developer.gnome.org/gio/stable/GSettings.html">gsettings</a> (on
-Linux) and the Windows Registry. (See also the wiki page <a
-href="https://wiki.gpii.net/w/Settings_Handler">Settings Handler</a>.) </p>
+<abbr>JSON</abbr> files, INI, 
+<a href="https://developer.gnome.org/gio/stable/GSettings.html">gsettings</a> 
+(on Linux) and the Windows Registry. (See also the wiki page 
+<a href="https://wiki.gpii.net/w/Settings_Handler">Settings Handler</a>.)
+</p>
 
 <h4>Solutions Registry Entry &amp; Transformations</h4>
 
 <p>The next step is the creation of the solutions registry entry. For a desktop
-solution, this would be either <a
-href="https://github.com/GPII/universal/blob/master/testData/solutions/win32.json"><code>win32.json</code></a>
-or <a
-href="https://github.com/GPII/universal/blob/master/testData/solutions/linux.json"><code>linux.json</code></a>.</p>
+solution, this would be either 
+<a href="https://github.com/GPII/universal/blob/master/testData/solutions/win32.json"><code>win32.json</code></a>
+or 
+<a href="https://github.com/GPII/universal/blob/master/testData/solutions/linux.json"><code>linux.json</code></a>.
+</p>
 
 <p>A solutions registry entry consists of several parts (see also the wiki page
-<a href="https://wiki.gpii.net/w/Solution_Registry">Solution Registry</a>, even
-though it is somewhat outdated): </p>
+<a href="https://wiki.gpii.net/w/Solution_Registry">Solution Registry</a>, 
+even though it is somewhat outdated): 
+</p>
 <ul>
   <li>The solution’s ID, which is used as a key in the <abbr>JSON</abbr>
     file, <abbr>e.g.</abbr> "<code>org.nvda-project</code>".</li>
@@ -382,10 +383,10 @@ though it is somewhat outdated): </p>
         application-specific terms. (During the Cloud4all project, there was a
         small team that was in charge of creating new common terms. After
         Cloud4all, this process should eventually be replaced by process for
-        accepting new terms in the <a
-        href="https://wiki.gpii.net/w/Preference_Terms_Dictionary">Preference
-        Terms Dictionary</a>, based on the revision of ISO/<abbr>IEC</abbr>
-        24751.) </li>
+        accepting new terms in the 
+        <a href="https://wiki.gpii.net/w/Preference_Terms_Dictionary">Preference Terms Dictionary</a>, 
+        based on the revision of ISO/<abbr>IEC</abbr> 24751.)
+      </li>
     </ul>
   </li>
   <li>"<code>configure</code>" and "<code>restore</code>" blocks.</li>
@@ -394,11 +395,11 @@ though it is somewhat outdated): </p>
 </ul>
 
 <p>The biggest task is writing transformations and defining acceptance tests
-for them. See the wiki pages <a
-href="https://wiki.gpii.net/w/Architecture_-_Available_transformation_functions">Architecture
-- Available transformation functions</a> and <a
-href="https://wiki.gpii.net/w/Writing_Acceptance_Tests">Writing Acceptance
-Tests</a>.</p>
+for them. See the wiki pages 
+<a href="https://wiki.gpii.net/w/Architecture_-_Available_transformation_functions">Architecture - Available transformation functions</a> 
+and
+<a href="https://wiki.gpii.net/w/Writing_Acceptance_Tests">Writing Acceptance Tests</a>.
+</p>
 
 <p>Once the preference terms and the solutions registry entry are in place (and
 the pull request to integrate this code has been accepted), <abbr>GPII</abbr>
@@ -452,31 +453,34 @@ However, there are a few differences.</p>
     will take care of translating the <abbr>JSON</abbr> payload in actual
     settings. </p>
   </li>
-  <li>Most importantly, the developer needs to make a <strong><abbr>REST</abbr>
+  <li><p>Most importantly, the developer needs to make a <strong><abbr>REST</abbr>
     call to the Online Flow Manager</strong> with a <abbr>URL</abbr> that
     identifies the solution and the user’s key/token. The <abbr>URL</abbr>
     would be similar to the following example:
     <code>https://flowmanager.gpii.net/olb_Carla/{"OS":{"id":"web"},"solutions":[{"id":"eu.gpii.olb"}]}</code>. 
+    </p>
     <p>In the above <abbr>URL</abbr>,
     <code>https://flowmanager.gpii.net/</code> is the Online Flow Manager’s
     location, <code>olb_Carla</code> is the key or token,
-    <code>{"OS":{"id":"web"}</code> identifies the solutions registry (<a
-    href="https://github.com/GPII/universal/blob/master/testData/solutions/web.json"><code>web.json</code></a>),
+    <code>{"OS":{"id":"web"}</code> identifies the solutions registry 
+    (<a href="https://github.com/GPII/universal/blob/master/testData/solutions/web.json"><code>web.json</code></a>),
     and <code>"solutions":[{"id":"eu.gpii.olb"}]</code> is the list of
     solutions for which the <abbr>REST</abbr> call requests settings
     (<code>eu.gpii.olb</code> refers to online banking web app developed at
-    <abbr>HdM</abbr>).</p>
-    <p>This <abbr>URL</abbr> needs to be <abbr>URL</abbr>-encoded @@footnote.
-    According to <a
-    href="https://tools.ietf.org/html/rfc3986"><abbr>IETF</abbr>
-    <abbr>RFC</abbr> 3986</a>, section 3.3, the characters <code>{</code> and
+    <abbr>HdM</abbr>).
+    </p>
+    <p>This <abbr>URL</abbr> needs to be <abbr>URL</abbr>-encoded.
+    According to 
+    <a href="https://tools.ietf.org/html/rfc3986"><abbr>IETF</abbr> <abbr>RFC</abbr> 3986</a>, 
+    section 3.3, the characters <code>{</code> and
     <code>}</code> need to be <abbr>URL</abbr>-encoded as <code>%7B</code> and
     <code>%7D</code>, respectively, <code>"</code> as <code>%22</code>,
     <code>,</code> as <code>%2C</code>, and <code>[</code> and <code>]</code>
     as <code>%5B</code> and <code>%5D</code>, respectively. You can use the
-    <abbr>URL</abbr> Decoder/Encoder at <a
-    href="http://meyerweb.com/eric/tools/dencoder/">http://meyerweb.com/eric/tools/dencoder/</a>
-    to decode and encode <abbr>URL</abbr>s.</p>
+    <abbr>URL</abbr> Decoder/Encoder at 
+    <a href="http://meyerweb.com/eric/tools/dencoder/">http://meyerweb.com/eric/tools/dencoder/</a>
+    to decode and encode <abbr>URL</abbr>s.
+    </p>
   </li>
 </ul>
 
@@ -501,21 +505,22 @@ cannot receive data from the Local Flow Manager. What is needed is a mechanism
 that “bridges” the browser’s security sandbox so the web application can
 communicate with the Local Flow Manager.</p>
 
-<p>See also Colin Clark’s document “<a
-href="https://wiki.gpii.net/w/Bridging_the_Browser-OS_Personalization_Gap">Bridging
-the Browser-OS Personalization Gap</a>”.</p>
+<p>See also Colin Clark’s document 
+“<a href="https://wiki.gpii.net/w/Bridging_the_Browser-OS_Personalization_Gap">Bridging the Browser-OS Personalization Gap</a>”.
+</p>
 
-<p>The <a href="https://github.com/javihernandez/gwc-chrome">GPII Website
-Connector</a> contains code that enables this. In order to enable a solution to
+<p>The 
+<a href="https://github.com/javihernandez/gwc-chrome">GPII Website Connector</a> 
+contains code that enables this. In order to enable a solution to
 get settings through the Local Flow Manager, the developer needs to do the
 following:</p>
 <ul>
   <li>The solution needs an entry in the web solutions registry (see the
     previous section), but with a different settings handler:
     <code>gpii.settingsHandlers.webSockets</code>. (See for example the entry
-    for <code>eu.gpii.olb</code> (the Online Banking web app) in the <a
-    href="https://github.com/GPII/universal/blob/review4/testData/solutions/web.json#L483-L623">review4
-    branch of the framework</a>.)</li>
+    for <code>eu.gpii.olb</code> (the Online Banking web app) in the 
+    <a href="https://github.com/GPII/universal/blob/review4/testData/solutions/web.json#L483-L623">review4 branch of the framework</a>.)
+  </li>
   <li>The solution needs to incorporate some JavaScript code, as documented in
     the README file of the “<abbr>GPII</abbr> Website Connector”.</li>
   <li>On the user side, the Chrome extension from the above repository needs to
@@ -536,14 +541,13 @@ are currently written by hand. This may change in two ways:</p>
   <li>The solutions registry entry gets generated out of data stored in the
     Semantic Framework developed by <abbr>CERTH</abbr> <abbr>ITI</abbr>. (For
     the goal and an older description of the Semantic Framework, see the wiki
-    page <a
-    href="https://wiki.gpii.net/w/Specification_of_Cloud_Semantic_Infrastructure">Specification
-    of Cloud Semantic Infrastructure</a>. For more up-to-date information, see
-    the deliverables <a
-    href="http://www.cloud4all.info/research/public-deliverables/d201-1-2-cloud-semantic-infrastructure-v2/">D201.1.2.
-    Cloud Semantic Infrastructure V2</a> and <a
-    href="http://www.cloud4all.info/research/public-deliverables/d202-1-semi-automatic-semantic-alignment-tool/">D202.1.
-    Semi-Automatic Semantic Alignment Tool</a>.) However, the Semantic
+    page 
+    <a href="https://wiki.gpii.net/w/Specification_of_Cloud_Semantic_Infrastructure">Specification of Cloud Semantic Infrastructure</a>. 
+    For more up-to-date information, see the deliverables 
+    <a href="http://www.cloud4all.info/research/public-deliverables/d201-1-2-cloud-semantic-infrastructure-v2/">D201.1.2. Cloud Semantic Infrastructure V2</a> 
+    and 
+    <a href="http://www.cloud4all.info/research/public-deliverables/d202-1-semi-automatic-semantic-alignment-tool/">D202.1. Semi-Automatic Semantic Alignment Tool</a>.) 
+    However, the Semantic
     Framework (presumably) does not yet contain the type of data that are
     needed to generate the transformations that should be part of a solutions
     registry entry.</li>
@@ -552,8 +556,9 @@ are currently written by hand. This may change in two ways:</p>
 <p>As mentioned above, the transformations developed during the Cloud4all
 project work in only one direction: from common terms to applications-specific
 terms. Work to support automatic inversion of transformations can be tracked by
-watching JIRA ticket <a
-href="https://issues.gpii.net/browse/GPII-1751"><abbr>GPII</abbr>-1751</a>. </p>
+watching JIRA ticket 
+<a href="https://issues.gpii.net/browse/GPII-1751"><abbr>GPII</abbr>-1751</a>.
+</p>
 
 <h3 id="future-pcp">The Personal Control Panel (<abbr>PCP</abbr>)</h3>
 
@@ -578,7 +583,9 @@ files once they have been launched (<abbr>i.e.</abbr> changes that were not
 done from within the application’s own <abbr>UI</abbr>). <abbr>MS</abbr>
 Windows itself only responded to turning high contrast on or off. The GNOME
 desktop on <abbr>GNU</abbr>/Linux responded to a larger number of settings
-changes@@footnote. However, desktop applications ignore settings changes by the
+changes (see the list of settings in 
+<a href="https://issues.gpii.net/browse/GPII-565">JIRA ticket <abbr>GPII</abbr>-565). 
+However, desktop applications ignore settings changes by the
 <abbr>PCP</abbr> entirely, so they needed to be closed and restarted in order
 to apply the new settings. (This was the approach used in the Cloud4all second
 pilot, when the <abbr>PMT</abbr> also had the capability to apply settings
@@ -599,16 +606,16 @@ clear how a tool such as the <abbr>PCP</abbr> may be used to change the
 settings for specific applications, as opposed to all applications that support
 a specific preference/setting.</p>
 
-<p>Take for example the common terms <a
-href="https://terms.raisingthefloor.org/details/speechRate"><code>speechRate</code></a>
+<p>Take for example the common term 
+<a href="https://terms.raisingthefloor.org/details/speechRate"><code>speechRate</code></a>
 in the Preference Terms Dictionary. (Note that the specification is incomplete
 since it does not state that speechRate is expressed in words per minute.) In
 Cloud4all, this term’s <a></a><abbr>URI</abbr> is
 <code>http://registry.gpii.net/common/speechRate</code>. This term describes
 the speed of a <abbr>TTS</abbr> engine or a screen reader in words per minute.
 On Microsoft Widows, the term currently maps to <abbr>NVDA</abbr>’s setting
-<code>speech.espeak.rate</code> @@footnote, to <abbr>JAWS</abbr>’ speed
-setting@@footnote and to SuperNova’s speech rate setting@@footnote. The entry
+<code>speech.espeak.rate</code>, to <abbr>JAWS</abbr>’ speed
+setting and to SuperNova’s speech rate setting. The entry
 in the Preference Terms Dictionary lists a few aliases, <abbr>e.g.</abbr>
 <code>org.nvda-project_speech\.espeak\.rate</code>,
 <code>org.gnome.orca_voices\.default\.rate</code> and
@@ -663,20 +670,5 @@ href="http://lists.gpii.net/pipermail/architecture/2015-April/003412.html">http:
 
 <p></p>
 
-<p></p>
-
-<p></p>
-
-<p></p>
-
-<p></p>
-
-<p></p>
-
-<p></p>
-
-<p></p>
-
-<p></p>
 </body>
 </html>
