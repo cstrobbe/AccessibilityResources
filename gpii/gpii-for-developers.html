@@ -13,660 +13,659 @@
   </header>
 
   <main>
-  	
-<p>Author: <a href="https://github.com/cstrobbe">Christophe Strobbe</a> (strobbe[at]hdm-stuttgart[dot]de).</p>
+    <p>Author: <a href="https://github.com/cstrobbe">Christophe Strobbe</a> (strobbe[at]hdm-stuttgart[dot]de).</p>
 
-<p>Licence: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License 
-(<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" xml:lang="en-US"
-lang="en-US"><abbr title="Creative Commons">CC</abbr> BY-<abbr title="NonCommercial">NC</abbr>-<abbr title="ShareAlike">SA</abbr> 4.0</a>).
-</p>
+    <p>Licence: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License 
+    (<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" xml:lang="en-US"
+    lang="en-US"><abbr title="Creative Commons">CC</abbr> BY-<abbr title="NonCommercial">NC</abbr>-<abbr title="ShareAlike">SA</abbr> 4.0</a>).
+    </p>
 
-<h2>Introduction</h2>
+    <h2>Introduction</h2>
 
-<p>Software programs, mobile apps and websites have a default user interface
-that tries to cater for many people, but that is often unsuitable for people
-with special needs (because of age or impairment). Many such programs are
-adaptable, but research has shown that most people, except for the most
-technically inclined, never adapt the settings of the software they use. This
-may be because they think the default settings are all there is, because they
-are afraid of breaking something or because it is too difficult.</p>
+    <p>Software programs, mobile apps and websites have a default user interface
+    that tries to cater for many people, but that is often unsuitable for people
+    with special needs (because of age or impairment). Many such programs are
+    adaptable, but research has shown that most people, except for the most
+    technically inclined, never adapt the settings of the software they use. This
+    may be because they think the default settings are all there is, because they
+    are afraid of breaking something or because it is too difficult.</p>
 
-<p>A related problem is that some people need assistive technologies
-(<abbr>AT</abbr>) to use <abbr>IT</abbr>, and setting up these programs and
-defining their settings can be a lot of work. They often need assistance to do
-this, and this task needs to be repeated on every device they want to use.</p>
+    <p>A related problem is that some people need assistive technologies
+    (<abbr>AT</abbr>) to use <abbr>IT</abbr>, and setting up these programs and
+    defining their settings can be a lot of work. They often need assistance to do
+    this, and this task needs to be repeated on every device they want to use.</p>
 
-<p>It would be much better if software programs were adaptive instead of merely
-adaptable, so they would adapt to a user’s needs and preferences without
-requiring much additional work or assistance. Ideally, the user would only need
-to identify who they are or provide a machine-readable description of their
-needs and preferences to a device, and the device would adapt in order to
-enable the user to use the device.</p>
+    <p>It would be much better if software programs were adaptive instead of merely
+    adaptable, so they would adapt to a user’s needs and preferences without
+    requiring much additional work or assistance. Ideally, the user would only need
+    to identify who they are or provide a machine-readable description of their
+    needs and preferences to a device, and the device would adapt in order to
+    enable the user to use the device.</p>
 
-<p>This is one of the challenges addressed by <dfn><abbr>GPII</abbr></dfn>
-(Global Public Inclusive Infrastructure). Cloud4all was one of the projects
-that contributed to <abbr>GPII</abbr>. For an overview of the components of
-<abbr>GPII</abbr> and which projects contribute to these components, see the 
-<a href="http://www.cloud4all.info/the-project/the-gpii/"><abbr>GPII</abbr> 
-page on the Cloud4all website</a>.</p>
+    <p>This is one of the challenges addressed by <dfn><abbr>GPII</abbr></dfn>
+    (Global Public Inclusive Infrastructure). Cloud4all was one of the projects
+    that contributed to <abbr>GPII</abbr>. For an overview of the components of
+    <abbr>GPII</abbr> and which projects contribute to these components, see the 
+    <a href="http://www.cloud4all.info/the-project/the-gpii/"><abbr>GPII</abbr> 
+    page on the Cloud4all website</a>.</p>
 
-<p>This document does not explain all of Cloud4all or <abbr>GPII</abbr>; its
-goal is to explain how developers can “integrate” software programs
-(including assistive technologies and mobile apps) and websites with the
-<abbr>GPII</abbr>, more specifically the <abbr>GPII</abbr> real-time framework.
-</p>
+    <p>This document does not explain all of Cloud4all or <abbr>GPII</abbr>; its
+    goal is to explain how developers can “integrate” software programs
+    (including assistive technologies and mobile apps) and websites with the
+    <abbr>GPII</abbr>, more specifically the <abbr>GPII</abbr> real-time framework.
+    </p>
 
-<p>Important <abbr>GPII</abbr>/Cloud4all concepts:</p>
-<ul>
-  <li>Applications or websites that integrate with <abbr>GPII</abbr> are here
-    often referred to as “<dfn>solutions</dfn>”.</li>
-  <li>The adaptation of a device and its solutions to the user’s needs and
-    preferences is called “<dfn>auto-personalisation</dfn>”</li>
-  <li>The “<dfn><abbr>GPII</abbr> real-time framework</dfn>” refers to the
-    “back-end” software components that implement the auto-personalisation
-    workflow. It is the reference implementation of the GPII architecture. An
-    overview is available on the wiki page <a
+    <p>Important <abbr>GPII</abbr>/Cloud4all concepts:</p>
+    <ul>
+      <li>Applications or websites that integrate with <abbr>GPII</abbr> are here
+        often referred to as “<dfn>solutions</dfn>”.</li>
+      <li>The adaptation of a device and its solutions to the user’s needs and
+        preferences is called “<dfn>auto-personalisation</dfn>”</li>
+      <li>The “<dfn><abbr>GPII</abbr> real-time framework</dfn>” refers to the
+        “back-end” software components that implement the auto-personalisation
+        workflow. It is the reference implementation of the GPII architecture. An
+        overview is available on the wiki page <a
+        href="https://wiki.gpii.net/w/GPII_Architecture_Overview"><abbr>GPII</abbr>
+        Architecture Overview</a>. Installation instructions for developers or
+        contributors is available on the wiki page <a
+        href="https://wiki.gpii.net/w/Setting_Up_Your_Development_Environment">Setting
+        Up Your Development Environment</a>.</li>
+    </ul>
+
+    <h2>The <abbr>GPII</abbr> Real-Time Framework</h2>
+
+    <h3>Components of the Real-Time Framework</h3>
+
+    <p>The real-time framework (often simply referred to as “the architecture”
+    because it was developed by Cloud4all’s architecture team) is a set of
+    loosely coupled components that use RESTful service <abbr>APIs</abbr> to
+    communicate with each other and other <abbr>GPII</abbr> components. The
+    <strong>core components</strong> of the real-time framework are the Preferences
+    Server, the Flow Manager, the Device Reporter, the Solutions Registry and
+    Transformer and the Lifecycle Manager. <strong>Other <abbr>GPII</abbr>
+    components</strong> (not developed by Cloud4all’s architecture team) include
+    the matchmakers, the Context Aware Server and the Service Synthesiser Tool.
+    (For a more detailed overview of the architecture, see the wiki page <a
     href="https://wiki.gpii.net/w/GPII_Architecture_Overview"><abbr>GPII</abbr>
-    Architecture Overview</a>. Installation instructions for developers or
-    contributors is available on the wiki page <a
+    Architecture Overview</a>.) </p>
+
+    <h3>Auto-Personalisation Flow</h3>
+
+    <p>The core components can run locally or “in the cloud”. The following
+    description of the “auto-personalisation flow” assumes a <abbr>PC</abbr> on
+    which the <abbr>GPII</abbr> real-time framework has been installed.</p>
+
+    <p>(See <a
     href="https://wiki.gpii.net/w/Setting_Up_Your_Development_Environment">Setting
-    Up Your Development Environment</a>.</li>
-</ul>
+    Up Your Development Environment</a> for instructions on how to set up your
+    system so you can integrate a solution. For instructions based on the Windows
+    installer, see <a href="https://wiki.gpii.net/w/Installing_the_GPII">Installing
+    the <abbr>GPII</abbr></a>. The latter set of instructions is useful for demos
+    but not if you want to integrate a solution with <abbr>GPII</abbr>.)</p>
 
-<h2>The <abbr>GPII</abbr> Real-Time Framework</h2>
+    <h4>Identification: User Listener</h4>
 
-<h3>Components of the Real-Time Framework</h3>
+    <p>The user provides a key or token, <abbr>e.g.</abbr> on a <abbr>USB</abbr>
+    drive or an <abbr>NFC</abbr> tag, to the <abbr>PC</abbr>. (On USB, the token is
+    stored in a file with the name “<code>.gpii-user-token.txt</code>”. This
+    file should not contain any other content. For <abbr>NFC</abbr>,
+    <abbr>GPII</abbr> currently supports only 
+    <a href="https://en.wikipedia.org/wiki/MIFARE#MIFARE_Classic">MIFARE Classic</a>.)
+    </p>
 
-<p>The real-time framework (often simply referred to as “the architecture”
-because it was developed by Cloud4all’s architecture team) is a set of
-loosely coupled components that use RESTful service <abbr>APIs</abbr> to
-communicate with each other and other <abbr>GPII</abbr> components. The
-<strong>core components</strong> of the real-time framework are the Preferences
-Server, the Flow Manager, the Device Reporter, the Solutions Registry and
-Transformer and the Lifecycle Manager. <strong>Other <abbr>GPII</abbr>
-components</strong> (not developed by Cloud4all’s architecture team) include
-the matchmakers, the Context Aware Server and the Service Synthesiser Tool.
-(For a more detailed overview of the architecture, see the wiki page <a
-href="https://wiki.gpii.net/w/GPII_Architecture_Overview"><abbr>GPII</abbr>
-Architecture Overview</a>.) </p>
+    <p>The token is simply a string that identifies the user’s needs &amp;
+    preferences set (<abbr>NP</abbr> set), which is stored on the Preferences
+    Server. For example, the token <code>olb_Carla</code> identifies the
+    <abbr>NP</abbr> set 
+    <a href="https://preferences.gpii.net/preferences/olb_Carla">https://preferences.gpii.net/preferences/olb_Carla</a>.
+    </p>
 
-<h3>Auto-Personalisation Flow</h3>
+    <p>The User Listener component will detect the key and send it to the Flow
+    Manager. (See the 
+    <a href="https://github.com/GPII/universal/blob/master/documentation/FlowManager.md">Flow Manager <abbr>API</abbr></a>; 
+    not the 
+    <a href="https://wiki.gpii.net/w/Flow_Manager">outdated wiki page</a>.)
+    </p>
 
-<p>The core components can run locally or “in the cloud”. The following
-description of the “auto-personalisation flow” assumes a <abbr>PC</abbr> on
-which the <abbr>GPII</abbr> real-time framework has been installed.</p>
+    <h4>Device Reporter</h4>
 
-<p>(See <a
-href="https://wiki.gpii.net/w/Setting_Up_Your_Development_Environment">Setting
-Up Your Development Environment</a> for instructions on how to set up your
-system so you can integrate a solution. For instructions based on the Windows
-installer, see <a href="https://wiki.gpii.net/w/Installing_the_GPII">Installing
-the <abbr>GPII</abbr></a>. The latter set of instructions is useful for demos
-but not if you want to integrate a solution with <abbr>GPII</abbr>.)</p>
+    <p>In addition to the user’s key, the Flow Manager also gets information
+    about the user’s device from the Device Reporter. Currently, this information
+    is about which (<abbr>GPII</abbr>-supported) solutions are available on the
+    device. This covers both installed solutions and built-in assistive
+    technologies and accessibility features. For example, on <abbr>MS</abbr>
+    Windows, the Device Reporter can report the presence of <abbr>MS</abbr>
+    Windows’ built-in Magnifier and high-contrast features, and the screen reader
+    <a href="http://www.nvaccess.org/"><abbr>NVDA</abbr></a> 
+    (an open source solution). </p>
 
-<h4>Identification: User Listener</h4>
+    <p>Strictly speaking, the Device Reporter should only pass on information for
+    which the user has given consent, but Cloud4all currently has no mechanism to
+    allow the user to specify which information can be used by the real-time
+    framework. </p>
 
-<p>The user provides a key or token, <abbr>e.g.</abbr> on a <abbr>USB</abbr>
-drive or an <abbr>NFC</abbr> tag, to the <abbr>PC</abbr>. (On USB, the token is
-stored in a file with the name “<code>.gpii-user-token.txt</code>”. This
-file should not contain any other content. For <abbr>NFC</abbr>,
-<abbr>GPII</abbr> currently supports only 
-<a href="https://en.wikipedia.org/wiki/MIFARE#MIFARE_Classic">MIFARE Classic</a>.)
-</p>
+    <p>(The Preferences Management Tool or <abbr>PMT</abbr> should allow users to
+    specify the solutions with which they want to share (parts) of their
+    <abbr>NP</abbr> set. (E.g. allow <abbr>EASIT</abbr> to read all of my
+    <abbr>EASIT</abbr>-related preferences but don’t share anything with
+    Facebook.) However, this has nothing to do with the Device Reporter.)</p>
 
-<p>The token is simply a string that identifies the user’s needs &amp;
-preferences set (<abbr>NP</abbr> set), which is stored on the Preferences
-Server. For example, the token <code>olb_Carla</code> identifies the
-<abbr>NP</abbr> set 
-<a href="https://preferences.gpii.net/preferences/olb_Carla">https://preferences.gpii.net/preferences/olb_Carla</a>.
-</p>
+    <h4>Preferences Server</h4>
 
-<p>The User Listener component will detect the key and send it to the Flow
-Manager. (See the 
-<a href="https://github.com/GPII/universal/blob/master/documentation/FlowManager.md">Flow Manager <abbr>API</abbr></a>; 
-not the 
-<a href="https://wiki.gpii.net/w/Flow_Manager">outdated wiki page</a>.)
-</p>
+    <p>The Flow Manager fetches the user’s <abbr>NP</abbr> set from the
+    Preferences Server and combines this data with the Device Reporter data.</p>
 
-<h4>Device Reporter</h4>
+    <h4>Matchmaker and/or Transformer</h4>
 
-<p>In addition to the user’s key, the Flow Manager also gets information
-about the user’s device from the Device Reporter. Currently, this information
-is about which (<abbr>GPII</abbr>-supported) solutions are available on the
-device. This covers both installed solutions and built-in assistive
-technologies and accessibility features. For example, on <abbr>MS</abbr>
-Windows, the Device Reporter can report the presence of <abbr>MS</abbr>
-Windows’ built-in Magnifier and high-contrast features, and the screen reader
-<a href="http://www.nvaccess.org/"><abbr>NVDA</abbr></a> 
-(an open source solution). </p>
+    <p>What happens next depends on the content of the <abbr>NP</abbr> set and the
+    Device Reporter data.</p>
 
-<p>Strictly speaking, the Device Reporter should only pass on information for
-which the user has given consent, but Cloud4all currently has no mechanism to
-allow the user to specify which information can be used by the real-time
-framework. </p>
+    <p>The <abbr>NP</abbr> set expresses the user’s needs and preferences using
+    “common terms”, “application-specific terms” or a combination of
+    these.</p>
 
-<p>(The Preferences Management Tool or <abbr>PMT</abbr> should allow users to
-specify the solutions with which they want to share (parts) of their
-<abbr>NP</abbr> set. (E.g. allow <abbr>EASIT</abbr> to read all of my
-<abbr>EASIT</abbr>-related preferences but don’t share anything with
-Facebook.) However, this has nothing to do with the Device Reporter.)</p>
+    <p>The <dfn>common terms</dfn> constitute a kind of lingua franca for
+    expressing preferences; they they are best thought of as “application-neutral
+    terms”. Common terms are names for settings or preferences that would apply
+    across many applications or devices and for which the name (unique
+    <abbr>ID</abbr>), data type, value space and definition are defined in the
+    Registry. This type of term should be stable and not change much (if at all).
+    In the current Cloud4all implementation, these terms belong in the namespace
+    <code>http://registry.gpii.net/common/</code>.</p>
 
-<h4>Preferences Server</h4>
+    <p><dfn>Application-specific terms</dfn> are names for settings or preferences
+    that apply to a specific device or application, that has a name, data type and
+    value space that are determined by the device or application for which the term
+    was defined. In the current Cloud4all implementation, a solution’s
+    application-specific terms belong in the namespace
+    <code>http://registry.gpii.net/applications/</code> followed by the
+    solution’s <abbr>ID</abbr>. For example, the settings for <a
+    href="https://wiki.gnome.org/Projects/Orca">Orca</a>, a screen reader developed
+    by the GNOME project, are in the namespace
+    <code>http://registry.gpii.net/applications/org.gnome.orca/</code>.</p>
 
-<p>The Flow Manager fetches the user’s <abbr>NP</abbr> set from the
-Preferences Server and combines this data with the Device Reporter data.</p>
-
-<h4>Matchmaker and/or Transformer</h4>
-
-<p>What happens next depends on the content of the <abbr>NP</abbr> set and the
-Device Reporter data.</p>
-
-<p>The <abbr>NP</abbr> set expresses the user’s needs and preferences using
-“common terms”, “application-specific terms” or a combination of
-these.</p>
-
-<p>The <dfn>common terms</dfn> constitute a kind of lingua franca for
-expressing preferences; they they are best thought of as “application-neutral
-terms”. Common terms are names for settings or preferences that would apply
-across many applications or devices and for which the name (unique
-<abbr>ID</abbr>), data type, value space and definition are defined in the
-Registry. This type of term should be stable and not change much (if at all).
-In the current Cloud4all implementation, these terms belong in the namespace
-<code>http://registry.gpii.net/common/</code>.</p>
-
-<p><dfn>Application-specific terms</dfn> are names for settings or preferences
-that apply to a specific device or application, that has a name, data type and
-value space that are determined by the device or application for which the term
-was defined. In the current Cloud4all implementation, a solution’s
-application-specific terms belong in the namespace
-<code>http://registry.gpii.net/applications/</code> followed by the
-solution’s <abbr>ID</abbr>. For example, the settings for <a
-href="https://wiki.gnome.org/Projects/Orca">Orca</a>, a screen reader developed
-by the GNOME project, are in the namespace
-<code>http://registry.gpii.net/applications/org.gnome.orca/</code>.</p>
-
-<p>Below is an example of an <abbr>NP</abbr> set that uses mostly common terms
-and two application-specific terms: </p>
-<pre><code>{
-  "flat": {
-    "contexts": {
-      "gpii-default": {
-        "name": "Default preferences",
-        "preferences": {
-          "<strong>http://registry.gpii.net/common/</strong>language": "en-GB",
-          "http://registry.gpii.net/common/fontSize": 24,
-          "http://registry.gpii.net/common/linkAdaptation": "emphasizeLinks",
-          "http://registry.gpii.net/common/highContrastEnabled": true,
-          "http://registry.gpii.net/common/highContrastTheme": "white-black",
-          "http://registry.gpii.net/common/signLanguageEnabled": false,
-          "<strong>http://registry.gpii.net/applications/eu.gpii.olb</strong>": {
-            "lineSpacing": 2,
-            "inputsLarger": true
+    <p>Below is an example of an <abbr>NP</abbr> set that uses mostly common terms
+    and two application-specific terms: </p>
+    <pre><code>{
+      "flat": {
+        "contexts": {
+          "gpii-default": {
+            "name": "Default preferences",
+            "preferences": {
+              "<strong>http://registry.gpii.net/common/</strong>language": "en-GB",
+              "http://registry.gpii.net/common/fontSize": 24,
+              "http://registry.gpii.net/common/linkAdaptation": "emphasizeLinks",
+              "http://registry.gpii.net/common/highContrastEnabled": true,
+              "http://registry.gpii.net/common/highContrastTheme": "white-black",
+              "http://registry.gpii.net/common/signLanguageEnabled": false,
+              "<strong>http://registry.gpii.net/applications/eu.gpii.olb</strong>": {
+                "lineSpacing": 2,
+                "inputsLarger": true
+              }
+            }
           }
         }
       }
-    }
-  }
-}</code></pre>
+    }</code></pre>
 
-<p>(This is the <abbr>NP</abbr> set 
-<a href="https://github.com/GPII/universal/blob/master/testData/preferences/olb_Carla.json">olb_Carla</a>.
-For an example containing only application-specific terms, see 
-<a href="https://github.com/GPII/universal/blob/master/testData/preferences/acceptanceTests/olb_applicationSpecific_01.json">olb_applicationSpecific_01.json</a>.)
-</p>
-
-<p>How an <abbr>NP</abbr> set gets applied to the local system depends on which
-solutions are available on the local system (<abbr>cf.</abbr> the Device
-Reporter data) and how the user’s preferences are expressed in the
-<abbr>NP</abbr> set. There are several possible scenarios (we will use the
-Windows screen reader <abbr>NVDA</abbr> as an example):</p>
-<ol>
-  <li>The Device Reporter data says that <abbr>NVDA</abbr> is available on the
-    system, and the <abbr>NP</abbr> set has settings for <abbr>NVDA</abbr>
-    expressed as application-specific terms. (These preferences would be in the
-    namespace
-    <code>http://registry.gpii.net/applications/org.nvda-project/</code>. The
-    Device Reporter data would contain the string
-    <code>org.nvda-project</code>.) 
-    <p>In this case, the settings can be passed on to the next component, the
-    Lifecycle Manager (see below).</p>
-  </li>
-  <li><p>The Device Reporter data says that <abbr>NVDA</abbr> is available on
-    the system, and the <abbr>NP</abbr> set contains screen reader settings
-    expressed as common terms. In this case, the Transformer will convert the
-    common terms into settings expressed in application-specific terms. The
-    Transformer uses transformations defined in the Solutions Registry in order
-    to translate the common terms into application-specific settings. The
-    output as then passed on to the Lifecycle Manager. </p>
-    <p>(The Solution Registry currently consists of 4 <abbr>JSON</abbr> files,
-    one per platform: 
-    <a href="https://github.com/GPII/universal/blob/master/testData/solutions/android.json">android.json</a>,
-    <a href="https://github.com/GPII/universal/blob/master/testData/solutions/linux.json">linux.json</a>,
-    <a href="https://github.com/GPII/universal/blob/master/testData/solutions/web.json">web.json</a>
-    and 
-    <a href="https://github.com/GPII/universal/blob/master/testData/solutions/win32.json">win32.json</a>.)
+    <p>(This is the <abbr>NP</abbr> set 
+    <a href="https://github.com/GPII/universal/blob/master/testData/preferences/olb_Carla.json">olb_Carla</a>.
+    For an example containing only application-specific terms, see 
+    <a href="https://github.com/GPII/universal/blob/master/testData/preferences/acceptanceTests/olb_applicationSpecific_01.json">olb_applicationSpecific_01.json</a>.)
     </p>
-  </li>
-  <li>The Device Reporter data says that <abbr>NVDA</abbr> is available on the
-    system, and the <abbr>NP</abbr> set contains settings for a different
-    screen reader, <abbr>e.g.</abbr> the Linux screen reader Orca. The Orca
-    settings are application-specific settings that cannot be translated into
-    <abbr>NVDA</abbr> settings by the Transformer. (The Transformer only
-    transforms from common terms to application-specific terms. The reverse
-    process is not yet supported. The Transformer is based on 
-    <a href="https://wiki.gpii.net/w/GPII_Architecture_Overview#The_Transformer_and_Data_Lensing">Benjamin Pierce’s concept of lensing</a>.) 
-    <p>In this case, we need a more intelligent component, <abbr>i.e.</abbr> a
-    <a href="https://wiki.gpii.net/w/Matchmaking">matchmaker</a>, to transform
-    the Orca settings into <abbr>NVDA</abbr> settings. Currently, only the
-    Statistical Matchmaker can do this; the Rule-Based Matchmaker relies on the
-    Transformer for this kind of translation and therefore cannot translate the
-    Orca settings into the common terms it needs in order to generate NVDA
-    settings. (There are more complex matchmaking scenarios than this, but
-    these need to be explained elsewhere.) </p>
-  </li>
-</ol>
 
-<h4>Lifecycle Manager</h4>
+    <p>How an <abbr>NP</abbr> set gets applied to the local system depends on which
+    solutions are available on the local system (<abbr>cf.</abbr> the Device
+    Reporter data) and how the user’s preferences are expressed in the
+    <abbr>NP</abbr> set. There are several possible scenarios (we will use the
+    Windows screen reader <abbr>NVDA</abbr> as an example):</p>
+    <ol>
+      <li>The Device Reporter data says that <abbr>NVDA</abbr> is available on the
+        system, and the <abbr>NP</abbr> set has settings for <abbr>NVDA</abbr>
+        expressed as application-specific terms. (These preferences would be in the
+        namespace
+        <code>http://registry.gpii.net/applications/org.nvda-project/</code>. The
+        Device Reporter data would contain the string
+        <code>org.nvda-project</code>.) 
+        <p>In this case, the settings can be passed on to the next component, the
+        Lifecycle Manager (see below).</p>
+      </li>
+      <li><p>The Device Reporter data says that <abbr>NVDA</abbr> is available on
+        the system, and the <abbr>NP</abbr> set contains screen reader settings
+        expressed as common terms. In this case, the Transformer will convert the
+        common terms into settings expressed in application-specific terms. The
+        Transformer uses transformations defined in the Solutions Registry in order
+        to translate the common terms into application-specific settings. The
+        output as then passed on to the Lifecycle Manager. </p>
+        <p>(The Solution Registry currently consists of 4 <abbr>JSON</abbr> files,
+        one per platform: 
+        <a href="https://github.com/GPII/universal/blob/master/testData/solutions/android.json">android.json</a>,
+        <a href="https://github.com/GPII/universal/blob/master/testData/solutions/linux.json">linux.json</a>,
+        <a href="https://github.com/GPII/universal/blob/master/testData/solutions/web.json">web.json</a>
+        and 
+        <a href="https://github.com/GPII/universal/blob/master/testData/solutions/win32.json">win32.json</a>.)
+        </p>
+      </li>
+      <li>The Device Reporter data says that <abbr>NVDA</abbr> is available on the
+        system, and the <abbr>NP</abbr> set contains settings for a different
+        screen reader, <abbr>e.g.</abbr> the Linux screen reader Orca. The Orca
+        settings are application-specific settings that cannot be translated into
+        <abbr>NVDA</abbr> settings by the Transformer. (The Transformer only
+        transforms from common terms to application-specific terms. The reverse
+        process is not yet supported. The Transformer is based on 
+        <a href="https://wiki.gpii.net/w/GPII_Architecture_Overview#The_Transformer_and_Data_Lensing">Benjamin Pierce’s concept of lensing</a>.) 
+        <p>In this case, we need a more intelligent component, <abbr>i.e.</abbr> a
+        <a href="https://wiki.gpii.net/w/Matchmaking">matchmaker</a>, to transform
+        the Orca settings into <abbr>NVDA</abbr> settings. Currently, only the
+        Statistical Matchmaker can do this; the Rule-Based Matchmaker relies on the
+        Transformer for this kind of translation and therefore cannot translate the
+        Orca settings into the common terms it needs in order to generate NVDA
+        settings. (There are more complex matchmaking scenarios than this, but
+        these need to be explained elsewhere.) </p>
+      </li>
+    </ol>
 
-<p>The Flow Manager passes the settings (the output from the previous step) and
-the list of solutions to the Lifecycle Manager. The Lifecycle Manager is
-responsible for starting and stopping solutions (i.e. starting them at “log
-in” and stopping them when the user “logs out”), and for configuring
-settings.</p>
+    <h4>Lifecycle Manager</h4>
 
-<p>The Lifecycle Manager first takes a snapshot of the system’s current
-settings so these can be restored again when the user logs out. Then, it
-invokes the Lifecycle Actions and Settings Handlers, which are in charge of the
-actual launching of the solutions and the modification of their settings.</p>
+    <p>The Flow Manager passes the settings (the output from the previous step) and
+    the list of solutions to the Lifecycle Manager. The Lifecycle Manager is
+    responsible for starting and stopping solutions (i.e. starting them at “log
+    in” and stopping them when the user “logs out”), and for configuring
+    settings.</p>
 
-<p>(While the user is logged in, they may use the 
-<a href="https://wiki.gpii.net/w/Personal_Control_Panel">Personal Control Panel</a> 
-or <abbr>PCP</abbr> to adjust and refine some of the settings.
-However, see <a href="#future-pcp">below</a> for issues related to the
-<abbr>PCP</abbr>.)</p>
+    <p>The Lifecycle Manager first takes a snapshot of the system’s current
+    settings so these can be restored again when the user logs out. Then, it
+    invokes the Lifecycle Actions and Settings Handlers, which are in charge of the
+    actual launching of the solutions and the modification of their settings.</p>
 
-<p>When the user is finished with his work and “logs out” —
-<abbr>e.g.</abbr> by pulling out the <abbr>USB</abbr> stick with the token —
-the device will be restored to the state it was in before the log-in (using the
-snapshotted settings), so the next user who comes along does not need to do the
-adaptations would not need to undo all the changes that were made for the
-previous user.</p>
+    <p>(While the user is logged in, they may use the 
+    <a href="https://wiki.gpii.net/w/Personal_Control_Panel">Personal Control Panel</a> 
+    or <abbr>PCP</abbr> to adjust and refine some of the settings.
+    However, see <a href="#future-pcp">below</a> for issues related to the
+    <abbr>PCP</abbr>.)</p>
 
-<h2>Integrating a Solution</h2>
+    <p>When the user is finished with his work and “logs out” —
+    <abbr>e.g.</abbr> by pulling out the <abbr>USB</abbr> stick with the token —
+    the device will be restored to the state it was in before the log-in (using the
+    snapshotted settings), so the next user who comes along does not need to do the
+    adaptations would not need to undo all the changes that were made for the
+    previous user.</p>
 
-<p>There are three ways in which a solution can integrate with
-<abbr>GPII</abbr>, based on which Flow Manager they use and the nature of the
-communication with the real-time framework.</p>
+    <h2>Integrating a Solution</h2>
 
-<h3>Using the Local Flow Manager</h3>
+    <p>There are three ways in which a solution can integrate with
+    <abbr>GPII</abbr>, based on which Flow Manager they use and the nature of the
+    communication with the real-time framework.</p>
 
-<p>In this situation, the <abbr>GPII</abbr> real-time framework needs to be
-installed on the local system. As a consequence, you can also rely on the
-framework’s Lifecycle Manager, Lifecycle Actions and Settings Handlers.</p>
+    <h3>Using the Local Flow Manager</h3>
 
-<p>As a developer, you need to take the following steps.</p>
+    <p>In this situation, the <abbr>GPII</abbr> real-time framework needs to be
+    installed on the local system. As a consequence, you can also rely on the
+    framework’s Lifecycle Manager, Lifecycle Actions and Settings Handlers.</p>
 
-<h4>Identify and Describe the Solution’s Settings</h4>
+    <p>As a developer, you need to take the following steps.</p>
 
-<p>Identify the solution’s settings, and describe each of them (or the subset
-for which you want <abbr>GPII</abbr> support) with the following types of
-information:</p>
-<ol>
-  <li>The setting’s name. In Cloud4all, we used the names that occur in the
-    solution’s settings file(s), <abbr>e.g.</abbr> <abbr>NVDA</abbr>’s INI
-    files. (A solution's application-specific terms always matched the
-    solution's internal names for the corresponding settings.)</li>
-  <li>The setting’s data type (string, integer, float, boolean, …).</li>
-  <li>The setting’s value range.</li>
-  <li>The setting’s relationship with other settings, if any exist. For
-    example, some settings are only present in a settings file if a certain
-    other settings has a specific value, etcetera..</li>
-</ol>
+    <h4>Identify and Describe the Solution’s Settings</h4>
 
-<p>Specify an identifier for your solution. The convention for the solution
-identifier is similar to the Java package naming conventions. For example, Orca
-(on <abbr>GNU</abbr>/Linux GNOME) is identified as <code>org.gnome.orca</code>,
-the browser extension 
-<a href="http://www.cloud4all.info/join-the-effort/solutions/chrome-extension/">Cloud4Chrome</a>
-(developed by Ilunion) is identified as <code>com.ilunion.cloud4chrome</code>,
-and the screen reader 
-<a href="http://www.freedomscientific.com/Products/Blindness/Jaws"><abbr
-title="Job Access with Speech">JAWS</abbr></a> 
-(developed by Freedom Scientific) is identified as <code>com.freedomscientific.jaws</code>.
-This ID becomes part of the namespace for your solution’s settings,
-<abbr>e.g.</abbr>
-<code>http://registry.gpii.net/applications/org.gnome.orca/</code> for Orca
-settings.</p>
+    <p>Identify the solution’s settings, and describe each of them (or the subset
+    for which you want <abbr>GPII</abbr> support) with the following types of
+    information:</p>
+    <ol>
+      <li>The setting’s name. In Cloud4all, we used the names that occur in the
+        solution’s settings file(s), <abbr>e.g.</abbr> <abbr>NVDA</abbr>’s INI
+        files. (A solution's application-specific terms always matched the
+        solution's internal names for the corresponding settings.)</li>
+      <li>The setting’s data type (string, integer, float, boolean, …).</li>
+      <li>The setting’s value range.</li>
+      <li>The setting’s relationship with other settings, if any exist. For
+        example, some settings are only present in a settings file if a certain
+        other settings has a specific value, etcetera..</li>
+    </ol>
 
-<p>With these data, it is already possible to create application-specific
-settings, but they will be ignored by the real-time framework as long as the
-solution is not included in a solutions registry. </p>
+    <p>Specify an identifier for your solution. The convention for the solution
+    identifier is similar to the Java package naming conventions. For example, Orca
+    (on <abbr>GNU</abbr>/Linux GNOME) is identified as <code>org.gnome.orca</code>,
+    the browser extension 
+    <a href="http://www.cloud4all.info/join-the-effort/solutions/chrome-extension/">Cloud4Chrome</a>
+    (developed by Ilunion) is identified as <code>com.ilunion.cloud4chrome</code>,
+    and the screen reader 
+    <a href="http://www.freedomscientific.com/Products/Blindness/Jaws"><abbr
+    title="Job Access with Speech">JAWS</abbr></a> 
+    (developed by Freedom Scientific) is identified as <code>com.freedomscientific.jaws</code>.
+    This ID becomes part of the namespace for your solution’s settings,
+    <abbr>e.g.</abbr>
+    <code>http://registry.gpii.net/applications/org.gnome.orca/</code> for Orca
+    settings.</p>
 
-<p>You also need to specify how the settings are stored and where. How the
-settings are stored is important because <abbr>GPII</abbr> already supports
-some very common types, <abbr>e.g.</abbr> <abbr>XML</abbr> files,
-<abbr>JSON</abbr> files, INI, 
-<a href="https://developer.gnome.org/gio/stable/GSettings.html">gsettings</a> 
-(on Linux) and the Windows Registry. (See also the wiki page 
-<a href="https://wiki.gpii.net/w/Settings_Handler">Settings Handler</a>.)
-</p>
+    <p>With these data, it is already possible to create application-specific
+    settings, but they will be ignored by the real-time framework as long as the
+    solution is not included in a solutions registry. </p>
 
-<h4>Solutions Registry Entry &amp; Transformations</h4>
+    <p>You also need to specify how the settings are stored and where. How the
+    settings are stored is important because <abbr>GPII</abbr> already supports
+    some very common types, <abbr>e.g.</abbr> <abbr>XML</abbr> files,
+    <abbr>JSON</abbr> files, INI, 
+    <a href="https://developer.gnome.org/gio/stable/GSettings.html">gsettings</a> 
+    (on Linux) and the Windows Registry. (See also the wiki page 
+    <a href="https://wiki.gpii.net/w/Settings_Handler">Settings Handler</a>.)
+    </p>
 
-<p>The next step is the creation of the solutions registry entry. For a desktop
-solution, this would be either 
-<a href="https://github.com/GPII/universal/blob/master/testData/solutions/win32.json"><code>win32.json</code></a>
-or 
-<a href="https://github.com/GPII/universal/blob/master/testData/solutions/linux.json"><code>linux.json</code></a>.
-</p>
+    <h4>Solutions Registry Entry &amp; Transformations</h4>
 
-<p>A solutions registry entry consists of several parts (see also the wiki page
-<a href="https://wiki.gpii.net/w/Solution_Registry">Solution Registry</a>, 
-even though it is somewhat outdated): 
-</p>
-<ul>
-  <li>The solution’s ID, which is used as a key in the <abbr>JSON</abbr>
-    file, <abbr>e.g.</abbr> "<code>org.nvda-project</code>".</li>
-  <li>The solution’s name.</li>
-  <li>A "<code>contexts</code>" block that defines the operating system and
-    minimum version on which the solution runs.</li>
-  <li>A "<code>settingsHandlers</code>" block with several parts: 
+    <p>The next step is the creation of the solutions registry entry. For a desktop
+    solution, this would be either 
+    <a href="https://github.com/GPII/universal/blob/master/testData/solutions/win32.json"><code>win32.json</code></a>
+    or 
+    <a href="https://github.com/GPII/universal/blob/master/testData/solutions/linux.json"><code>linux.json</code></a>.
+    </p>
+
+    <p>A solutions registry entry consists of several parts (see also the wiki page
+    <a href="https://wiki.gpii.net/w/Solution_Registry">Solution Registry</a>, 
+    even though it is somewhat outdated): 
+    </p>
     <ul>
-      <li>"<code>configs</code>", where you define the type of settings handler
-        that will be used. In the case of <abbr>NVDA</abbr>, which uses INI
-        files, this is defined as
-        "<code>gpii.settingsHandlers.INISettingsHandler</code>".</li>
-      <li>"<code>options</code>", which describes where the settings file can
-        be found.</li>
-      <li>"<code>capabilities</code>" (a block that is not well
-      documented).</li>
-      <li>"<code>capabilitiesTransformations</code>", which contains the actual
-        transformations between common terms and your solution’s
-        application-specific terms. This block only contains transformations
-        for common terms that directly match the solution's
-        application-specific terms. (During the Cloud4all project, there was a
-        small team that was in charge of creating new common terms. After
-        Cloud4all, this process should eventually be replaced by process for
-        accepting new terms in the 
-        <a href="https://wiki.gpii.net/w/Preference_Terms_Dictionary">Preference Terms Dictionary</a>, 
-        based on the revision of ISO/<abbr>IEC</abbr> 24751.)
+      <li>The solution’s ID, which is used as a key in the <abbr>JSON</abbr>
+        file, <abbr>e.g.</abbr> "<code>org.nvda-project</code>".</li>
+      <li>The solution’s name.</li>
+      <li>A "<code>contexts</code>" block that defines the operating system and
+        minimum version on which the solution runs.</li>
+      <li>A "<code>settingsHandlers</code>" block with several parts: 
+        <ul>
+          <li>"<code>configs</code>", where you define the type of settings handler
+            that will be used. In the case of <abbr>NVDA</abbr>, which uses INI
+            files, this is defined as
+            "<code>gpii.settingsHandlers.INISettingsHandler</code>".</li>
+          <li>"<code>options</code>", which describes where the settings file can
+            be found.</li>
+          <li>"<code>capabilities</code>" (a block that is not well
+          documented).</li>
+          <li>"<code>capabilitiesTransformations</code>", which contains the actual
+            transformations between common terms and your solution’s
+            application-specific terms. This block only contains transformations
+            for common terms that directly match the solution's
+            application-specific terms. (During the Cloud4all project, there was a
+            small team that was in charge of creating new common terms. After
+            Cloud4all, this process should eventually be replaced by process for
+            accepting new terms in the 
+            <a href="https://wiki.gpii.net/w/Preference_Terms_Dictionary">Preference Terms Dictionary</a>, 
+            based on the revision of ISO/<abbr>IEC</abbr> 24751.)
+          </li>
+        </ul>
+      </li>
+      <li>"<code>configure</code>" and "<code>restore</code>" blocks.</li>
+      <li>"<code>start</code>" and "<code>stop</code>" blocks that specify how the
+        solutions is to be launched and killed, respectively.</li>
+    </ul>
+
+    <p>The biggest task is writing transformations and defining acceptance tests
+    for them. See the wiki pages 
+    <a href="https://wiki.gpii.net/w/Architecture_-_Available_transformation_functions">Architecture - Available transformation functions</a> 
+    and
+    <a href="https://wiki.gpii.net/w/Writing_Acceptance_Tests">Writing Acceptance Tests</a>.
+    </p>
+
+    <p>Once the preference terms and the solutions registry entry are in place (and
+    the pull request to integrate this code has been accepted), <abbr>GPII</abbr>
+    should be able support the solution, <abbr>i.e.</abbr> change its settings and
+    launch &amp; kill it.</p>
+
+    <p>Additional work should only be necessary of the solution uses a settings
+    format that is not yet supported by the <abbr>GPII</abbr> real-time framework,
+    e.g. a binary format. (For example, SuperNova is an <abbr>AT</abbr> that uses a
+    binary file format for its settings.) </p>
+
+    <h3>Using the Online Flow Manager</h3>
+
+    <p>If your solution cannot or should not talk to a locally installed real-time
+    framework, it is possible to use the Online Flow Manager instead. There can be
+    several reasons for this: the <abbr>GPII</abbr> cannot be installed locally
+    (<abbr>e.g.</abbr> the platform is not supported, <abbr>GPII</abbr> is too big
+    for the device, the device is an Android device that must not be rooted to
+    install <abbr>GPII</abbr>, …) or the solution is web-based and is accessed
+    from a device where <abbr>GPII</abbr> was never installed. [In order to install
+    <abbr>GPII</abbr> on Android, the device needs to be rooted. Without a rooted
+    device, <abbr>GPII</abbr> cannot change the settings of the apps it is supposed
+    to adapt.]</p>
+
+    <p>In this case, most of the integration work is the same as above: creating an
+    identifier for your solution, describing your settings and how they are stored,
+    creating transformations and the other parts of the solutions registry entry.
+    However, there are a few differences.</p>
+    <ul>
+      <li>Since there is no local GPII framework, there are <strong>no User
+        Listeners</strong> to listen for log-in and log-out events. If such a
+        listener is needed, it needs to be developed. Mobile Accessibility for
+        Android is an example of an app that listens for <abbr>NFC</abbr> tags
+        without relying on the <abbr>GPII</abbr>’s user listeners. In other
+        words, the solution is responsible for identifying the user and passing
+        their token on to the <abbr>GPII</abbr> framework.</li>
+      <li>Since there is no local <abbr>GPII</abbr> framework, there is no
+        Lifecycle Manager to snapshot the settings and restore them later, and
+        there are no Settings Handlers to change the solution’s settings. This
+        means that the developer needs to write <strong>code that parses the
+        <abbr>JSON</abbr> payload</strong> it receives from the Online Flow Manager
+        and code that changes the solution’s settings based on this payload. 
+        <p>This is reflected in the solutions registry entry: instead of something
+        like an INI settings handler, all “web-based” solutions use the
+        “settings handler” <code>gpii.settingsHandlers.noSettings</code>. Note
+        that “Web-based” here refers to any solution that uses the Online Flow
+        Manager instead of the Local Flow Manager, so it also applies to Android
+        solutions that use this approach.
+        <code>gpii.settingsHandlers.noSettings</code> is strictly speaking not a
+        settings handler but a way of telling <abbr>GPII</abbr> that the solution
+        will take care of translating the <abbr>JSON</abbr> payload in actual
+        settings. </p>
+      </li>
+      <li><p>Most importantly, the developer needs to make a <strong><abbr>REST</abbr>
+        call to the Online Flow Manager</strong> with a <abbr>URL</abbr> that
+        identifies the solution and the user’s key/token. The <abbr>URL</abbr>
+        would be similar to the following example:
+        <code>https://flowmanager.gpii.net/olb_Carla/{"OS":{"id":"web"},"solutions":[{"id":"eu.gpii.olb"}]}</code>. 
+        </p>
+        <p>In the above <abbr>URL</abbr>,
+        <code>https://flowmanager.gpii.net/</code> is the Online Flow Manager’s
+        location, <code>olb_Carla</code> is the key or token,
+        <code>{"OS":{"id":"web"}</code> identifies the solutions registry 
+        (<a href="https://github.com/GPII/universal/blob/master/testData/solutions/web.json"><code>web.json</code></a>),
+        and <code>"solutions":[{"id":"eu.gpii.olb"}]</code> is the list of
+        solutions for which the <abbr>REST</abbr> call requests settings
+        (<code>eu.gpii.olb</code> refers to online banking web app developed at
+        <abbr>HdM</abbr>).
+        </p>
+        <p>This <abbr>URL</abbr> needs to be <abbr>URL</abbr>-encoded.
+        According to 
+        <a href="https://tools.ietf.org/html/rfc3986"><abbr>IETF</abbr> <abbr>RFC</abbr> 3986</a>, 
+        section 3.3, the characters <code>{</code> and
+        <code>}</code> need to be <abbr>URL</abbr>-encoded as <code>%7B</code> and
+        <code>%7D</code>, respectively, <code>"</code> as <code>%22</code>,
+        <code>,</code> as <code>%2C</code>, and <code>[</code> and <code>]</code>
+        as <code>%5B</code> and <code>%5D</code>, respectively. You can use the
+        <abbr>URL</abbr> Decoder/Encoder at 
+        <a href="http://meyerweb.com/eric/tools/dencoder/">http://meyerweb.com/eric/tools/dencoder/</a>
+        to decode and encode <abbr>URL</abbr>s.
+        </p>
       </li>
     </ul>
-  </li>
-  <li>"<code>configure</code>" and "<code>restore</code>" blocks.</li>
-  <li>"<code>start</code>" and "<code>stop</code>" blocks that specify how the
-    solutions is to be launched and killed, respectively.</li>
-</ul>
 
-<p>The biggest task is writing transformations and defining acceptance tests
-for them. See the wiki pages 
-<a href="https://wiki.gpii.net/w/Architecture_-_Available_transformation_functions">Architecture - Available transformation functions</a> 
-and
-<a href="https://wiki.gpii.net/w/Writing_Acceptance_Tests">Writing Acceptance Tests</a>.
-</p>
+    <h3>Multi-Layer Integration</h3>
 
-<p>Once the preference terms and the solutions registry entry are in place (and
-the pull request to integrate this code has been accepted), <abbr>GPII</abbr>
-should be able support the solution, <abbr>i.e.</abbr> change its settings and
-launch &amp; kill it.</p>
+    <p>One of the downsides of a web application that can communicate only with the
+    Online Flow Manager is that it is not very useful for people who local
+    adaptations in order to use the device on which they access the website in the
+    first place. However, when local <abbr>AT</abbr> and applications are adapted
+    through the Local Flow Manager and the web application gets its settings
+    through the Online Flow Manager, these are two independent processes that run
+    the risk of triggering adaptations that work against each other. For example,
+    for a user who needs magnification, the Local Flow Manager will fetch settings
+    for the locally installed magnifier, while the web application fetches settings
+    that also trigger a zoom; the cumulative magnifications that result from this
+    may be too big for the user. </p>
 
-<p>Additional work should only be necessary of the solution uses a settings
-format that is not yet supported by the <abbr>GPII</abbr> real-time framework,
-e.g. a binary format. (For example, SuperNova is an <abbr>AT</abbr> that uses a
-binary file format for its settings.) </p>
+    <p>For this reason, the web application should get its settings through the
+    same <abbr>REST</abbr> call that also fetches the settings for the local
+    system. But the web application runs in the browser’s security sandbox and
+    cannot receive data from the Local Flow Manager. What is needed is a mechanism
+    that “bridges” the browser’s security sandbox so the web application can
+    communicate with the Local Flow Manager.</p>
 
-<h3>Using the Online Flow Manager</h3>
-
-<p>f your solution cannot or should not talk to a locally installed real-time
-framework, it is possible to use the Online Flow Manager instead. There can be
-several reasons for this: the <abbr>GPII</abbr> cannot be installed locally
-(<abbr>e.g.</abbr> the platform is not supported, <abbr>GPII</abbr> is too big
-for the device, the device is an Android device that must not be rooted to
-install <abbr>GPII</abbr>, …) or the solution is web-based and is accessed
-from a device where <abbr>GPII</abbr> was never installed. [In order to install
-<abbr>GPII</abbr> on Android, the device needs to be rooted. Without a rooted
-device, <abbr>GPII</abbr> cannot change the settings of the apps it is supposed
-to adapt.]</p>
-
-<p>In this case, most of the integration work is the same as above: creating an
-identifier for your solution, describing your settings and how they are stored,
-creating transformations and the other parts of the solutions registry entry.
-However, there are a few differences.</p>
-<ul>
-  <li>Since there is no local GPII framework, there are <strong>no User
-    Listeners</strong> to listen for log-in and log-out events. If such a
-    listener is needed, it needs to be developed. Mobile Accessibility for
-    Android is an example of an app that listens for <abbr>NFC</abbr> tags
-    without relying on the <abbr>GPII</abbr>’s user listeners. In other
-    words, the solution is responsible for identifying the user and passing
-    their token on to the <abbr>GPII</abbr> framework.</li>
-  <li>Since there is no local <abbr>GPII</abbr> framework, there is no
-    Lifecycle Manager to snapshot the settings and restore them later, and
-    there are no Settings Handlers to change the solution’s settings. This
-    means that the developer needs to write <strong>code that parses the
-    <abbr>JSON</abbr> payload</strong> it receives from the Online Flow Manager
-    and code that changes the solution’s settings based on this payload. 
-    <p>This is reflected in the solutions registry entry: instead of something
-    like an INI settings handler, all “web-based” solutions use the
-    “settings handler” <code>gpii.settingsHandlers.noSettings</code>. Note
-    that “Web-based” here refers to any solution that uses the Online Flow
-    Manager instead of the Local Flow Manager, so it also applies to Android
-    solutions that use this approach.
-    <code>gpii.settingsHandlers.noSettings</code> is strictly speaking not a
-    settings handler but a way of telling <abbr>GPII</abbr> that the solution
-    will take care of translating the <abbr>JSON</abbr> payload in actual
-    settings. </p>
-  </li>
-  <li><p>Most importantly, the developer needs to make a <strong><abbr>REST</abbr>
-    call to the Online Flow Manager</strong> with a <abbr>URL</abbr> that
-    identifies the solution and the user’s key/token. The <abbr>URL</abbr>
-    would be similar to the following example:
-    <code>https://flowmanager.gpii.net/olb_Carla/{"OS":{"id":"web"},"solutions":[{"id":"eu.gpii.olb"}]}</code>. 
+    <p>See also Colin Clark’s document 
+    “<a href="https://wiki.gpii.net/w/Bridging_the_Browser-OS_Personalization_Gap">Bridging the Browser-OS Personalization Gap</a>”.
     </p>
-    <p>In the above <abbr>URL</abbr>,
-    <code>https://flowmanager.gpii.net/</code> is the Online Flow Manager’s
-    location, <code>olb_Carla</code> is the key or token,
-    <code>{"OS":{"id":"web"}</code> identifies the solutions registry 
-    (<a href="https://github.com/GPII/universal/blob/master/testData/solutions/web.json"><code>web.json</code></a>),
-    and <code>"solutions":[{"id":"eu.gpii.olb"}]</code> is the list of
-    solutions for which the <abbr>REST</abbr> call requests settings
-    (<code>eu.gpii.olb</code> refers to online banking web app developed at
-    <abbr>HdM</abbr>).
+
+    <p>The 
+    <a href="https://github.com/javihernandez/gwc-chrome">GPII Website Connector</a> 
+    contains code that enables this. In order to enable a solution to
+    get settings through the Local Flow Manager, the developer needs to do the
+    following:</p>
+    <ul>
+      <li>The solution needs an entry in the web solutions registry (see the
+        previous section), but with a different settings handler:
+        <code>gpii.settingsHandlers.webSockets</code>. (See for example the entry
+        for <code>eu.gpii.olb</code> (the Online Banking web app) in the 
+        <a href="https://github.com/GPII/universal/blob/review4/testData/solutions/web.json#L483-L623">review4 branch of the framework</a>.)
+      </li>
+      <li>The solution needs to incorporate some JavaScript code, as documented in
+        the README file of the “<abbr>GPII</abbr> Website Connector”.</li>
+      <li>On the user side, the Chrome extension from the above repository needs to
+        be installed.</li>
+    </ul>
+
+    <h2 id="future">The Future of <abbr>GPII</abbr>/Cloud4all</h2>
+
+    <h3>The Solutions Registry &amp; Transformations</h3>
+
+    <p>The entries (including the transformers) in the various solutions registries
+    are currently written by hand. This may change in two ways:</p>
+    <ul>
+      <li>A tool with a user-friendly user interface gets developed that will
+        output the solutions registry entry for the solution you want to integrate.
+        (There are currently no plans for this; it was a suggestion made at a
+        developer focus group meeting during the Cloud4all project.)</li>
+      <li>The solutions registry entry gets generated out of data stored in the
+        Semantic Framework developed by <abbr>CERTH</abbr> <abbr>ITI</abbr>. (For
+        the goal and an older description of the Semantic Framework, see the wiki
+        page 
+        <a href="https://wiki.gpii.net/w/Specification_of_Cloud_Semantic_Infrastructure">Specification of Cloud Semantic Infrastructure</a>. 
+        For more up-to-date information, see the deliverables 
+        <a href="http://www.cloud4all.info/research/public-deliverables/d201-1-2-cloud-semantic-infrastructure-v2/">D201.1.2. Cloud Semantic Infrastructure V2</a> 
+        and 
+        <a href="http://www.cloud4all.info/research/public-deliverables/d202-1-semi-automatic-semantic-alignment-tool/">D202.1. Semi-Automatic Semantic Alignment Tool</a>.) 
+        However, the Semantic
+        Framework (presumably) does not yet contain the type of data that are
+        needed to generate the transformations that should be part of a solutions
+        registry entry.</li>
+    </ul>
+
+    <p>As mentioned above, the transformations developed during the Cloud4all
+    project work in only one direction: from common terms to applications-specific
+    terms. Work to support automatic inversion of transformations can be tracked by
+    watching JIRA ticket 
+    <a href="https://issues.gpii.net/browse/GPII-1751"><abbr>GPII</abbr>-1751</a>.
     </p>
-    <p>This <abbr>URL</abbr> needs to be <abbr>URL</abbr>-encoded.
-    According to 
-    <a href="https://tools.ietf.org/html/rfc3986"><abbr>IETF</abbr> <abbr>RFC</abbr> 3986</a>, 
-    section 3.3, the characters <code>{</code> and
-    <code>}</code> need to be <abbr>URL</abbr>-encoded as <code>%7B</code> and
-    <code>%7D</code>, respectively, <code>"</code> as <code>%22</code>,
-    <code>,</code> as <code>%2C</code>, and <code>[</code> and <code>]</code>
-    as <code>%5B</code> and <code>%5D</code>, respectively. You can use the
-    <abbr>URL</abbr> Decoder/Encoder at 
-    <a href="http://meyerweb.com/eric/tools/dencoder/">http://meyerweb.com/eric/tools/dencoder/</a>
-    to decode and encode <abbr>URL</abbr>s.
-    </p>
-  </li>
-</ul>
 
-<h3>Multi-Layer Integration</h3>
+    <h3 id="future-pcp">The Personal Control Panel (<abbr>PCP</abbr>)</h3>
 
-<p>One of the downsides of a web application that can communicate only with the
-Online Flow Manager is that it is not very useful for people who local
-adaptations in order to use the device on which they access the website in the
-first place. However, when local <abbr>AT</abbr> and applications are adapted
-through the Local Flow Manager and the web application gets its settings
-through the Online Flow Manager, these are two independent processes that run
-the risk of triggering adaptations that work against each other. For example,
-for a user who needs magnification, the Local Flow Manager will fetch settings
-for the locally installed magnifier, while the web application fetches settings
-that also trigger a zoom; the cumulative magnifications that result from this
-may be too big for the user. </p>
+    <p>The Personal Control Panel is a component that was not originally planned
+    for Cloud4all. The <abbr>PCP</abbr> was envisaged as an end-user tool that
+    would be always available (<abbr>e.g.</abbr> as a tool that can be opened by
+    clicking on a System Tray icon on Windows) and that would enable the user to
+    quickly tweak the settings that they needed most often. The settings changes in
+    the <abbr>PCP</abbr> would have an immediate (<abbr>i.e.</abbr> “live”)
+    effect on the application(s) to which the setting(s) apply/applies.</p>
 
-<p>For this reason, the web application should get its settings through the
-same <abbr>REST</abbr> call that also fetches the settings for the local
-system. But the web application runs in the browser’s security sandbox and
-cannot receive data from the Local Flow Manager. What is needed is a mechanism
-that “bridges” the browser’s security sandbox so the web application can
-communicate with the Local Flow Manager.</p>
+    <p>The <abbr>PCP</abbr> would be personal in the sense that it would not
+    display settings that are irrelevant to the user. For example, it would never
+    display screen reader settings for users who don’t need a screen reader.
+    Ideally, the content of the <abbr>PCP</abbr> (<abbr>i.e.</abbr> the selection
+    of settings for which adjusters should be displayed) would be decided by one of
+    the matchmakers.</p>
 
-<p>See also Colin Clark’s document 
-“<a href="https://wiki.gpii.net/w/Bridging_the_Browser-OS_Personalization_Gap">Bridging the Browser-OS Personalization Gap</a>”.
-</p>
+    <p>However, the implementation of the <abbr>PCP</abbr> ran into serious
+    obstacles because many applications simply ignore changes to their settings
+    files once they have been launched (<abbr>i.e.</abbr> changes that were not
+    done from within the application’s own <abbr>UI</abbr>). <abbr>MS</abbr>
+    Windows itself only responded to turning high contrast on or off. The GNOME
+    desktop on <abbr>GNU</abbr>/Linux responded to a larger number of settings
+    changes (see the list of settings in 
+    <a href="https://issues.gpii.net/browse/GPII-565">JIRA ticket <abbr>GPII</abbr>-565</a>). 
+    However, desktop applications ignore settings changes by the
+    <abbr>PCP</abbr> entirely, so they needed to be closed and restarted in order
+    to apply the new settings. (This was the approach used in the Cloud4all second
+    pilot, when the <abbr>PMT</abbr> also had the capability to apply settings
+    changes “live”.)</p>
 
-<p>The 
-<a href="https://github.com/javihernandez/gwc-chrome">GPII Website Connector</a> 
-contains code that enables this. In order to enable a solution to
-get settings through the Local Flow Manager, the developer needs to do the
-following:</p>
-<ul>
-  <li>The solution needs an entry in the web solutions registry (see the
-    previous section), but with a different settings handler:
-    <code>gpii.settingsHandlers.webSockets</code>. (See for example the entry
-    for <code>eu.gpii.olb</code> (the Online Banking web app) in the 
-    <a href="https://github.com/GPII/universal/blob/review4/testData/solutions/web.json#L483-L623">review4 branch of the framework</a>.)
-  </li>
-  <li>The solution needs to incorporate some JavaScript code, as documented in
-    the README file of the “<abbr>GPII</abbr> Website Connector”.</li>
-  <li>On the user side, the Chrome extension from the above repository needs to
-    be installed.</li>
-</ul>
+    <p>The <abbr>PCP</abbr> is an important component from the user’s point of
+    view, but it can only work if applications are modified in order to make them
+    listen to changes in their settings file by a third party (<abbr>i.e.</abbr>
+    the <abbr>PCP</abbr>). This is outside the control of Cloud4all or
+    <abbr>GPII</abbr>, especially for closed-source applications. </p>
 
-<h2 id="future">The Future of <abbr>GPII</abbr>/Cloud4all</h2>
+    <h3>Preference Terms Dictionary (<abbr>PTD</abbr>)</h3>
 
-<h3>The Solutions Registry &amp; Transformations</h3>
+    <p>Whereas in Cloud4all, common terms and application-specific terms could be
+    distinguished based on their <abbr>URI</abbr>s (<abbr>URL</abbr>s), the
+    <abbr>PTD</abbr> has done away with namespaces. As a consequence, it is not
+    clear how a tool such as the <abbr>PCP</abbr> may be used to change the
+    settings for specific applications, as opposed to all applications that support
+    a specific preference/setting.</p>
 
-<p>The entries (including the transformers) in the various solutions registries
-are currently written by hand. This may change in two ways:</p>
-<ul>
-  <li>A tool with a user-friendly user interface gets developed that will
-    output the solutions registry entry for the solution you want to integrate.
-    (There are currently no plans for this; it was a suggestion made at a
-    developer focus group meeting during the Cloud4all project.)</li>
-  <li>The solutions registry entry gets generated out of data stored in the
-    Semantic Framework developed by <abbr>CERTH</abbr> <abbr>ITI</abbr>. (For
-    the goal and an older description of the Semantic Framework, see the wiki
-    page 
-    <a href="https://wiki.gpii.net/w/Specification_of_Cloud_Semantic_Infrastructure">Specification of Cloud Semantic Infrastructure</a>. 
-    For more up-to-date information, see the deliverables 
-    <a href="http://www.cloud4all.info/research/public-deliverables/d201-1-2-cloud-semantic-infrastructure-v2/">D201.1.2. Cloud Semantic Infrastructure V2</a> 
-    and 
-    <a href="http://www.cloud4all.info/research/public-deliverables/d202-1-semi-automatic-semantic-alignment-tool/">D202.1. Semi-Automatic Semantic Alignment Tool</a>.) 
-    However, the Semantic
-    Framework (presumably) does not yet contain the type of data that are
-    needed to generate the transformations that should be part of a solutions
-    registry entry.</li>
-</ul>
+    <p>Take for example the common term 
+    <a href="https://terms.raisingthefloor.org/details/speechRate"><code>speechRate</code></a>
+    in the Preference Terms Dictionary. (Note that the specification is incomplete
+    since it does not state that speechRate is expressed in words per minute.) In
+    Cloud4all, this term’s <a></a><abbr>URI</abbr> is
+    <code>http://registry.gpii.net/common/speechRate</code>. This term describes
+    the speed of a <abbr>TTS</abbr> engine or a screen reader in words per minute.
+    On Microsoft Widows, the term currently maps to <abbr>NVDA</abbr>’s setting
+    <code>speech.espeak.rate</code>, to <abbr>JAWS</abbr>’ speed
+    setting and to SuperNova’s speech rate setting. The entry
+    in the Preference Terms Dictionary lists a few aliases, <abbr>e.g.</abbr>
+    <code>org.nvda-project_speech\.espeak\.rate</code>,
+    <code>org.gnome.orca_voices\.default\.rate</code> and
+    <code>com.yourdolphin.supernova-as_speechRate</code>, even though common terms
+    were not supposed to incorporate this type of “ersatz namespaces”.</p>
 
-<p>As mentioned above, the transformations developed during the Cloud4all
-project work in only one direction: from common terms to applications-specific
-terms. Work to support automatic inversion of transformations can be tracked by
-watching JIRA ticket 
-<a href="https://issues.gpii.net/browse/GPII-1751"><abbr>GPII</abbr>-1751</a>.
-</p>
+    <p>Preference Terms Dictionary (formerly known as “Common Terms Registry”)
+    is available at <a
+    href="http://terms.raisingthefloor.org/">http://terms.raisingthefloor.org/</a>.</p>
 
-<h3 id="future-pcp">The Personal Control Panel (<abbr>PCP</abbr>)</h3>
+    <p>See also the wiki page about the <a
+    href="https://wiki.gpii.net/w/Preference_Terms_Dictionary">Preference Terms
+    Dictionary</a>. </p>
 
-<p>The Personal Control Panel is a component that was not originally planned
-for Cloud4all. The <abbr>PCP</abbr> was envisaged as an end-user tool that
-would be always available (<abbr>e.g.</abbr> as a tool that can be opened by
-clicking on a System Tray icon on Windows) and that would enable the user to
-quickly tweak the settings that they needed most often. The settings changes in
-the <abbr>PCP</abbr> would have an immediate (<abbr>i.e.</abbr> “live”)
-effect on the application(s) to which the setting(s) apply/applies.</p>
+    <h3>Settings Snapshotter/Capturing Tool</h3>
 
-<p>The <abbr>PCP</abbr> would be personal in the sense that it would not
-display settings that are irrelevant to the user. For example, it would never
-display screen reader settings for users who don’t need a screen reader.
-Ideally, the content of the <abbr>PCP</abbr> (<abbr>i.e.</abbr> the selection
-of settings for which adjusters should be displayed) would be decided by one of
-the matchmakers.</p>
+    <p>“Snapshotter” here refers to a tool that captures the settings of a
+    device and uses these settings to populate the user’s <abbr>NP</abbr> set.
+    This is particularly useful for users who already have a device that is adapted
+    to their needs. The use of such a tool would have several advantages over the
+    use of the <abbr>PMT</abbr> as a mechanism for creating an initial
+    <abbr>NP</abbr> set:</p>
+    <ol>
+      <li>It is much simpler and quicker than going to the <abbr>PMT</abbr> to
+        create an initial <abbr>NP</abbr> set. (A button to trigger the snapshotter
+        would be part of the <abbr>PCP</abbr>.) </li>
+      <li>It also has the advantage that there is no loss of precision in the
+        settings when the user moves from their own device to a similar device
+        (<abbr>e.g.</abbr> from their own <abbr>MS</abbr> Windows <abbr>PC</abbr>
+        to another Windows <abbr>PC</abbr>) because there is no need for
+        transformers that translate common terms to the application-specific terms
+        required for the other device. (Setting up an <abbr>NP</abbr> set using the
+        <abbr>PMT</abbr> always results in an <abbr>NP</abbr> set expressed in
+        common terms.)</li>
+    </ol>
 
-<p>However, the implementation of the <abbr>PCP</abbr> ran into serious
-obstacles because many applications simply ignore changes to their settings
-files once they have been launched (<abbr>i.e.</abbr> changes that were not
-done from within the application’s own <abbr>UI</abbr>). <abbr>MS</abbr>
-Windows itself only responded to turning high contrast on or off. The GNOME
-desktop on <abbr>GNU</abbr>/Linux responded to a larger number of settings
-changes (see the list of settings in 
-<a href="https://issues.gpii.net/browse/GPII-565">JIRA ticket <abbr>GPII</abbr>-565</a>). 
-However, desktop applications ignore settings changes by the
-<abbr>PCP</abbr> entirely, so they needed to be closed and restarted in order
-to apply the new settings. (This was the approach used in the Cloud4all second
-pilot, when the <abbr>PMT</abbr> also had the capability to apply settings
-changes “live”.)</p>
-
-<p>The <abbr>PCP</abbr> is an important component from the user’s point of
-view, but it can only work if applications are modified in order to make them
-listen to changes in their settings file by a third party (<abbr>i.e.</abbr>
-the <abbr>PCP</abbr>). This is outside the control of Cloud4all or
-<abbr>GPII</abbr>, especially for closed-source applications. </p>
-
-<h3>Preference Terms Dictionary (<abbr>PTD</abbr>)</h3>
-
-<p>Whereas in Cloud4all, common terms and application-specific terms could be
-distinguished based on their <abbr>URI</abbr>s (<abbr>URL</abbr>s), the
-<abbr>PTD</abbr> has done away with namespaces. As a consequence, it is not
-clear how a tool such as the <abbr>PCP</abbr> may be used to change the
-settings for specific applications, as opposed to all applications that support
-a specific preference/setting.</p>
-
-<p>Take for example the common term 
-<a href="https://terms.raisingthefloor.org/details/speechRate"><code>speechRate</code></a>
-in the Preference Terms Dictionary. (Note that the specification is incomplete
-since it does not state that speechRate is expressed in words per minute.) In
-Cloud4all, this term’s <a></a><abbr>URI</abbr> is
-<code>http://registry.gpii.net/common/speechRate</code>. This term describes
-the speed of a <abbr>TTS</abbr> engine or a screen reader in words per minute.
-On Microsoft Widows, the term currently maps to <abbr>NVDA</abbr>’s setting
-<code>speech.espeak.rate</code>, to <abbr>JAWS</abbr>’ speed
-setting and to SuperNova’s speech rate setting. The entry
-in the Preference Terms Dictionary lists a few aliases, <abbr>e.g.</abbr>
-<code>org.nvda-project_speech\.espeak\.rate</code>,
-<code>org.gnome.orca_voices\.default\.rate</code> and
-<code>com.yourdolphin.supernova-as_speechRate</code>, even though common terms
-were not supposed to incorporate this type of “ersatz namespaces”.</p>
-
-<p>Preference Terms Dictionary (formerly known as “Common Terms Registry”)
-is available at <a
-href="http://terms.raisingthefloor.org/">http://terms.raisingthefloor.org/</a>.</p>
-
-<p>See also the wiki page about the <a
-href="https://wiki.gpii.net/w/Preference_Terms_Dictionary">Preference Terms
-Dictionary</a>. </p>
-
-<h3>Settings Snapshotter/Capturing Tool</h3>
-
-<p>“Snapshotter” here refers to a tool that captures the settings of a
-device and uses these settings to populate the user’s <abbr>NP</abbr> set.
-This is particularly useful for users who already have a device that is adapted
-to their needs. The use of such a tool would have several advantages over the
-use of the <abbr>PMT</abbr> as a mechanism for creating an initial
-<abbr>NP</abbr> set:</p>
-<ol>
-  <li>It is much simpler and quicker than going to the <abbr>PMT</abbr> to
-    create an initial <abbr>NP</abbr> set. (A button to trigger the snapshotter
-    would be part of the <abbr>PCP</abbr>.) </li>
-  <li>It also has the advantage that there is no loss of precision in the
-    settings when the user moves from their own device to a similar device
-    (<abbr>e.g.</abbr> from their own <abbr>MS</abbr> Windows <abbr>PC</abbr>
-    to another Windows <abbr>PC</abbr>) because there is no need for
-    transformers that translate common terms to the application-specific terms
-    required for the other device. (Setting up an <abbr>NP</abbr> set using the
-    <abbr>PMT</abbr> always results in an <abbr>NP</abbr> set expressed in
-    common terms.)</li>
-</ol>
-
-<p>A snapshotter was available during Cloud4all’s second pilot phase. At
-first, it seemed that such a tool would be easy to develop because it could
-build on the Settings Handler code that the real-time framework was already
-using to backup and restore settings when users log in and out, respectively.
-However, it was much harder to develop than expected and is no longer
-available. (See also the thread about the “Capture tool” on the
-<abbr>GPII</abbr> Architecture mailing list starting at 
-<a href="http://lists.gpii.net/pipermail/architecture/2015-March/003402.html">http://lists.gpii.net/pipermail/architecture/2015-March/003402.html</a>
-(March 2015) and continued at 
-<a href="http://lists.gpii.net/pipermail/architecture/2015-April/003412.html">http://lists.gpii.net/pipermail/architecture/2015-April/003412.html</a>
-(April 2015).)</p>
+    <p>A snapshotter was available during Cloud4all’s second pilot phase. At
+    first, it seemed that such a tool would be easy to develop because it could
+    build on the Settings Handler code that the real-time framework was already
+    using to backup and restore settings when users log in and out, respectively.
+    However, it was much harder to develop than expected and is no longer
+    available. (See also the thread about the “Capture tool” on the
+    <abbr>GPII</abbr> Architecture mailing list starting at 
+    <a href="http://lists.gpii.net/pipermail/architecture/2015-March/003402.html">http://lists.gpii.net/pipermail/architecture/2015-March/003402.html</a>
+    (March 2015) and continued at 
+    <a href="http://lists.gpii.net/pipermail/architecture/2015-April/003412.html">http://lists.gpii.net/pipermail/architecture/2015-April/003412.html</a>
+    (April 2015).)</p>
   </main>
 
   <footer>
