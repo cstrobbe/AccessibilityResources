@@ -131,6 +131,13 @@ p {
   line-height: 1.3;
 }
 
+kbd {
+  font-family: 'Consolas', 'Andale Mono', Courier, 'Lucida Sans Unicode', monospace;
+  background-color: black;
+  color: #00FF00;
+  padding-left: 4px; padding-right: 4px;
+}
+
 footer {
   border: 1px solid #51739C;
   border-left: 20px solid #51739C;
