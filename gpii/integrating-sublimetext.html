@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en-GB" xml:lang="en-GB" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <title>Integrating Sublime Text with GPII</title>
+  <link rel="stylesheet" type="text/css" media="screen" href="../css/stuttgartbib.css" title="default" />
+  <link rel="stylesheet" type="text/css" media="screen" href="../css/verdemoderna.css" title="alternative stylesheet (green)" />
+</head>
+
+<body>
+  <header>
+    <h1><span class="h1txt">Integrating Sublime Text with <abbr>GPII</abbr></span></h1>
+  </header>
+
+  <main>
+    <p>Author: <a href="https://github.com/cstrobbe">Christophe Strobbe</a> (strobbe[at]hdm-stuttgart[dot]de).</p>
+
+    <p>Licence: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License 
+    (<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" xml:lang="en-US"
+    lang="en-US"><abbr title="Creative Commons">CC</abbr> BY-<abbr title="NonCommercial">NC</abbr>-<abbr title="ShareAlike">SA</abbr> 4.0</a>).
+    </p>
+
+    <h2 id="intro">Introduction</h2>
+    <p>This document describes how you can integrate a dekstop application with <abbr>GPII</abbr>'s
+      real-time framework. The description uses the programming editor
+      <a href="http://www.sublimetext.com/">Sublime Text</a> (version 3) as an example.
+      For a general introduction to <abbr>GPII</abbr> and the integration process, see 
+      <a href="gpii-for-developers.html"><abbr>GPII</abbr>/Cloud4all for Developers</a>
+      and the 
+      <a href="https://wiki.gpii.net/w/Main_Page"><abbr>GPII</abbr> wiki</a> 
+      pages referenced in that document.
+      For an similar but older document, see
+      <a href="https://wiki.gpii.net/w/Building_A_Simple_Solution">Building A Simple Solution</a>
+      on the <abbr>GPII</abbr> wiki.
+    </p>
+
+    <h2>Installing <abbr>GPII</abbr> on Windows</h2>
+    <p>The process described below is based on a 64-bit version of Microsoft Windows 7
+      but should also work on a 32-bit version of Windows 7 and on more recent versions of Windows.
+    </p>
+    <h3>Installing Dependencies for Windows</h3>
+    <p>You need the following dependencies for installing <abbr>GPII</abbr> on Windows:</p>
+    <ul>
+      <li>Git:
+        install both <a href="https://desktop.github.com/">GitHub Desktop for Windows</a>
+        and <a href="https://git-for-windows.github.io/">Git for Windows</a> (sometimes referred to as &ldquo;msysgi&rdquo;).
+      </li>
+      <li>Node.js:
+        install the <strong>32-bit</strong> version of
+        <a href="https://nodejs.org/en/download/">Node.js</a> 4.x,
+        even if you are using a 64-bit version of Windows.
+        (After installing, you can check Node.js by typing <kbd>node --version</kbd> on the command line.)
+      </li>
+      <li><a href="https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs#DownloadFamilies_2">Visual Studio 2013</a>:
+        install Visual Studio Express 2013 for desktop or Visual Studio Community 2013.
+        (Visual Studio 2015 Express might also work, but we have not been lucky with it.)
+      </li>
+      <li>
+        <a href="https://www.microsoft.com/en-us/download/details.aspx?id=40784">Visual C++ Redistributable Packages for Visual Studio 2013</a>.
+      </li>
+      <li>Python 2.7.x:
+        <a href="https://www.python.org/downloads/release/python-2711/">Python 2.7.11</a>.
+        After installing Python, go to the operating system's environment variables and
+        add the Python directory to the <code>PATH</code> variable.
+        (You can check your Python installation by typing <kbd>python --version</kbd> on the command line.
+        We have not checked whether Python 3.x also works.)
+      </li>
+    </ul>
+    <p>If you run into problems installing any of these dependencies, check the 
+      <a href="https://wiki.gpii.net/w/Setting_Up_Your_Development_Environment#Dependencies">Windows installation instructions on the <abbr>GPIi</abbr> wiki</a>.
+    </p>
+
+    <h2>Installing the <abbr>GPII</abbr> Real-Time Framework</h2>
+    <p>Open a command line window, go to the directory where you want to intall <abbr>GPII</abbr> 
+      and type the following commands:
+    </p>
+    <ul>
+      <li><kbd>mkdir gpii</kbd>
+      </li>
+      <li><kbd>cd gpii</kbd>
+      </li>
+      <li><kbd>git clone git://github.com/GPII/windows.git</kbd>
+      </li>
+      <li><kbd>cd windows</kbd>
+      </li>
+      <li><kbd>npm install</kbd>
+      </li>
+      <li><kbd>npm install grunt</kbd>
+        <br /><strong>Note</strong>: this step may fail; it is currently not clear wether it is necessary.
+      </li>
+      <li><kbd>npm install -g grunt-cli</kbd>
+      </li>
+      <li><kbd>grunt build</kbd>
+      </li>
+      <li>You can now check whether <abbr>GPII</abbr> works. Start <abbr>GPII</abbr>: 
+        <kbd>node gpii.js</kbd>
+        <br />Now test whether the personalisation system works by entering the following <abbr>URL</abbr> into a browser:
+        <br /><a href="http://localhost:8081/user/sammy/logonChange">http://localhost:8081/user/sammy/logonChange</a>.
+        <br />This &ldquo;logs in&rdquo; the user &ldquo;sammy&rdquo;, <abbr>i.e.</abbr> applies 
+        <a href="https://github.com/GPII/universal/blob/master/testData/preferences/sammy.json">Sammy's needs and preferences</a>
+        to Windows.
+        As a result, the Windows magnifier should launch and the user interface colours should be inverted.
+        Use the same <abbr>URL</abbr> again to undo the adaptations:
+        <br /><a href="http://localhost:8081/user/sammy/logonChange">http://localhost:8081/user/sammy/logonChange</a>.
+      </li>
+      <li>As an additional check, you can also run the acceptance tests: 
+        go to the directory <code>gpii/node_modules/universal/tests/</code>
+        and enter the command <kbd>node IntegrationTests.js</kbd>.
+        When the integration tests have finished, you should see a message like the following:
+        <samp>jq: All tests concluded: 190/190 total passed in 50981 ms - PASS</samp>.
+        <!-- 'node tests\all-tests.js' at https://wiki.gpii.net/w/Setting_Up_Your_Development_Environment#run_acceptance_tests is outdated. -->
+      </li>
+    </ul>
+
+    <h2>Integrating Sublime Text 3</h2>
+    <p>First, download and install <a href="http://www.sublimetext.com/">Sublime Text</a> (version 3).
+    </p>
+    <p>(todo)</p>
+
+    <h3>Installing Sublime Text 3</h3>
+    <p>(todo)</p>
+
+    <h3>Integration Steps for Sublime Text 3</h3>
+    <h4>Collecting Settings and Other Data for Sublime Text 3</h4>
+    <p>(todo)</p>
+    <h4>Creating a Solutions Registry Entry and Related Files</h4>
+    <p>(todo)</p>
+    <h4>Writing Acceptance Tests</h4>
+    <p>(todo)</p>
+
+  </main>
+
+  <footer>
+  	<p>Page <abbr>URL</abbr>: <a href="http://cstrobbe.github.io/AccessibilityResources/gpii/gpii-for-developers.html">http://cstrobbe.github.io/AccessibilityResources/gpii/gpii-for-developers.html</a>.</p>
+  </footer>
+</body>
+</html>
