@@ -20,7 +20,7 @@
     lang="en-US"><abbr title="Creative Commons">CC</abbr> BY-<abbr title="NonCommercial">NC</abbr>-<abbr title="ShareAlike">SA</abbr> 4.0</a>).
     </p>
 
-    <h2>Introduction</h2>
+    <h2 id="intro">Introduction</h2>
 
     <p>Software programs, mobile apps and websites have a default user interface
     that tries to cater for many people, but that is often unsuitable for people
@@ -72,9 +72,9 @@
         Up Your Development Environment</a>.</li>
     </ul>
 
-    <h2>The <abbr>GPII</abbr> Real-Time Framework</h2>
+    <h2 id="gpii-rtf">The <abbr>GPII</abbr> Real-Time Framework</h2>
 
-    <h3>Components of the Real-Time Framework</h3>
+    <h3 id="rtf-components">Components of the Real-Time Framework</h3>
 
     <p>The real-time framework (often simply referred to as “the architecture”
     because it was developed by Cloud4all’s architecture team) is a set of
@@ -89,7 +89,7 @@
     href="https://wiki.gpii.net/w/GPII_Architecture_Overview"><abbr>GPII</abbr>
     Architecture Overview</a>.) </p>
 
-    <h3>Auto-Personalisation Flow</h3>
+    <h3 id="auto-perso-flow">Auto-Personalisation Flow</h3>
 
     <p>The core components can run locally or “in the cloud”. The following
     description of the “auto-personalisation flow” assumes a <abbr>PC</abbr> on
@@ -103,7 +103,7 @@
     the <abbr>GPII</abbr></a>. The latter set of instructions is useful for demos
     but not if you want to integrate a solution with <abbr>GPII</abbr>.)</p>
 
-    <h4>Identification: User Listener</h4>
+    <h4 id="user-listener">Identification: User Listener</h4>
 
     <p>The user provides a key or token, <abbr>e.g.</abbr> on a <abbr>USB</abbr>
     drive or an <abbr>NFC</abbr> tag, to the <abbr>PC</abbr>. (On USB, the token is
@@ -127,7 +127,7 @@
     <a href="https://wiki.gpii.net/w/Flow_Manager">outdated wiki page</a>.)
     </p>
 
-    <h4>Device Reporter</h4>
+    <h4 id="device-reporter">Device Reporter</h4>
 
     <p>In addition to the user’s key, the Flow Manager also gets information
     about the user’s device from the Device Reporter. Currently, this information
@@ -150,12 +150,12 @@
     <abbr>EASIT</abbr>-related preferences but don’t share anything with
     Facebook.) However, this has nothing to do with the Device Reporter.)</p>
 
-    <h4>Preferences Server</h4>
+    <h4 id="prefs-server">Preferences Server</h4>
 
     <p>The Flow Manager fetches the user’s <abbr>NP</abbr> set from the
     Preferences Server and combines this data with the Device Reporter data.</p>
 
-    <h4>Matchmaker and/or Transformer</h4>
+    <h4 id="matchmaker">Matchmaker and/or Transformer</h4>
 
     <p>What happens next depends on the content of the <abbr>NP</abbr> set and the
     Device Reporter data.</p>
@@ -265,7 +265,7 @@
       </li>
     </ol>
 
-    <h4>Lifecycle Manager</h4>
+    <h4 id="lifecycle-mgr">Lifecycle Manager</h4>
 
     <p>The Flow Manager passes the settings (the output from the previous step) and
     the list of solutions to the Lifecycle Manager. The Lifecycle Manager is
@@ -291,21 +291,25 @@
     adaptations would not need to undo all the changes that were made for the
     previous user.</p>
 
-    <h2>Integrating a Solution</h2>
+    <h2 id="integrating">Integrating a Solution</h2>
 
     <p>There are three ways in which a solution can integrate with
     <abbr>GPII</abbr>, based on which Flow Manager they use and the nature of the
     communication with the real-time framework.</p>
 
-    <h3>Using the Local Flow Manager</h3>
+    <h3 id="integrating-local-fm">Using the Local Flow Manager</h3>
 
+    <p><strong>Note</strong>: the document 
+      <a href="integrating-sublimetext.html">Integrating Sublime Text with <abbr>GPII</abbr></a>
+      describes a practical example on Windows.
+    </p>
     <p>In this situation, the <abbr>GPII</abbr> real-time framework needs to be
     installed on the local system. As a consequence, you can also rely on the
     framework’s Lifecycle Manager, Lifecycle Actions and Settings Handlers.</p>
 
     <p>As a developer, you need to take the following steps.</p>
 
-    <h4>Identify and Describe the Solution’s Settings</h4>
+    <h4 id="solution-settings">Identify and Describe the Solution’s Settings</h4>
 
     <p>Identify the solution’s settings, and describe each of them (or the subset
     for which you want <abbr>GPII</abbr> support) with the following types of
@@ -350,7 +354,7 @@
     <a href="https://wiki.gpii.net/w/Settings_Handler">Settings Handler</a>.)
     </p>
 
-    <h4>Solutions Registry Entry &amp; Transformations</h4>
+    <h4 id="registry-entry">Solutions Registry Entry &amp; Transformations</h4>
 
     <p>The next step is the creation of the solutions registry entry. For a desktop
     solution, this would be either 
@@ -414,7 +418,7 @@
     e.g. a binary format. (For example, SuperNova is an <abbr>AT</abbr> that uses a
     binary file format for its settings.) </p>
 
-    <h3>Using the Online Flow Manager</h3>
+    <h3 id="integrating-online-fm">Using the Online Flow Manager</h3>
 
     <p>If your solution cannot or should not talk to a locally installed real-time
     framework, it is possible to use the Online Flow Manager instead. There can be
@@ -487,7 +491,7 @@
       </li>
     </ul>
 
-    <h3>Multi-Layer Integration</h3>
+    <h3 id="integrating-multi-layer">Multi-Layer Integration</h3>
 
     <p>One of the downsides of a web application that can communicate only with the
     Online Flow Manager is that it is not very useful for people who local
@@ -532,7 +536,7 @@
 
     <h2 id="future">The Future of <abbr>GPII</abbr>/Cloud4all</h2>
 
-    <h3>The Solutions Registry &amp; Transformations</h3>
+    <h3 id="future-solutions-registry">The Solutions Registry &amp; Transformations</h3>
 
     <p>The entries (including the transformers) in the various solutions registries
     are currently written by hand. This may change in two ways:</p>
@@ -600,7 +604,7 @@
     the <abbr>PCP</abbr>). This is outside the control of Cloud4all or
     <abbr>GPII</abbr>, especially for closed-source applications. </p>
 
-    <h3>Preference Terms Dictionary (<abbr>PTD</abbr>)</h3>
+    <h3 id="future-ptd">Preference Terms Dictionary (<abbr>PTD</abbr>)</h3>
 
     <p>Whereas in Cloud4all, common terms and application-specific terms could be
     distinguished based on their <abbr>URI</abbr>s (<abbr>URL</abbr>s), the
@@ -633,7 +637,7 @@
     href="https://wiki.gpii.net/w/Preference_Terms_Dictionary">Preference Terms
     Dictionary</a>. </p>
 
-    <h3>Settings Snapshotter/Capturing Tool</h3>
+    <h3 id="future-snapshotter">Settings Snapshotter/Capturing Tool</h3>
 
     <p>“Snapshotter” here refers to a tool that captures the settings of a
     device and uses these settings to populate the user’s <abbr>NP</abbr> set.
