@@ -186,27 +186,27 @@
 
     <p>Below is an example of an <abbr>NP</abbr> set that uses mostly common terms
     and two application-specific terms: </p>
-    <pre><code>{
-      "flat": {
-        "contexts": {
-          "gpii-default": {
-            "name": "Default preferences",
-            "preferences": {
-              "<strong>http://registry.gpii.net/common/</strong>language": "en-GB",
-              "http://registry.gpii.net/common/fontSize": 24,
-              "http://registry.gpii.net/common/linkAdaptation": "emphasizeLinks",
-              "http://registry.gpii.net/common/highContrastEnabled": true,
-              "http://registry.gpii.net/common/highContrastTheme": "white-black",
-              "http://registry.gpii.net/common/signLanguageEnabled": false,
-              "<strong>http://registry.gpii.net/applications/eu.gpii.olb</strong>": {
-                "lineSpacing": 2,
-                "inputsLarger": true
-              }
-            }
+<pre><code>{
+  "flat": {
+    "contexts": {
+      "gpii-default": {
+        "name": "Default preferences",
+        "preferences": {
+          "<strong>http://registry.gpii.net/common/</strong>language": "en-GB",
+          "http://registry.gpii.net/common/fontSize": 24,
+          "http://registry.gpii.net/common/linkAdaptation": "emphasizeLinks",
+          "http://registry.gpii.net/common/highContrastEnabled": true,
+          "http://registry.gpii.net/common/highContrastTheme": "white-black",
+          "http://registry.gpii.net/common/signLanguageEnabled": false,
+          "<strong>http://registry.gpii.net/applications/eu.gpii.olb</strong>": {
+            "lineSpacing": 2,
+            "inputsLarger": true
           }
         }
       }
-    }</code></pre>
+    }
+  }
+}</code></pre>
 
     <p>(This is the <abbr>NP</abbr> set 
     <a href="https://github.com/GPII/universal/blob/master/testData/preferences/olb_Carla.json">olb_Carla</a>.
@@ -662,7 +662,7 @@
     <p>A snapshotter was available during Cloud4all’s second pilot phase. At
     first, it seemed that such a tool would be easy to develop because it could
     build on the Settings Handler code that the real-time framework was already
-    using to backup and restore settings when users log in and out, respectively.
+    using to back up and restore settings when users log in and out, respectively.
     However, it was much harder to develop than expected and is no longer
     available. (See also the thread about the “Capture tool” on the
     <abbr>GPII</abbr> Architecture mailing list starting at 
