@@ -34,16 +34,16 @@
       on the <abbr>GPII</abbr> wiki.
     </p>
 
-    <h2>Installing <abbr>GPII</abbr> on Windows</h2>
+    <h2 id="installing-gpii">Installing <abbr>GPII</abbr> on Windows</h2>
     <p>The process described below is based on a 64-bit version of Microsoft Windows 7
       but should also work on a 32-bit version of Windows 7 and on more recent versions of Windows.
     </p>
-    <h3>Installing Dependencies for Windows</h3>
+    <h3 id="dependencies-windows">Installing Dependencies for Windows</h3>
     <p>You need the following dependencies for installing <abbr>GPII</abbr> on Windows:</p>
     <ul>
       <li>Git:
         install both <a href="https://desktop.github.com/">GitHub Desktop for Windows</a>
-        and <a href="https://git-for-windows.github.io/">Git for Windows</a> (sometimes referred to as &ldquo;msysgi&rdquo;).
+        and <a href="https://git-for-windows.github.io/">Git for Windows</a> (sometimes referred to as &ldquo;msysgit&rdquo;).
       </li>
       <li>Node.js:
         install the <strong>32-bit</strong> version of
@@ -70,7 +70,7 @@
       <a href="https://wiki.gpii.net/w/Setting_Up_Your_Development_Environment#Dependencies">Windows installation instructions on the <abbr>GPIi</abbr> wiki</a>.
     </p>
 
-    <h2>Installing the <abbr>GPII</abbr> Real-Time Framework</h2>
+    <h2 id="installing-rtf">Installing the <abbr>GPII</abbr> Real-Time Framework</h2>
     <p>Open a command line window, go to the directory where you want to intall <abbr>GPII</abbr> 
       and type the following commands:
     </p>
@@ -112,26 +112,549 @@
       </li>
     </ul>
 
-    <h2>Integrating Sublime Text 3</h2>
+    <h2 id="sublime-text-integration-all">Integrating Sublime Text 3</h2>
+
+    <h3 id="sublime-first-step">Identifying Sublime Text 3's Executable and Settings File</h3>
     <p>First, download and install <a href="http://www.sublimetext.com/">Sublime Text</a> (version 3).
+      Then, note the two following things:
     </p>
+    <ol>
+      <li>Where the <strong>user settings</strong> are stored. 
+        <abbr>GPII</abbr> needs to know this location, so it can adapt the settings.
+        <br />The path to Sublime Text's settings file typically has the following pattern:
+        <samp>C:\Users\&lt;user&gt;\AppData\Roaming\Sublime Text 3\Packages\User\Preferences.sublime-settings</samp>
+        (where <samp>&lt;user&gt;</samp> represents the current user account).
+        <br />It is possible that this file does not exist immediately after installation. 
+        In order to create the file, you can start Sublime Text and change one of its settings,
+        such as the colour scheme or the font size (in the Preferences menu), 
+        or the settings related to spelling in the View menu.
+        Alternatively, you can go to
+        <code>Preferences &gt; Settings &ndash; User</code> and edit the settings file directly.
+        After this, you should find a settings file at the location mentioned above.
+      </li>
+      <li>How the location of the Sublime Text <strong>executable</strong> is represented in the Windows registry.
+        <abbr>GPII</abbr> needs to know this location, so it can start and stop the application.
+        <br />You can find this path by searching for the name of the executable, <samp>sublime_text.exe</samp>,
+        in the Windows registry (using regedit).
+        The Windows registry entry for Sublime Text can be found at 
+        <samp>HKEY_CLASSES_ROOT\Applications\sublime_text.exe</samp>.
+      </li>
+    </ol>
+
+    <h3 id="sublime-text-integration">Integration Steps for Sublime Text 3</h3>
+    <h4>Identifying Sublime Text's Settings</h4>
+    <p>The next step is the identification and description of Sublime Text's settings.
+      Sublime Text has a hundred different settings; they can be found in the <abbr>JSON</abbr>-like file at
+      <samp>C:\Users\&lt;user&gt;\AppData\Roaming\Sublime Text 3\Packages\Default\\Preferences.sublime-settings</samp>.
+      (The file is not pure <abbr>JSON</abbr> because <abbr>JSON</abbr> syntax does not allow JavaScript comments.)
+      Since <abbr>GPII</abbr>/Cloud4all currently does not have a database for 
+      registering applications with all their settings, we will focus on those Sublime Text settings
+      that are relevant to accessibility or that we want to show in demonstrations (or both).
+      For each of these settings, we provide the following types of information:
+      its internal name, its data type, its value range, its default value (if applicable),
+      and any dependencies on other settings (for example, the <samp>dictionary</samp> setting
+      is only relevant when the <samp>spell_check</samp> setting has the value <code>true</code>).
+    </p>
+    <p id="solution-id">
+      In addition, we also create a <strong>solution <abbr>ID</abbr></strong> for Sublime Text, <abbr>i.e.</abbr> a 
+      string that will uniquely identify the application in <abbr>GPII</abbr>.
+      Based on the <abbr>URL</abbr> of the website where Sublime Text can be downloaded,
+      we give the application the following <abbr>ID</abbr>: <code>com.sublimetext</code>.
+      The following table summarizes the data involved in this step. 
+      (Setting are listed in alphabetical order. 
+      The column &ldquo;common term&rdquo; will be explained below.)
+    </p>
+
+    <table id="settings-table">
+      <thead>
+        <tr>
+          <th scope="col">Solution <abbr>ID</abbr></th>
+          <th scope="col">Setting</th>
+          <th scope="col">Data type</th>
+          <th scope="col">Value range</th>
+          <th scope="col">Default value</th>
+          <th scope="col">Description</th>
+          <th scope="col">Constraints</th>
+          <th scope="col">Common term</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>com.sublimetext</td>
+          <td>caret_extra_bottom</td>
+          <td>Integer</td>
+          <td>0 &hellip;</td>
+          <td>0</td>
+          <td>size of the caret: bottom</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>com.sublimetext</td>
+          <td>caret_extra_top</td>
+          <td>Integer</td>
+          <td>0 &hellip;</td>
+          <td>0</td>
+          <td>size of the caret: top</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>com.sublimetext</td>
+          <td>caret_extra_width</td>
+          <td>Integer</td>
+          <td>0 &hellip;</td>
+          <td>0</td>
+          <td>size of the caret: width</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>com.sublimetext</td>
+          <td>caret_style</td>
+          <td>String</td>
+          <td>"smooth", "phase", "blink" and "solid"</td>
+          <td>smooth</td>
+          <td>Valid values are "smooth", "phase", "blink" and "solid".</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>com.sublimetext</td>
+          <td>color_scheme</td>
+          <td>String</td>
+          <td>“Packages/Color Scheme - Default/Monokai.tmTheme”, “Packages/Color Scheme - Default/Amy.tmTheme”, <abbr>etc.</abbr></td>
+          <td>“Packages/Color Scheme - Default/Monokai.tmTheme”</td>
+          <td>Sets the colours used within the text area; covers code colouring.</td>
+          <td>-</td>
+          <td>(closest match: <code>highContrastEnabled</code> &amp; <code>highContrastTheme</code>)</td>
+        </tr>
+        <tr>
+          <td>com.sublimetext</td>
+          <td>dictionary</td>
+          <td>String</td>
+          <td>(path to a dictionary file on the file system)</td>
+          <td>"Packages/Language - English/en_US.dic"</td>
+          <td>Word list to use for spell checking.</td>
+          <td>Only relevant when the setting <code>spell_check</code> has the value <code>true</code>.</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>com.sublimetext</td>
+          <td>fade_fold_buttons</td>
+          <td>Boolean</td>
+          <td>true | false</td>
+          <td>true</td>
+          <td>Hides the fold buttons unless the mouse pointer hovers over the gutter.</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>com.sublimetext</td>
+          <td>font_face</td>
+          <td>String</td>
+          <td>(depends on the fonts installed in the <abbr>OS</abbr>)</td>
+          <td>(empty string)</td>
+          <td>Font face used in the editing area (not the menus).</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>com.sublimetext</td>
+          <td>font_size</td>
+          <td>Integer (pixels)</td>
+          <td>(?)</td>
+          <td>10</td>
+          <td>Font size used in the editing area (not the menus).</td>
+          <td>-</td>
+          <td><code>fontSize</code> (points)</td>
+        </tr>
+        <tr>
+          <td>com.sublimetext</td>
+          <td>gutter</td>
+          <td>Boolean</td>
+          <td>true | false</td>
+          <td>true</td>
+          <td>Show or hide the gutter.</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>com.sublimetext</td>
+          <td>highlight_line</td>
+          <td>Boolean</td>
+          <td>true | false</td>
+          <td>false</td>
+          <td>If enabled, will highlight any line with a caret.</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>com.sublimetext</td>
+          <td>highlight_modified_tabs</td>
+          <td>Boolean</td>
+          <td>true | false</td>
+          <td>false</td>
+          <td>Highlight tabs containing unsaved modifications.</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>com.sublimetext</td>
+          <td>line_numbers</td>
+          <td>Boolean</td>
+          <td>true | false</td>
+          <td>true</td>
+          <td>Display line numbers in the gutter.</td>
+          <td>Not relevant if <code>gutter</code> is set to <code>false</code>.</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>com.sublimetext</td>
+          <td>margin</td>
+          <td>Integer</td>
+          <td>(?)</td>
+          <td>4</td>
+          <td>Spacing between the gutter and the editing area.</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>com.sublimetext</td>
+          <td>show_encoding</td>
+          <td>Boolean</td>
+          <td>true | false</td>
+          <td>false</td>
+          <td>Display file encoding (for the activ tab) in the status bar.</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>com.sublimetext</td>
+          <td>show_line_endings</td>
+          <td>Boolean</td>
+          <td>true | false</td>
+          <td>false</td>
+          <td>Display the type of line endings in the status bar: Windows, Unix, …</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>com.sublimetext</td>
+          <td>spell_check</td>
+          <td>Boolean</td>
+          <td>true | false</td>
+          <td>false</td>
+          <td>Set to true to turn spell checking on by default.</td>
+          <td>(See <code>dictionary</code>, above.)</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>com.sublimetext</td>
+          <td>translate_tabs_to_spaces</td>
+          <td>Boolean</td>
+          <td>true | false</td>
+          <td>false</td>
+          <td>Set to true to insert spaces when the tab key is pressed.</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Each of the application's settings can be uniquely identified using the following pattern:
+      <code>http://registry.gpii.net/applications/</code> + solution <abbr>ID</abbr> + setting name.
+      For example, the Sublime Text setting <code>caret_extra_bottom</code> is uniquely identified
+      in <abbr>GPII</abbr> by the following <abbr>URI</abbr>:
+      <code>http://registry.gpii.net/applications/com.sublimetext/caret_extra_bottom</code>.
+      The category of settings represented by means of this type of <abbr>URI</abbr>
+      is known as <strong>application-specific terms</strong>.
+    </p>
+    <p>The last column in the settings table represents the <strong>common terms</strong>.
+      The Cloud4all project created a set of common terms that represent an
+      application-neutral way of representing settings.
+      Common terms serve as a lingua franca for representing settings without 
+      relying on application-specific terms. 
+      The have a data type and value space that can be easily translated to
+      application-specific terms.
+      For example, the common term <code>speechRate</code> (data type: integer) represents the speed of a
+      text-to-speech engine's output in words per minute. This type of value can
+      be translated or &ldquo;transformed&rdquo; (see below<!-- @@add link to transformation section below -->) 
+      to the application-specific setting for speech rate in various screen readers.
+    </p>
+    <p>
+      The Cloud4all project created a small set of 50 common terms, and most of
+      Sublime Text's settings have no corresponding common term.
+      Sublime Text's <code>font_size</code> setting (an integer representing size in pixels)
+      can easily be represented by the common term <code>fontSize</code>, which represents a size in points.
+      However, the common terms <code>highContrastEnabled</code> (Boolean) and <code>highContrastTheme</code>
+      (with the possible values <code>black-white</code>, <code>white-black</code>, <code>yellow-black</code>, <code>black-yellow</code>, <code>lime-black</code>)
+      were conceived for users who need high-contrast settings,
+      while Sublime Text's colour schemes are much more complex and were not conceived to represent high-contrast settings.
+      In fact, many of Sublime Text's colour schemes are low-contrast schemes.
+      <br />In summary, Sublime Text's settings, with the exception of <code>font_size</code>, can currently
+      only be represented using application-specific terms.
+    </p>
+
+    <h4 id="solution-registry">Creating a Solutions Registry Entry and Related Files</h4>
+    <p>The integration of a solution requires modifications to a few existing files
+     and the creation of few new files:
+    </p>
+    <ul>
+      <li><strong>win32.json<!-- @@link --></strong>:
+        this is the Windows solutions registry. 
+        For each solution that runs on Windows, the registry describes where the solution's settings can be found,
+        how the solution can be launched and stopped, how common terms (if any) can be &ldquo;transformed&rdquo;
+        to the solution's application-specific terms, and a few other things.
+      </li>
+      <li><strong>installedSolutions.json<!-- @@link --></strong>:
+        this is the list of integrated solutions that the 
+        <abbr>GPII</abbr>'s device reporter <!-- @@link -->
+        can report as available.
+      </li>
+      <li>A description of the solution (in Markdown format).</li>
+      <li>A number of preference sets that can be used to demonstrate the integration of the solutions,
+        to be stored in the directory <code>gpii/node_modules/universal/testData/preferences/</code>.
+      </li>
+      <li>Several files for running acceptance tests or integration tests (discussed <a href="#acceptance-tests">below</a>).
+        Without such tests, the pull request for the solution integration will not be merged into
+        the <abbr>GPII</abbr> code repository. 
+        The tests are run as part of <abbr>GPII</abbr>'s continuous integration system.
+      </li>
+    </ul>
+    <p><strong>Note</strong>: Before modifying or creating these files, you should
+      first create a new branch in your fork of <abbr>GPII</abbr>'s 
+      &ldquo;<a href="https://github.com/GPII/universal">universal</a>&rdquo; repository. 
+      Ideally, the name of the branch matches the name of the <abbr>JIRA</abbr> ticket 
+      (in <a href="https://issues.gpii.net/"><abbr>GPII</abbr>'s issue tracking system</a>)
+      for the solution integration.
+      <br />For Sublime Text, the ticket for the Windows integration is
+      <a href="https://issues.gpii.net/browse/GPII-1796">GPII-1796</a>,
+      so the corresponding branch is also called
+      <a href="https://github.com/cstrobbe/universal/tree/GPII-1796">GPII-1796</a>.
+      <!-- URL pull request: https://github.com/GPII/universal/pull/449 -->
+    </p>
+    <p>The entry for Sublime Text in the Windows solutions registry <strong>win32.json</strong> looks as follows:</p>
+<pre><code>"<strong>com.sublimetext</strong>": {
+    "name": "Sublime Text",
+    "contexts": {
+        "OS": [
+            {
+                "id": "win32",
+                "version": ">=5.0"
+            }
+        ]
+    },
+    "<strong>settingsHandlers</strong>": {
+        "configuration": {
+            "type": "<strong>gpii.settingsHandlers.JSONSettingsHandler</strong>",
+            "options": {
+                "filename": "<strong>${{environment}.APPDATA}\\Sublime Text 3\\Packages\\User\\Preferences.sublime-settings</strong>"
+            },
+            "<strong>capabilities</strong>": [
+                "applications.com\\.sublimetext\\.id",
+                "caret_extra_bottom",
+                "caret_extra_top",
+                "caret_extra_width",
+                "caret_style",
+                "color_scheme",
+                "dictionary",
+                "fade_fold_buttons",
+                "font_face",
+                "font_size",
+                "gutter",
+                "highlight_line",
+                "highlight_modified_tabs",
+                "line_numbers",
+                "margin",
+                "show_encoding",
+                "show_line_endings",
+                "spell_check",
+                "translate_tabs_to_spaces"
+            ],
+            "<strong>capabilitiesTransformations</strong>": {
+                "font_size": {
+                    "transform": {
+                        "type": "fluid.transforms.round",
+                        "input": {
+                            "transform": {
+                                "type": "fluid.transforms.linearScale",
+                                "valuePath": "http://registry\\.gpii\\.net/common/fontSize",
+                                "factor": 1.33
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "configure": [
+        "settings.configuration"
+    ],
+    "restore": [
+        "settings.configuration"
+    ],
+    "<strong>start</strong>": [
+        {
+            "type": "gpii.launch.exec",
+            "command": "<strong>\"${{registry}.HKEY_CLASSES_ROOT\\Applications\\sublime_text.exe\\}\"</strong>"
+        }
+    ],
+    "stop": [
+    ],
+    "isInstalled": [
+        {
+            "type": "gpii.deviceReporter.alwaysInstalled"
+        }
+    ]
+}
+</code></pre>
+
+    <p>The solution entry starts with Sublime Text's solution <abbr>ID</abbr>
+      (see <a href="#solution-id">above</a>) and contains the following sections:
+    </p>
+    <ul>
+      <li><code>name</code>: the solution's human-readable name.
+      </li>
+      <li><code>contexts</code>: the platform and versions on which the solution runs.
+        <code>win32</code> obviously denotes Microsoft Windows.
+        <code>&gt;=5.0</code> means &ldquo;version 5 or higher&rdquo;.
+        This refers to the internal version numbering, where
+        version 5 refers to Windows Vista,<!-- @@check on Wikipedia -->
+        version 6.1 refers to Windows 7 with Service Pack 1, <abbr>etc</abbr>.
+      </li>
+      <li><code>settingsHandlers</code> contains several important parts:
+        <ul>
+          <li><code>configuration</code> describes two types of data.
+            <code>type</code> identifies the type of settings handler that is needed
+            to read and write the solution's settings.
+            Since Sublime Text uses <abbr>JSON</abbr> to store its settings, 
+            we use the <abbr>GPII</abbr>'s built-in code for dealing with this format.
+            This settings handler is identified as 
+            <code>gpii.settingsHandlers.JSONSettingsHandler</code>.
+            <br /><code>filename</code> describes the path to the settings file.
+            In this path, <code>${{environment}.APPDATA}</code> is used to refer to 
+            the <code>APPDATA</code> directory associated with the account of the
+            user who is logged in to Windows whilst <abbr>GPII</abbr> is running.
+            (<code>${{environment}.APPDATA}</code> resolves to the path that is returned when
+            you enter <kbd>echo %APPDATA%</kbd> on the command line.)
+          </li>
+          <li><code>capabilities</code>: consists of a different version of the
+            solution's identifier<!-- @@what is the exact convention? -->
+            followed by a list of application-specific terms that <abbr>GPII</abbr> should recognise.
+            This is potentially the entire list of application settings.
+            <!-- @@search message by Collin about this. -->
+            (When a preference set contains settings that are not in this list, 
+            <abbr>GPII</abbr> can filter them out. This filtering is currently not active, however.)
+          </li>
+          <li id="capabilitiesTransformations"><code>capabilitiesTransformations</code> is a section with transformations
+            that converts settings expressed as common terms (if any are present in the user's preference set)
+            into application-specific settings.
+            The length of this section depends on the number of common terms that can be mapped to 
+            the solution's application-specific terms. In the case of Sublime Text,
+            there is only one common term that can be mapped to any of the solution's application-specific terms,
+            <abbr>i.e.</abbr> <code>fontSize</code>.
+            <br />The transformations are expressed in a declarative format. For more details, see the wiki page 
+            <a href="https://wiki.gpii.net/w/Architecture_-_Available_transformation_functions">Architecture - Available transformation functions</a>.
+          </li>
+        </ul>
+      </li>
+      <li><code>configure</code> and <code>restore</code>
+        have to do with the mechanisms that <abbr>GPII</abbr> uses to write to the solution's 
+        persistence system for settings (<abbr>JSON</abbr>, <abbr>XML</abbr>, the Windows registry, <abbr>etc.</abbr>)
+        and how the original settings should be restored once the &ldquo;<abbr>GPII</abbr> user&rdquo;
+        logs out from <abbr>GPII</abbr> on the device (<abbr>PC</abbr>, smartphone, &hellip;).
+        <!-- @@check wiki documentation or settingHandler docs on GitHub? -->
+      </li>
+      <li><code>start</code> and <code>stop</code> refers to how the solution should be
+        launched (if it is not already running) and stopped (if it was not running before the &ldquo;<abbr>GPII</abbr> user&rdquo; logged in).
+      </li>
+      <!-- 
+      <li><code>isInstalled</code> @@
+      </li>
+      -->
+    </ul>
+
+    <p>Next, you need to add an entry for the solution to the file
+      <code>testData/deviceReporter/installedSolutions.json</code><!-- @@link -->.
+      For Sublime Text, the following addition was made:
+<pre><code>{
+  "id": "com.sublimetext"
+}</code></pre>
+    </p>
+    <p>You should also create a few <strong>needs &amp; preferences sets</strong> that
+      you can use to demonstrate the adaptations that <abbr>GPII</abbr> can make to the solution's settings.
+      These needs and preferences sets (short: <abbr>NP</abbr> sets) are also in <abbr>JSON</abbr>.
+      <abbr>NP</abbr> sets can use common terms, application-specific terms or a combination of these.
+      For example, the <abbr>NP</abbr> set <code>sublime_carla</code><!-- @@link -->
+      uses the common term <code>fontSize</code> and several application-specific terms for Sublime Text:
+    </p>
+<pre><code>{
+    "flat": {
+        "contexts": {
+            "gpii-default": {
+                "name": "Default preferences",
+                "preferences": {
+                    "http://registry.gpii.net/common/fontSize": 24,
+                    "http://registry.gpii.net/applications/com.sublimetext": {
+                      "caret_extra_bottom": 1,
+                      "caret_extra_top": 1,
+                      "caret_extra_width": 4,
+                      "color_scheme": "Packages/Color Scheme - Default/Blackboard.tmTheme",
+                      "dictionary": "Packages/Language - English/en_GB.dic",
+                      "highlight_line": true,
+                      "highlight_modified_tabs": true,
+                      "spell_check": true
+                    }
+                }
+            }
+        }
+    }
+}</code></pre>
+    <p>A solution's <abbr>NP</abbr> sets should always be accompanied by a 
+      Markdown file that identifies the solution they were created for
+      and that explains the intended effect of the <abbr>NP</abbr> sets.
+      The file names for both the <abbr>NP</abbr> sets and the Markdown file
+      should have a prefix that is unique to the solution, <abbr>e.g.</abbr>
+      <code>sublime_</code> for Sublime Text. (This is not required by the system;
+      it is only meant to make it easier to figure out which <abbr>NP</abbr> sets
+      belong to which solution.)
+      These files are all stored in the directory
+      <code>universal/testData/preferences/</code><!-- @@link -->.
+    </p>
+
+    <p>Finally, you should also create a Markdown file that describes the solution,
+      the settings that have been integrated, the <abbr>NP</abbr> sets used for the
+      acceptance tests (see <a href="#acceptance-tests">below</a>) and any other information 
+      that the <abbr>GPII</abbr> developer team would need to know when reviewing 
+      your contribution.
+    </p>
+
+    <p id="first-test">At this point, you should already be able to test whether the integration works.
+      Open a command line, navigate to the <code>windows</code> directory in your <abbr>GPII</abbr>
+      installation and start <abbr>GPII</abbr> by typing <kbd>node gpii.js</kbd>.
+      Open Sublime Text. 
+      Then enter a <abbr>URL</abbr> like the following into a browser:
+      <a href="http://localhost:8081/user/sublime_carla/logonChange">http://localhost:8081/user/<strong>sublime_carla</strong>/logonChange</a>.
+      (<code>sublime_carla</code> is an <abbr>NP</abbr> set that we created for this kind of test.)
+      Sublime Text should now adapt to the settings defined in the <abbr>NP</abbr> set <code>sublime_carla</code>.
+      (If you opened the settings file <code>Preferences.sublime-settings</code> before this test, 
+      you will be able to see the resulting settings there.)
+      Then activate the same link again to &ldquo;log out&rdquo; <code>sublime_carla</code>;
+      <abbr>GPII</abbr> should now restore the original settings.
+    </p>
+
+    <h4 id="acceptance-tests">Writing Acceptance Tests</h4>
     <p>(todo)</p>
 
-    <h3>Installing Sublime Text 3</h3>
+    <h4 id="integration-testing">Testing the Integration</h4>
     <p>(todo)</p>
 
-    <h3>Integration Steps for Sublime Text 3</h3>
-    <h4>Collecting Settings and Other Data for Sublime Text 3</h4>
-    <p>(todo)</p>
-    <h4>Creating a Solutions Registry Entry and Related Files</h4>
-    <p>(todo)</p>
-    <h4>Writing Acceptance Tests</h4>
-    <p>(todo)</p>
 
   </main>
 
   <footer>
-  	<p>Page <abbr>URL</abbr>: <a href="http://cstrobbe.github.io/AccessibilityResources/gpii/gpii-for-developers.html">http://cstrobbe.github.io/AccessibilityResources/gpii/gpii-for-developers.html</a>.</p>
+  	<p>Page <abbr>URL</abbr>: <a href="http://cstrobbe.github.io/AccessibilityResources/gpii/integrating-sublimetext.html">http://cstrobbe.github.io/AccessibilityResources/gpii/integrating-sublimetext.html</a>.</p>
   </footer>
 </body>
 </html>
