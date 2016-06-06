@@ -131,11 +131,26 @@ p {
   line-height: 1.3;
 }
 
+table {
+  border-collapse: collapse;
+  margin-bottom: 12pt;
+}
+th, td {
+  border: 1px solid gray;
+  padding: 4px;
+}
+
 kbd {
   font-family: 'Consolas', 'Andale Mono', Courier, 'Lucida Sans Unicode', monospace;
   background-color: black;
   color: #00FF00;
   padding-left: 4px; padding-right: 4px;
+}
+
+pre code strong {
+  color: red;
+  background-color: transparent;
+  font-weight: bolder;
 }
 
 footer {
