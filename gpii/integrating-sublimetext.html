@@ -379,7 +379,7 @@
       application-specific terms.
       For example, the common term <code>speechRate</code> (data type: integer) represents the speed of a
       text-to-speech engine's output in words per minute. This type of value can
-      be translated or &ldquo;transformed&rdquo; (see below<!-- @@add link to transformation section below -->) 
+      be translated or &ldquo;transformed&rdquo; (see <a href="#capabilitiesTransformations">below</a>) 
       to the application-specific setting for speech rate in various screen readers.
     </p>
     <p>
@@ -401,15 +401,15 @@
      and the creation of few new files:
     </p>
     <ul>
-      <li><strong>win32.json<!-- @@link --></strong>:
+      <li><strong><a href="https://github.com/GPII/universal/blob/master/testData/solutions/win32.json">win32.json</a></strong>:
         this is the Windows solutions registry. 
         For each solution that runs on Windows, the registry describes where the solution's settings can be found,
         how the solution can be launched and stopped, how common terms (if any) can be &ldquo;transformed&rdquo;
         to the solution's application-specific terms, and a few other things.
       </li>
-      <li><strong>installedSolutions.json<!-- @@link --></strong>:
+      <li><strong><a href="https://github.com/GPII/universal/blob/master/testData/deviceReporter/installedSolutions.json">installedSolutions.json</a></strong>:
         this is the list of integrated solutions that the 
-        <abbr>GPII</abbr>'s device reporter <!-- @@link -->
+        <abbr>GPII</abbr>'s <a href="https://wiki.gpii.net/w/GPII_Architecture_Overview#Device_Reporter">device reporter</a>
         can report as available.
       </li>
       <li>A description of the solution (in Markdown format).</li>
@@ -520,8 +520,10 @@
         <code>win32</code> obviously denotes Microsoft Windows.
         <code>&gt;=5.0</code> means &ldquo;version 5 or higher&rdquo;.
         This refers to the internal version numbering, where
-        version 5 refers to Windows Vista,<!-- @@check on Wikipedia -->
-        version 6.1 refers to Windows 7 with Service Pack 1, <abbr>etc</abbr>.
+        version 5.1 refers to Windows XP,
+        version 6.0 refers to Windows Vista,
+        version 6.1 refers to Windows 7, <abbr>etc.</abbr>
+        (based on <a href="https://en.wikipedia.org/wiki/List_of_Microsoft_Windows_versions">Wikipedia's list of Windows versions</a>).
       </li>
       <li><code>settingsHandlers</code> contains several important parts:
         <ul>
@@ -532,6 +534,7 @@
             we use the <abbr>GPII</abbr>'s built-in code for dealing with this format.
             This settings handler is identified as 
             <code>gpii.settingsHandlers.JSONSettingsHandler</code>.
+            (See the wiki page <a href="https://wiki.gpii.net/w/Settings_Handler">Settings Handler</a> for more background information.)
             <br /><code>filename</code> describes the path to the settings file.
             In this path, <code>${{environment}.APPDATA}</code> is used to refer to 
             the <code>APPDATA</code> directory associated with the account of the
@@ -543,9 +546,11 @@
             solution's identifier<!-- @@what is the exact convention? -->
             followed by a list of application-specific terms that <abbr>GPII</abbr> should recognise.
             This is potentially the entire list of application settings.
-            <!-- @@search message by Collin about this. -->
+            <!-- @@search message by Collin about this: -->
+            <!-- 
             (When a preference set contains settings that are not in this list, 
             <abbr>GPII</abbr> can filter them out. This filtering is currently not active, however.)
+            -->
           </li>
           <li id="capabilitiesTransformations"><code>capabilitiesTransformations</code> is a section with transformations
             that converts settings expressed as common terms (if any are present in the user's preference set)
@@ -576,7 +581,7 @@
     </ul>
 
     <p>Next, you need to add an entry for the solution to the file
-      <code>testData/deviceReporter/installedSolutions.json</code><!-- @@link -->.
+      <a href="https://github.com/GPII/universal/blob/master/testData/deviceReporter/installedSolutions.json"><code>testData/deviceReporter/installedSolutions.json</code></a>.
       For Sublime Text, the following addition was made:
 <pre><code>{
   "id": "com.sublimetext"
@@ -586,7 +591,7 @@
       you can use to demonstrate the adaptations that <abbr>GPII</abbr> can make to the solution's settings.
       These needs and preferences sets (short: <abbr>NP</abbr> sets) are also in <abbr>JSON</abbr>.
       <abbr>NP</abbr> sets can use common terms, application-specific terms or a combination of these.
-      For example, the <abbr>NP</abbr> set <code>sublime_carla</code><!-- @@link -->
+      For example, the <abbr>NP</abbr> set <a href="https://github.com/cstrobbe/universal/blob/d8a74c6a2fe09c52d25779c861859e6e2541f3d3/testData/preferences/sublime_carla.json"><code>sublime_carla</code></a><!-- @@update after PR has been merged -->
       uses the common term <code>fontSize</code> and several application-specific terms for Sublime Text:
     </p>
 <pre><code>{
@@ -620,7 +625,7 @@
       it is only meant to make it easier to figure out which <abbr>NP</abbr> sets
       belong to which solution.)
       These files are all stored in the directory
-      <code>universal/testData/preferences/</code><!-- @@link -->.
+      <a href="https://github.com/GPII/universal/tree/master/testData/preferences"><code>universal/testData/preferences/</code></a>.
     </p>
 
     <p>Finally, you should also create a Markdown file that describes the solution,
