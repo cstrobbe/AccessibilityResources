@@ -527,7 +527,7 @@
       </li>
       <li><code>settingsHandlers</code> contains several important parts:
         <ul>
-          <li><code>configuration</code> describes two types of data.
+          <li id="setHandlerBlock-configuration">The settingsHandler block <code>configuration</code> describes two types of data.
             <code>type</code> identifies the type of settings handler that is needed
             to read and write the solution's settings.
             Since Sublime Text uses <abbr>JSON</abbr> to store its settings, 
@@ -569,15 +569,21 @@
         persistence system for settings (<abbr>JSON</abbr>, <abbr>XML</abbr>, the Windows registry, <abbr>etc.</abbr>)
         and how the original settings should be restored once the &ldquo;<abbr>GPII</abbr> user&rdquo;
         logs out from <abbr>GPII</abbr> on the device (<abbr>PC</abbr>, smartphone, &hellip;).
-        <!-- @@check wiki documentation or settingHandler docs on GitHub? -->
+        The values in these blocks are either references to existing 
+        &ldquo;settingsHandlers blocks&rdquo;
+        or a customised lifecycle block.
+        <!-- @@see GitHub: https://github.com/GPII/universal/blob/master/documentation/SolutionsRegistryFormat.md#isinstalled -->
+        For Sublime Text, we use the value <code>settings.configuration</code>. 
+        Note that the last part of this value, <code>configuration</code>, matches 
+        the name &ldquo;configuration&rdquo; we gave to the
+        <a href="#setHandlerBlock-configuration">settingsHandler block (above)</a>.
       </li>
       <li><code>start</code> and <code>stop</code> refers to how the solution should be
         launched (if it is not already running) and stopped (if it was not running before the &ldquo;<abbr>GPII</abbr> user&rdquo; logged in).
       </li>
-      <!-- 
-      <li><code>isInstalled</code> @@
+      <li><a href="https://github.com/GPII/universal/blob/master/documentation/SolutionsRegistryFormat.md#isinstalled"><code>isInstalled</code></a>
+        contains mechanisms to detect whether the solution is installed.
       </li>
-      -->
     </ul>
 
     <p>Next, you need to add an entry for the solution to the file
