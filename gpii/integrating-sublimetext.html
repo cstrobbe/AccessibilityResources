@@ -60,6 +60,7 @@
       </li>
       <li>Python 2.7.x:
         <a href="https://www.python.org/downloads/release/python-2711/">Python 2.7.11</a>.
+        (Python is only needed to install and build <abbr>GPII</abbr>, not to run it.)
         After installing Python, go to the operating system's environment variables and
         add the Python directory to the <code>PATH</code> variable.
         (You can check your Python installation by typing <kbd>python --version</kbd> on the command line.
@@ -370,7 +371,7 @@
       The category of settings represented by means of this type of <abbr>URI</abbr>
       is known as <strong>application-specific terms</strong>.
     </p>
-    <p>The last column in the settings table represents the <strong>common terms</strong>.
+    <p id="common-terms-intro">The last column in the settings table represents the <strong>common terms</strong>.
       The Cloud4all project created a set of common terms that represent an
       application-neutral way of representing settings.
       Common terms serve as a lingua franca for representing settings without 
@@ -429,6 +430,9 @@
     <p><strong>Note</strong>: Before modifying or creating these files, you should
       first create a new branch in your fork of <abbr>GPII</abbr>'s 
       &ldquo;<a href="https://github.com/GPII/universal">universal</a>&rdquo; repository. 
+      This branch will contain all the changes and additions that are required to integrate
+      the application with <abbr>GPII</abbr>, including the integration tests, which are explained 
+      <a href="#integration-testing">below</a>.
       Ideally, the name of the branch matches the name of the <abbr>JIRA</abbr> ticket 
       (in <a href="https://issues.gpii.net/"><abbr>GPII</abbr>'s issue tracking system</a>)
       for the solution integration.
@@ -483,7 +487,7 @@
                         "input": {
                             "transform": {
                                 "type": "fluid.transforms.linearScale",
-                                "valuePath": "http://registry\\.gpii\\.net/common/fontSize",
+                                "inputPath": "http://registry\\.gpii\\.net/common/fontSize",
                                 "factor": 1.33
                             }
                         }
@@ -659,8 +663,178 @@
       <abbr>GPII</abbr> should now restore the original settings.
     </p>
 
-    <h4 id="acceptance-tests">Writing Acceptance Tests</h4>
-    <p>(todo)</p>
+    <h4 id="acceptance-tests">Writing Integration Tests</h4>
+    <p>The instruction in this section are based on the wiki page
+      <a href="https://wiki.gpii.net/w/Writing_Acceptance_Tests">Writing Acceptance Tests</a>,
+      more specifically the section
+      <a href="https://wiki.gpii.net/w/Writing_Acceptance_Tests#Writing_Acceptance_Tests_for_Applications_Using_the_Local_Flow_Manager">Writing Acceptance Tests for Applications Using the Local Flow Manager</a>.
+    </p>
+    <p>
+      The integration tests are part of <abbr>GPII</abbr>'s automatic acceptance testing framework.
+      The acceptance tests for a specific solution test the entire real-time framework end to end.
+      Simply put, the tests start up the <abbr>GPII</abbr> server, log in a user, and checks that the
+      system is modified according to that user's needs &amp; preferences set. 
+      It then logs that user out again, restores the system to its original settings and checks that the system has been restored to its original state.
+      This type of tests also includes testing of the transformations
+      (<a href="#capabilitiesTransformations">see above</a>).
+    </p>
+    <p>First, you need to create a few needs &amp; preferences sets (<abbr>NP</abbr> sets)
+      that you want to test your application with. These should be stored in the directory
+      <a href="https://github.com/GPII/universal/tree/master/testData/preferences/acceptanceTests"><code>universal/testData/preferences/acceptanceTests/</code></a>.
+      You can reuse the <abbr>NP</abbr> sets that you have already created for demonstrating the solution.
+    </p>
+    <p>You should also create a device reporter file, which is to be stored in the directory
+      <a href="https://github.com/GPII/universal/tree/master/testData/deviceReporter/acceptanceTests"><code>universal/testData/deviceReporter/acceptanceTests/</code></a>.
+      The device reporter file name should be descriptive of its content, <abbr>e.g.</abbr>
+      <code>sublimetext.json</code>, and its content looks like the following example:
+    </p>
+<pre><code>[
+  {
+    "id": "com.sublimetext"
+  }
+]</code></pre>
+    <p>The next step is to create the configuration file that the testing framework should use
+      when running the integration tests for the application. The purpose of this file is
+      to point the testing framework to the device reporter file created in the previous step.
+    </p>
+    <p>Since our example is the Windows version of Sublime text, 
+      the configuration file should be stored in the directory
+      <a href="https://github.com/GPII/universal/tree/master/tests/platform/windows/configs"><code>universal/tests/platform/<b>windows</b>/configs/</code></a>.
+      The file name uses the pattern <code>gpii.tests.acceptance.windows.<b>&lt;application&gt;</b>.config.json</code>,
+      where <code>&lt;application&gt;</code> stands for the application being integrated.
+      For Sublime Text, the config file should be called
+      <code>gpii.tests.acceptance.windows.sublimetext.config.json</code>.
+      Its content looks as follows:
+    </p>
+<pre><code>{
+    "type": "gpii.tests.acceptance.windows.sublimetext.config",
+    "options": {
+        "distributeOptions": {
+            "acceptance.installedSolutionsPath": {
+                <b>"record": "%universal/testData/deviceReporter/acceptanceTests/sublimetext.json",</b>
+                "target": "{that deviceReporter installedSolutionsDataSource}.options.path",
+                "priority": "after:development.installedSolutionsPath"
+            }
+        }
+    },       
+    "mergeConfigs": "%universal/tests/configs/gpii.tests.acceptance.localInstall.config.json"
+}</code></pre>
+    <p>The important part of this file is the line starting with <code>record</code>, which points to the device reporter file.
+      In addition, value of <code>type</code> in the second line reflects the configuration file name without its file name extension.
+      <!-- @@ add description file: gpii.tests.acceptance.windows.sublimetext.config.txt -->
+    </p>
+    <p>The final step is to create the file with the actual acceptance test(s). 
+      Acceptance tests for Windows solutions are stored in the directory
+      <a href="https://github.com/GPII/universal/tree/master/tests/platform/windows"><code>universal/tests/platform/windows/</code></a>.
+      Each of the 
+      <a href="#capabilitiesTransformations">transformations</a>
+      in the solution's registry entry should have at least one unit test;
+      it is good practice to cover some edge cases for the 
+      <a href="#common-terms-intro">common terms</a>
+      that can be mapped to your solution's application-specific terms.
+      The acceptance tests for Sublime Text on Windows are shown below by way of example:
+    </p>
+<pre><code>"use strict";
+var fluid = require("universal"),
+    gpii = fluid.registerNamespace("gpii");
+
+gpii.loadTestingSupport();
+
+fluid.registerNamespace("gpii.tests.windows");
+
+gpii.tests.windows.sublimetext = [
+    {
+        name: "Acceptance test for small font size in Sublime Text",
+        userToken: "sublime_font8",
+        settingsHandlers: {
+            "gpii.settingsHandlers.JSONSettingsHandler": {
+                "data": [
+                    {
+                        "settings": {
+                            "font_size": 11
+                        },
+                        "options": {
+                            "filename": "${{environment}.APPDATA}\\Sublime Text 3\\Packages\\User\\Preferences.sublime-settings"
+                        }
+                    }
+                ]
+            }
+        },
+        processes: []
+    },
+    {
+        name: "Acceptance test for large font size in Sublime Text",
+        userToken: "sublime_gert",
+        settingsHandlers: {
+            "gpii.settingsHandlers.JSONSettingsHandler": {
+                "data": [
+                    {
+                        "settings": {
+                            "font_size": 32
+                        },
+                        "options": {
+                            "filename": "${{environment}.APPDATA}\\Sublime Text 3\\Packages\\User\\Preferences.sublime-settings"
+                        }
+                    }
+                ]
+            }
+        },
+        processes: []
+    }
+];
+
+module.exports = gpii.test.bootstrap({
+    testDefs:  "gpii.tests.windows.sublimetext",
+    configName: "gpii.tests.acceptance.windows.sublimetext.config",
+    configPath: "%universal/tests/platform/windows/configs"
+}, ["gpii.test.integration.testCaseHolder.windows"],
+    module, require, __dirname);</code></pre>
+    <p>Below are a few comments to help you understand the above code.
+    </p>
+    <ul>
+      <li>The line <code>fluid.registerNamespace("gpii.tests.windows");</code>
+        is specific to Windows. Acceptance tests for solutions on <abbr>GNU</abbr>/Linux
+        will contain the string <code>linux</code> in the namespace, 
+        tests for Android solutions will contain the string <code>android</code> in the namespace, ectetera.
+      </li>
+      <li>The identifier <code>gpii.tests.windows.sublimetext</code> below the namespace registration code
+        is referenced in the name-value pair
+        <code>testDefs:  "gpii.tests.windows.sublimetext"</code> near the end of the file.
+      </li>
+      <li>Each test has four parts: <code>name</code>, <code>userToken</code>, <code>settingsHandlers</code> and <code>processes</code>.
+        <ul>
+          <li>The key <code>name</code> provides a human-readable description of the test.</li>
+          <li>The key <code>userToken</code> refers to the <abbr>NP</abbr> set involved in the test.</li>
+          <li>The <code>settingsHandlers</code> block identifies the type of setting handler that is required for reading and writing the solution's settings.
+            The value provided here, <code>gpii.settingsHandlers.JSONSettingsHandler</code> in the case of Sublime Text,
+            matches the type of settings handler identified in the solution registry entry.
+            <br />The <code>data</code> block contains two parts:
+            <ul>
+              <li><code>settings</code> contains the expected application-specific terms and their corresponding values
+                after the <abbr>NP</abbr> set identified above has been gone through the transformers
+                defined in the solutions registry entry.
+              </li>
+              <li><code>options</code> defines where the solution's settings can be found.
+                This matches the options for the settings handler defined in the solutions registry entry.
+                <br />Note that <code>options</code> does not always use a file name reference to 
+                identify where settings are stored. See for example the 
+                <a href="https://github.com/GPII/universal/blob/master/tests/platform/android/android-builtIn-testSpec.js">acceptance tests for Android's built-in features</a>,
+                where the settings persistence system is defined as <code>"settingType": "System"</code>.
+              </li>
+            </ul>
+          </li>
+          <li>The <code>processes</code>
+            <q cite="https://wiki.gpii.net/w/Writing_Acceptance_Tests#Processes"> allows for the specification of an array of running applications to check</q>.
+            For Sublime Text, no such processes are relevant. 
+            For documentation on how to define <code>processes</code>, see the relevant section of the wiki page
+            <a href="https://wiki.gpii.net/w/Writing_Acceptance_Tests#Processes">Writing Acceptance Tests</a>.
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <p>In addition to the acceptance test file itself, you should also create a plain text file
+      that describes the resources required for the tests (<abbr>NP</abbr> sets, etcetera).
+    </p>
 
     <h4 id="integration-testing">Testing the Integration</h4>
     <p>(todo)</p>
@@ -668,7 +842,6 @@
       meets the criteria in the
       <a href="https://wiki.gpii.net/w/Pull_Request_Review_Checklist_%28GPII_Laser_eye_checklist%29">Pull Request Review Checklist</a>.
     </p>
-
 
   </main>
 
