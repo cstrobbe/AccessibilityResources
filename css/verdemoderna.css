@@ -50,8 +50,8 @@ h1 {
   /*text-transform: uppercase;*/
 }
 
-h1 { font-size: 2.8em; }
-#home h1 { font-size: 3.2em; }
+h1 { font-size: 2.5em; }
+#home h1 { font-size: 3em; }
 
 h1 .h1txt {
   background: rgba(0, 0, 0, 0.4);
