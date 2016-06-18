@@ -843,6 +843,16 @@ module.exports = gpii.test.bootstrap({
       <a href="https://wiki.gpii.net/w/Pull_Request_Review_Checklist_%28GPII_Laser_eye_checklist%29">Pull Request Review Checklist</a>.
     </p>
 
+    <h2>Integration on <abbr>GNU</abbr>/Linux</h2>
+    <p>Sublime Text has a version for <abbr>GNU</abbr>/Linux, but this version is not
+      available through a package repository. 
+      Sublime Text can be installed in a non-standard way (for example, using the instructions in the article
+      <a href="https://sayaksarkar.wordpress.com/2014/11/05/installing-sublime-text-3-on-rhel-fedora/">Installing Sublime Text 3 on <abbr>RHEL</abbr> Fedora</a><!-- @@check title -->),
+      but will not be known to PackageKit<!-- @@link for PackageKit -->. 
+      As a consequence, <abbr>GPII</abbr>, which currently relies on PackageKit to find installed applications, 
+      will not be able to find it.
+      For this reason, the <abbr>GPII</abbr> integration of Sublime Text on <abbr>GNU</abbr>/Linux is not part of this tutorial.
+    </p>
   </main>
 
   <footer>
