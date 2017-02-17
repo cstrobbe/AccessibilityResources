@@ -8,19 +8,26 @@
   <meta content="création artisanale à la main" lang="fr" name="generator" />
   <style type="text/css">
     .deleted { display: none; }
-    .incorrectcopyright, .nocclicence { color: inherit; background-color: yellow; 
+    .incorrectcopyright, .missingcopyright, .nocclicence { color: inherit; background-color: yellow; 
     }
     .incorrectcopyright:after { color: red; background-color: white;
-      content: 'Incorrect copyright information ☹!';
+      content: ' Incorrect copyright information ☹! ';
       font-weight: bold;
       padding: .1em;
       border: 1px dotted black;
     }
-    .nocclicence:after { color: brown; background-color: white;
+    .missingcopyright:after { color: red; background-color: white;
+      content: ' No copyright information ☹! ';
+      font-weight: bold;
+      padding: .1em;
+      border: 1px dotted black;
+    }
+    .nocclicence:before { color: black; background-color: Gold;
       content: 'Not available under Creative Commons!';
       font-weight: bold;
       padding: .1em;
-      border: 1px dotted blue;
+      border-left: 2px solid transparent;
+      border-right: 2px solid transparent;
     }
     *[id^="fl-step"]:before {
       content:attr(id);
@@ -48,20 +55,22 @@
       <a href="https://www.futurelearn.com/courses/digital-accessibility">Digital Accessibility: Enabling Participation in the Information Society</a>,
       which ran on FutureLearn from 17 October till 20 November 2016
       and a second time from 6 February till 12 March 2017.
+    </p>
+    <p>
       These <abbr>OERs</abbr> are made available under the 
-      <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International</a> licence
-      (<abbr>CC-BY</abbr> 4.0). 
+      <strong><a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International</a> licence
+      (<abbr>CC-BY</abbr> 4.0)</strong>. 
       Simply put, this licence allows you to share, adapt and redistribute the content of the <abbr>OERs</abbr>,
-      provided that you correctly attribute the original creators of these resources (see the copyright information for each resources).
+      provided that you correctly attribute the original creators of these resources (see the copyright information for each resource).
       If you are not familiar with this licence, please read it before reusing these <abbr>OERs</abbr>.
     </p>
 
     <h3>Glossary</h3>
-    <p><a href="https://drive.google.com/open?id=0B_Ytr4BUNCGqNGFjeFV3YkpNcDQ"><abbr>ICT</abbr> Accessibility Glossary (Microsoft Word document)</a>
-      (copyright: University of Southampton, <span lang="el">Πανεπιστήμιο Αιγαίου</span> (University of the Aegean), <span lang="de">Hochschule der Medien</span> (<abbr>HdM</abbr>), 2016
-      licence: Creative Commons by Attribution (<abbr>CC-BY</abbr> 4.0)).
+    <p><a href="https://drive.google.com/open?id=0B_Ytr4BUNCGqNGFjeFV3YkpNcDQ"><abbr>ICT</abbr> Accessibility Glossary (Microsoft Word document)</a>.
       There is also a <a href="https://drive.google.com/open?id=0B_Ytr4BUNCGqSU1qSWpMVVVRejg"><abbr>PDF</abbr> version of the glossary</a>.
-      <br />(<a href="https://drive.google.com/drive/folders/0B_Ytr4BUNCGqN2wwdFZGM2FFYVk">Google Drive folder with the glossary files</a>.)
+      (<a href="https://drive.google.com/drive/folders/0B_Ytr4BUNCGqN2wwdFZGM2FFYVk">Google Drive folder with the glossary files</a>.)
+      <br />© Copyright: University of Southampton, <span lang="el">Πανεπιστήμιο Αιγαίου</span> (University of the Aegean), <span lang="de">Hochschule der Medien</span> (<abbr>HdM</abbr>), 2016
+      licence: Creative Commons by Attribution (<abbr>CC-BY</abbr> 4.0).
     </p>
 
 
@@ -115,7 +124,7 @@
         <br />Text: © Copyright: <span lang="de">Hochschule der Medien</span> (Stuttgart Media University), 2015.
         Image: © Copyright: The University of Southampton, 2016.
       </li>
-      <li id="fl-step-1-01">
+      <li id="fl-step-1-10">
         <a href="https://drive.google.com/open?id=0B5w8EXu9wtOqWGdRbXhoVmNSb1U">Susan (hard of hearing)</a>
         (<a href="http://gpii.eu/moocap/?page_id=52"><abbr>HTML</abbr> version</a>)
         <br />Text: © Copyright: The University of Southampton, 2015.
@@ -133,7 +142,7 @@
         Image: © Copyright: The University of Southampton, 2016.
         <!-- @@ copyright for text and images: only Southampton???, CC BY 4.0 -->
       </li>
-      <li>
+      <li class="missingcopyright nocclicence">
         <a href="https://drive.google.com/open?id=0B5w8EXu9wtOqZGVKV2ctbzNyUTg">Please add your thoughts about Personas</a>
         <!-- @@no copyright or licence. @@They shouldn't be called personas.-->
       </li>
@@ -141,14 +150,28 @@
 
     <h3>Introduction</h3>
     <ul>
+      <li class="UOS" id="fl-step-1-02">Welcome to the course
+        <br />© Copyright: The University of Southampton, 2016.
+        <!-- Google Drive folder: https://drive.google.com/drive/folders/0BwcWJ_CGWdF3cE9xdTc4RWhsMEU -->
+        <ul>
+          <li>
+            <a href="https://vimeo.com/204344107">Welcome to the course: video on Vimeo</a>;
+            <a href="https://drive.google.com/open?id=0BwcWJ_CGWdF3UkphUGUxc2RQOTQ">captions in Web<abbr>VTT</abbr> format</a>.
+          </li>
+          <li>
+            <a href="https://drive.google.com/open?id=0BwcWJ_CGWdF3bGxpckNmSllNLVE">Video transcript in Microsoft Word format</a>.
+          </li>
+        </ul>
+      </li>
       <li class="HDM">Getting to Know You:
         <a href="https://drive.google.com/open?id=0B_Ytr4BUNCGqR0I4SzJJRTQ5QzA">Getting to know you (Microsoft Word document)</a>:
         document that invites learners to describe how they relate to 
         <a href="http://gpii.eu/moocap/?page_id=33"><abbr>MOOCAP</abbr>'s day-in-the-life stories</a>.
+        <br />© Copyright: <span lang="de">Hochschule der Medien</span> (Stuttgart Media University), 2015-2016.
       </li>
       <li class="HDM" id="fl-step-1-01">Life Is Full of Challenges: Interview with Neal Ewers 
-        (<a href="https://drive.google.com/drive/folders/0B1xSmiMx9252OUtVYU1qS3hqS0U">Google Drive folder</a>;
-        copyright Neal Ewers, 2015; licence: <abbr>CC-BY</abbr> 4.0):
+        (<a href="https://drive.google.com/drive/folders/0B1xSmiMx9252OUtVYU1qS3hqS0U">Google Drive folder</a>).
+        © Copyright Neal Ewers, 2015; licence: <abbr>CC-BY</abbr> 4.0:
         <ul>
           <!-- 
           <li>
@@ -169,13 +192,14 @@
             <a href="https://drive.google.com/open?id=0B1xSmiMx9252dk5XczBsaVR5T2c">Captions for the video in <abbr>WebVTT</abbr> format</a>.
           </li>
           <li>
-            <a href="https://drive.google.com/open?id=0B_Ytr4BUNCGqMWY0S09JVThMdlE">Introduction to the video</a>
-            (Author/copyright: Neal Ewers, 2015; Creative Commons by Attribution (CC-BY 4.0) licence).
+            <a href="https://drive.google.com/open?id=0B_Ytr4BUNCGqMWY0S09JVThMdlE">Introduction to the video</a>. 
+            <br />© Copyright Neal Ewers, 2015; Creative Commons by Attribution (CC-BY 4.0) licence.
           </li>
         </ul>
       </li>
       <li class="HDM" id="fl-step-1-03">What Is Digital Accessibility? 
         (<a href="https://drive.google.com/drive/folders/0B_Ytr4BUNCGqNG56Z2VFWjA1RGs">Google Drive folder</a>)
+        <br />© Copyright <span lang="de">Hochschule der Medien</span> (Stuttgart Media University), 2015-2016.
         <ul>
           <li>
             <a href="https://drive.google.com/open?id=0B_Ytr4BUNCGqRTQxUzRYRWFOd3c">What Is Digital Accessibility? (Microsoft Word document)</a>.
@@ -186,51 +210,54 @@
           </li>
         </ul>
       </li>
-      <li class="UOS">Why Care About Digital Accessibility
+      <li class="UOS">Why Care About Digital Accessibility?
+        <br />© Copyright University of Southampton, 2016.
         (<a href="https://drive.google.com/drive/folders/0B876rHn1ttslR2ZNTmJ0eFcwc2s">Google Drive folder</a>):
         <!-- OERs for "Digital Accessibility and Business" & "Why Should Businesses Care About Accessibility?" -->
         <ul>
           <li id="fl-step-1-04">
             <!-- <a href="https://drive.google.com/open?id=0B876rHn1ttslUTBZMGJYeThfZkU">Interview with David Caldwell (<abbr>MP4</abbr> video)</a>. -->
-            <a href="https://vimeo.com/202987197">Video on Vimeo</a> (no captions available).<!-- @@no captions yet -->
+            <a class="nocclicence" href="https://vimeo.com/202987197">Video on Vimeo</a> (no captions available).<!-- @@no captions yet -->
           </li>
           <li id="fl-step-1-05">
             <!-- <a href="https://drive.google.com/open?id=0B876rHn1ttslUzZIT0U3TjJHeFE">Interview with Neil Milliken (<abbr>MP4</abbr> video)</a>. -->
-            <a href="https://vimeo.com/203276646">Video on Vimeo</a> (no captions available).<!-- @@no captions yet -->
+            <a class="nocclicence" href="https://vimeo.com/203276646">Video on Vimeo</a> (no captions available).<!-- @@no captions yet -->
           </li>
         </ul>
       </li>
       <li class="UOS" id="fl-step-1-06">Accessibility and Usability
-        (<a href="https://drive.google.com/drive/folders/0B876rHn1ttslUGVYeFFOdFRucmM">Google Drive folder</a>): 
+        (<a href="https://drive.google.com/drive/folders/0B876rHn1ttslUGVYeFFOdFRucmM">Google Drive folder</a>):
         <ul>
-          <li>
-            <a href="https://drive.google.com/open?id=0B876rHn1ttslV0xLb1dPamZoaDQ">Accessibility and Usability (Microsoft Word document)</a>.
-          </li>
           <li>
             <!-- <a href="https://drive.google.com/open?id=0B876rHn1ttslWHdQb21YbDJRS1U"><abbr>MP4</abbr> video</a>. -->
             <a href="https://vimeo.com/203282566">Video on Vimeo</a>.<!-- @@no subtitle file; 2017-01-26 -->
+            <br />© Copyright University of Southampton, 2015.
           </li>
           <li>
-            <a href="https://drive.google.com/open?id=0B876rHn1ttslQlBaamNIUmRCRHc">Venn Diagram used in the video</a>.
+            <a href="https://drive.google.com/open?id=0B876rHn1ttslV0xLb1dPamZoaDQ">Accessibility and Usability (Microsoft Word document)</a>.
+            <a href="https://drive.google.com/open?id=0B876rHn1ttslQlBaamNIUmRCRHc">Venn Diagram used in the video and the above document</a>.
+            <br />© Copyright Mike Wald, University of Southampton, 2015.
           </li>
         </ul>
       </li>
-      <li class="UOS" id="fl-step-1-07">Dyslexia and Visual Stress: 
+      <li class="UOS" id="fl-step-1-08">Dyslexia and Visual Stress: 
         (<a href="https://drive.google.com/drive/folders/0B5w8EXu9wtOqOThuUjBGOE1VaDQ">Google Drive folder</a>): 
         <ul>
           <li>
             <a href="https://drive.google.com/open?id=0B5w8EXu9wtOqdG9ZemZ2dWh5djQ">Dyslexia and Visual Stress (Microsoft Word document)</a>
             (and as <a href="https://drive.google.com/open?id=1N_vxKCD0cpArcacekjiNLTtpuUKarKscKe2joyyy3H0">Dyslexia and Visual Stress (Google Docs document)</a>).
-            (Both documents: copyright Univerisity of Southampton, 2015; licence: <abbr>CC-BY</abbr> 4.0.)
+            <br />Both documents: © Copyright University of Southampton, 2015.
           </li>
           <li>
             <a href="https://drive.google.com/open?id=0B5w8EXu9wtOqUzVaLUxFNnVSTDQ">Visual Stress Strategies: Figure with Alternative Text</a>
             (as <a href="https://drive.google.com/open?id=1LLaB3IM5B7qutMuEAcxVA6O9nVTbe47zUERgJBr-SOo">Google Docs document</a>,
             and the <a href="https://drive.google.com/open?id=0B5w8EXu9wtOqdG1jOGI0bDdkV3c">image</a>).
+            <br />© Copyright E.A. Draffan, University of Southampton, 2015.
           </li>
           <li>
+            <a href="https://vimeo.com/204397000">Video on Vimeo</a> and 
             <a href="https://drive.google.com/open?id=0B5w8EXu9wtOqN1NQSVQxM3kteFk">Video transcript (Microsoft Word document)</a>
-            of a video that shows different types of visual stress.<!-- @@video not available -->
+            of a video that shows different types of visual stress.<!-- OER: https://drive.google.com/open?id=0BwcWJ_CGWdF3UXBBWGZqUzlDTzg -->
           </li>
         </ul>
       </li>
@@ -248,7 +275,8 @@
         </ul>
       </li>
       <li class="HDM" id="fl-step-1-13">Caption it
-        (<a href="https://drive.google.com/drive/folders/0B1xSmiMx9252NXU2bU83NW1aNmM">Google Drive folder</a>): 
+        (<a href="https://drive.google.com/drive/folders/0B1xSmiMx9252NXU2bU83NW1aNmM">Google Drive folder</a>)
+        <br />© Copyright: <span lang="de">Gottfried Zimmermann</span>, 2015-2017.
         <ul>
           <li>
             <!-- <a href="https://drive.google.com/open?id=0B1xSmiMx9252Nm5WTmpjb3ZFX28">Caption it (video in <abbr>MP4</abbr> format)</a> how to add subtitles to a YouTube video. -->
@@ -277,30 +305,43 @@
         </ul>
       </li>
       <!-- OER on symbols? OER on communication aids? -->
+      <li class="HDM">Multiple Ways to Represent Images:
+        <br />© Copyright: <span lang="de">Gottfried Zimmermann</span>, 2015.
+        <!-- https://drive.google.com/drive/folders/0B1xSmiMx9252MkV3YVdwNWcwZ3c -->
+        <ul>
+          <li>
+            <a href="https://drive.google.com/open?id=0B1xSmiMx9252aTFHY2JxN253N1k">Quiz: Can you represent these images in a non-visual way? (Microsoft Word document)</a>:
+            quiz with 18 questions about text alternatives for images.
+            <!-- Original step 1.7. Copyright: Gottfried Zimmermann, Stuttgart Media University, 2015; Creative Commons by Attribution (CC-BY 4.0) licence -->
+          </li>
+          <li>Example images: 
+            <a href="https://drive.google.com/open?id=0B1xSmiMx9252cjlSZVV0NElqdlU">art-745938_640.png</a>,
+            <a href="https://drive.google.com/open?id=0B1xSmiMx9252QTZDTEFjRDc1cVE">BarChart.png</a>,
+            <a href="https://drive.google.com/open?id=0B1xSmiMx9252TllMLVZRMjZwZUU">cyprus.jpg</a>,
+            <a href="https://drive.google.com/open?id=0B1xSmiMx9252UmpVVHFlYUdva3M">fabric-703447_640.jpg</a>,
+            <a href="https://drive.google.com/open?id=0B1xSmiMx9252RDUwTnpGdC12dkk">Gardening.png</a>,
+            <a href="https://drive.google.com/open?id=0B1xSmiMx9252d2MyNGl3N2xCSEU">gear-471988_640.jpg</a>,
+            <a href="https://drive.google.com/open?id=0B1xSmiMx9252akNTY3p2TGtuSEE">GroupPhoto.jpg</a>,
+            <a href="https://drive.google.com/open?id=0B1xSmiMx9252YW1BZ29GZzRCNm8">Live_from_the_Moon_-_Impact!.gif</a>,
+            <a href="https://drive.google.com/open?id=0B1xSmiMx9252YURMdnJNVHdpQVE">mortarboard.450x150.png</a>.
+          </li>
+        </ul>
+      </li>
     </ul>
 
     <h3>Enabling People to Work on Computers</h3>
     <ul>
-      <li class="DIT UP8" id="fl-step-2-04">Typical Desktop Usage:
-        (<a href="https://drive.google.com/drive/folders/0B6PTy2fBpskdN0dtUlpsbHZDUTA">Google Drive folder</a>): 
-        <!-- Dublin Institute of Technology (DIT) &amp; Université Paris 8 (UP8), 2015 -->
-        <ul>
-          <li>
-            <a href="https://drive.google.com/open?id=0B6PTy2fBpskdRFhQYlRWc2FadGc">Typical Desktop Usage (Microsoft Word document)</a>
-          </li>
-        </ul>
+      <li class="DIT UP8" id="fl-step-2-04">
+        <a href="https://drive.google.com/open?id=0B6PTy2fBpskdRFhQYlRWc2FadGc">Typical Desktop Usage (Microsoft Word document)</a>
+        (<a href="https://drive.google.com/drive/folders/0B6PTy2fBpskdN0dtUlpsbHZDUTA">Google Drive folder</a>).
+        <br />© Copyright <span lang="fr">Dominique Archambault, Université Paris 8</span> &amp; John Gilligan, Dublin Institute of Technology, 2015.
       </li>
-      <li class="DIT UP8" id="fl-step-2-05">Different Ways to Access the Desktop
+      <li class="DIT UP8" id="fl-step-2-05">Different Ways to Access the Desktop:
+        <a href="https://vimeo.com/199364477">video on Vimeo</a> and
+        <a href="https://drive.google.com/open?id=1DcCm4X4Xs7GP7sIzaC2ix7IEa-rVArYMmfmDaqz_WFQ">Different ways to access the Desktop (Google Doc)</a>.
         (<a class="UP8" href="https://drive.google.com/drive/folders/0B_IRtMIKdfI5c196X2tTai1HdGs">Google Drive folder</a>): 
-        <!-- Dublin Institute of Technology (DIT) &amp; Université Paris 8 (UP8) -->
+        <br />© Copyright <span lang="fr">Dominique Archambault, Université Paris 8</span> &amp; John Gilligan, Dublin Institute of Technology<!-- @@no year in Word doc -->.
         <!-- DIT & UP8 folder https://drive.google.com/drive/folders/0B_IRtMIKdfI5Q2hFM2dTeXlmYmc : only contains Google Docs file; @@No Legal folder; not able to add one-->
-        <ul>
-          <li>
-            <a href="https://drive.google.com/open?id=1DcCm4X4Xs7GP7sIzaC2ix7IEa-rVArYMmfmDaqz_WFQ">Different ways to access the Desktop (Google Doc)</a>
-            <!-- : mentions a video that is not in the same folder -->
-            <a href="https://vimeo.com/199364477">video on Vimeo</a>.
-          </li>
-        </ul>
       </li>
       <!-- OER for "Understanding the Principles of Software Accessibility": -->
       <li class="UP8" id="fl-step-2-06">Understanding Software Accessibility:
@@ -367,49 +408,8 @@
           </li>
         </ul>
       </li>
-      <li class="DIT UP8" id="fl-step-2-13">Document Auditing Exercise<!-- step 2.13 -->
-        (<a href="https://drive.google.com/drive/folders/0B6PTy2fBpskdUlluS0oxUTRlY3M">Google Drive folder</a>): 
-        <!-- Dublin Institute of Technology (DIT) &amp; Université Paris 8 (UP8) -->
-        <!-- @@Legal folder should not be open to the world, but I can't change sharing settings. -->
-        <ul>
-          <li>
-            <a href="https://drive.google.com/open?id=17MCHRoakPeT7GpoXS5yMC3o6f5Os5t08wsJ66jGlvNs">Introduction Document Accessibility Audit (Microsoft Word document)</a>
-          </li>
-          <li>
-            <a href="https://drive.google.com/open?id=1j17WJRR3TsFxwn5o7eQOIlby9aKz61b6-mAf9XUBUn0">Document Audit (Microsoft Word document)</a>
-          </li>
-          <li class="DIT">Audit Exercise Files
-            (<a href="https://drive.google.com/drive/folders/0B6PTy2fBpskdbENTdmlNTU1YTlE">Google Drive folder</a>):
-            <ul>
-              <li>
-                <a href="https://drive.google.com/open?id=0B6PTy2fBpskdN2NMTno4bGJBZWM"><abbr>JPEG</abbr> image</a>
-                (<a href="https://drive.google.com/open?id=0B6PTy2fBpskdU2dZTEJETkZObVU">licence terms</a>)          
-              </li>
-              <li>
-                <a href="https://drive.google.com/open?id=0B6PTy2fBpskdcXEtcS1GUWxMTlk">document in Microsoft docx format</a>
-                (<a href="https://drive.google.com/open?id=0B6PTy2fBpskdOHVjZW90LVd5T3M">licence terms</a>)          
-              </li>
-              <li>
-                <a href="https://drive.google.com/open?id=0B6PTy2fBpskdaXlHLWt1YUpHcVk">document in Open Document Format</a>
-                (opens in LibreOffice and OpenOffice.org)
-                (<a href="https://drive.google.com/open?id=0B6PTy2fBpskdWGZETi0ydmlVNjQ">licence terms</a>)          
-              </li>
-              <li>
-                <a href="https://drive.google.com/open?id=0B6PTy2fBpskdakRIN2txNW5kTTA">document in Rich Text Format (<abbr>RTF</abbr>)</a>
-                (<a href="https://drive.google.com/open?id=0B6PTy2fBpskdYnVmYWFXazRjSWs">licence terms</a>)          
-              </li>
-            </ul>
-          </li>
-          <ul>
-          </ul>
-        </ul>
-      </li>
-    </ul>
-  
-  
-    <h3>Document Accessibility (Using LibreOffice Writer 4.4.4.3)</h3>
-    <!-- @@check duplicates. Some OERs not used in MOOC? -->
-    <ul>
+
+      <!-- @@check duplicates. Some OERs not used in MOOC? -->
       <li class="DIT">How to Add Headings to a Document Using LibreOffice Writer:
         <!-- Dublin Institute of Technology 2016, CC-BY 4.0 -->
         <!-- https://drive.google.com/drive/folders/0B6PTy2fBpskddFJlTXJ3TDRRcHM -->
@@ -509,7 +509,45 @@
           </li>
         </ul>
       </li>
+
+      <li class="DIT UP8" id="fl-step-2-13">Document Auditing Exercise<!-- step 2.13 -->
+        (<a href="https://drive.google.com/drive/folders/0B6PTy2fBpskdUlluS0oxUTRlY3M">Google Drive folder</a>): 
+        <!-- Dublin Institute of Technology (DIT) &amp; Université Paris 8 (UP8) -->
+        <!-- @@Legal folder should not be open to the world, but I can't change sharing settings. -->
+        <ul>
+          <li>
+            <a href="https://drive.google.com/open?id=17MCHRoakPeT7GpoXS5yMC3o6f5Os5t08wsJ66jGlvNs">Introduction Document Accessibility Audit (Microsoft Word document)</a>
+          </li>
+          <li>
+            <a href="https://drive.google.com/open?id=1j17WJRR3TsFxwn5o7eQOIlby9aKz61b6-mAf9XUBUn0">Document Audit (Microsoft Word document)</a>
+          </li>
+          <li class="DIT">Audit Exercise Files
+            (<a href="https://drive.google.com/drive/folders/0B6PTy2fBpskdbENTdmlNTU1YTlE">Google Drive folder</a>):
+            <ul>
+              <li>
+                <a href="https://drive.google.com/open?id=0B6PTy2fBpskdN2NMTno4bGJBZWM"><abbr>JPEG</abbr> image</a>
+                (<a href="https://drive.google.com/open?id=0B6PTy2fBpskdU2dZTEJETkZObVU">licence terms</a>)          
+              </li>
+              <li>
+                <a href="https://drive.google.com/open?id=0B6PTy2fBpskdcXEtcS1GUWxMTlk">document in Microsoft docx format</a>
+                (<a href="https://drive.google.com/open?id=0B6PTy2fBpskdOHVjZW90LVd5T3M">licence terms</a>)          
+              </li>
+              <li>
+                <a href="https://drive.google.com/open?id=0B6PTy2fBpskdaXlHLWt1YUpHcVk">document in Open Document Format</a>
+                (opens in LibreOffice and OpenOffice.org)
+                (<a href="https://drive.google.com/open?id=0B6PTy2fBpskdWGZETi0ydmlVNjQ">licence terms</a>)          
+              </li>
+              <li>
+                <a href="https://drive.google.com/open?id=0B6PTy2fBpskdakRIN2txNW5kTTA">document in Rich Text Format (<abbr>RTF</abbr>)</a>
+                (<a href="https://drive.google.com/open?id=0B6PTy2fBpskdYnVmYWFXazRjSWs">licence terms</a>)          
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
     </ul>
+
+
 
     <h3>Mobile Accessibility</h3>
     <ul>
@@ -557,7 +595,7 @@
       </li>
       <li class="JKU">Controlling a Device in Different Ways:
         (<a href="https://drive.google.com/drive/folders/0BytF5o2naVX9UUx2ZU05STJ1dWM">Google Drive folder</a>).
-        Copyright <span lang="de">Johannes Kepler Universität Linz</span>, 2015-2017.
+        <br />© Copyright <span lang="de">Johannes Kepler Universität Linz</span>, 2015-2017.
         Licence: Creative Commons by Attribution (CC-BY 4.0).
         <ul>
           <li>
@@ -712,8 +750,8 @@
       </li>
       <li class="HIOA" id="fl-step-4-05">Before &amp; After Example
         (<a href="https://drive.google.com/drive/folders/0B9GyZ3n5dNZ4Y19hRkwtMXJWOXc">Google Drive folder</a>):
-        <br />(copyright: Oslo and Akershus University College of Applied Sciences, 2015;
-        licence: Creative Commons by Attribution (<abbr>CC-BY</abbr> 4.0))
+        <br />© Copyright: Oslo and Akershus University College of Applied Sciences, 2015;
+        licence: Creative Commons by Attribution (<abbr>CC-BY</abbr> 4.0).
         <ul>
           <li>
             <a href="https://drive.google.com/open?id=0B9GyZ3n5dNZ4MUh3NEtmckxLbkk">Before and After Example: Web Forms (Microsoft Word document)</a>
@@ -920,7 +958,7 @@
           </li>
         </ul>
       </li>
-  
+
       <li class="UAEGEAN" id="fl-step-5-07">Understanding the Impact of Inaccessibility
         (<a href="https://drive.google.com/drive/folders/0B-kbLV8R6-18QnUzVXM4aEJWY0U">Google Drive folder</a>): 
         <ul>
@@ -931,23 +969,12 @@
             <a href="https://drive.google.com/open?id=0B-kbLV8R6-18bDNEZUlMWXNvU2c"><abbr>MP4</abbr> video</a>,
             <a href="https://drive.google.com/open?id=0B-kbLV8R6-18RE5VdW9qdFhvWFk">subtitles in <abbr>VTT</abbr> format</a>.
           </li>
-        </ul>
-      </li>
-  
-      <li class="UAEGEAN">Inaccessible Everyday Technology
-        (<a href="https://drive.google.com/drive/folders/0B-kbLV8R6-18WkJpY2FUbU82RGs">Google Drive folder</a>):
-        <ul>
           <li>
             <a href="https://drive.google.com/open?id=0B-kbLV8R6-18OXB4YVFlT1BYejQ">Inaccessible Everyday Technology: Deeper Impacts (Microsoft Word document)</a>.
-          </li>
-          <li class="nocclicence">Wang, Cheng; Harris, Jennifer; Patterson, Paul (2013): 
-            <a href="https://drive.google.com/open?id=0B5w8EXu9wtOqQXhOYUhCU1BPOHc">The Roles of Habit: Self-Efficacy and Satisfaction (<abbr>PDF</abbr> document)</a>,
-            Journal of Service Research, 16.3 (2013): 400-414. (&copy; The Authors 2013)
-            <!-- Uploaded by E.A. Draffan. @@check whether this is referenced in week 5 or in the MS Word doc. -->
+            (<a href="https://drive.google.com/drive/folders/0B-kbLV8R6-18WkJpY2FUbU82RGs">Google Drive folder</a>.)
           </li>
         </ul>
       </li>
-  
       <li class="UAEGEAN" id="fl-step-5-08">Solving Accessibility Problems
         (<a href="https://drive.google.com/drive/folders/0B-kbLV8R6-18SUd4WlJiamx5b28">Google Drive folder</a>):
         <ul>
@@ -1051,7 +1078,7 @@
       <li>Alternative Text: 
         <!-- OER folder: https://drive.google.com/drive/folders/0B_IRtMIKdfI5OHVBUGJDVjRoeTg -->
         <a href="https://drive.google.com/open?id=0B6PTy2fBpskdSUZ1NVRJYWdwNWc">Tian An Men image used in the quiz for text alternatives</a><!-- https://drive.google.com/drive/folders/0B6PTy2fBpskdbDVHUGdrMExXbm8 -->
-        (copyright Dominique Archambault, Université Paris 8, CC-BY-4.0).
+        <br />© Copyright <span lang="fr">Dominique Archambault, Université Paris 8</span>, <abbr>CC</abbr>-BY-4.0).
       </li>
       <li>Different Ways to Access the Desktop: 
         <!-- OER folder: https://drive.google.com/drive/folders/0B_IRtMIKdfI5c196X2tTai1HdGs @@ no Assets Registry -->
@@ -1089,31 +1116,6 @@
       </li>
     </ul>
 
-
-    <h3>Multimedia Accessibility</h3>
-    <ul>
-      <li class="HDM">Multiple Ways to Represent Images:
-        <!-- https://drive.google.com/drive/folders/0B1xSmiMx9252MkV3YVdwNWcwZ3c -->
-        <ul>
-          <li>
-            <a href="https://drive.google.com/open?id=0B1xSmiMx9252aTFHY2JxN253N1k">Quiz: Can you represent these images in a non-visual way? (Microsoft Word document)</a>:
-            quiz with 18 questions about text alternatives for images.
-            <!-- Copyright: Gottfried Zimmermann, Stuttgart Media University, 2015; Creative Commons by Attribution (CC-BY 4.0) licence -->
-          </li>
-          <li>Example images: 
-            <a href="https://drive.google.com/open?id=0B1xSmiMx9252cjlSZVV0NElqdlU">art-745938_640.png</a>,
-            <a href="https://drive.google.com/open?id=0B1xSmiMx9252QTZDTEFjRDc1cVE">BarChart.png</a>,
-            <a href="https://drive.google.com/open?id=0B1xSmiMx9252TllMLVZRMjZwZUU">cyprus.jpg</a>,
-            <a href="https://drive.google.com/open?id=0B1xSmiMx9252UmpVVHFlYUdva3M">fabric-703447_640.jpg</a>,
-            <a href="https://drive.google.com/open?id=0B1xSmiMx9252RDUwTnpGdC12dkk">Gardening.png</a>,
-            <a href="https://drive.google.com/open?id=0B1xSmiMx9252d2MyNGl3N2xCSEU">gear-471988_640.jpg</a>,
-            <a href="https://drive.google.com/open?id=0B1xSmiMx9252akNTY3p2TGtuSEE">GroupPhoto.jpg</a>,
-            <a href="https://drive.google.com/open?id=0B1xSmiMx9252YW1BZ29GZzRCNm8">Live_from_the_Moon_-_Impact!.gif</a>,
-            <a href="https://drive.google.com/open?id=0B1xSmiMx9252YURMdnJNVHdpQVE">mortarboard.450x150.png</a>.
-          </li>
-        </ul>
-      </li>
-    </ul>
 
   <!-- 
     <h2>@@</h2>
