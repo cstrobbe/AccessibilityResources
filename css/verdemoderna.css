@@ -54,7 +54,7 @@ h1 { font-size: 2.5em; }
 #home h1 { font-size: 3em; }
 
 h1 .h1txt {
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.5);
   padding: 4px;
 }
 
