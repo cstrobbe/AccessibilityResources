@@ -8,7 +8,7 @@ header, nav, main, footer {
 }
 
 header, main, footer {
-  margin-right: 20em;
+  margin-right: 23em;
 }
 
 header {
@@ -24,7 +24,7 @@ nav {
   position: relative;
   margin-top: -164px;
   float: right;
-  width: 16em; /* @@TODO check min-width and max-width */
+  width: 18em; /* @@TODO check min-width and max-width */
   height: auto;
   /*padding: 0;*//*'none' is not valid; 0 has different effect*/
   top: .5em; 
