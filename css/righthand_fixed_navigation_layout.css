@@ -8,7 +8,7 @@ header, nav, main, footer {
 }
 
 header, main, footer {
-  margin-right: 20em;
+  margin-right: 23em;
 }
 
 header {
@@ -17,7 +17,7 @@ header {
 
 nav {
   position: fixed;
-  width: 16em; height: auto;
+  width: 18em; height: auto;
   /*padding: none;*//*'none' is not valid; 0 has different effect*/
   top: .5em; right: 20px; bottom: auto; left: auto;
   padding-bottom: 10px;
