@@ -9,7 +9,16 @@
   <style type="text/css">
   /*
     .deleted { display: none; }
-    .incorrectcopyright, .missingcopyright, .nocclicence { color: inherit; background-color: yellow; 
+    .incorrectcopyright, .missingcopyright, .nocclicence, .nodownloadableoer, .possiblyincompleteoer { color: inherit; background-color: yellow; 
+    }
+    .possiblyincompleteoer:after { color: red; background-color: white;
+      content: ' Is this OER complete? ';
+    }
+    .nodownloadableoer:after { color: red; background-color: white;
+      content: ' No downloadable OER ☹! ';
+      font-weight: bold;
+      padding: .1em;
+      border: 1px dotted red;
     }
     .incorrectcopyright:after { color: red; background-color: white;
       content: ' Incorrect copyright information ☹! ';
@@ -30,7 +39,7 @@
       border-left: 2px solid transparent;
       border-right: 2px solid transparent;
     }
-    *[id^="fl-step"]:before {
+    *[id^="fl-step"]:before, *[id^="accdoc-step"]:before {
       content:attr(id);
       color: black;
       background-color: lime;
@@ -1622,7 +1631,216 @@
     </section>
   -->
     <section id="accesible-documents">
-    <h2>Accessible Documents (<abbr>TUD</abbr>)</h2>
+      <h2>Accessible Documents (<abbr>TUD</abbr>)</h2>
+      <p>The course &ldquo;Accessible Documents&rdquo; was created by the <span lang="de">Technische Universität Dresden</span> (<abbr>TUD</abbr>).
+        See also the <a href="http://gpii.eu/moocap/?p=757">course description</a>.
+        The entire content of the course is stored as a set of
+        <a href="https://drive.google.com/drive/folders/0B7yTykBzKH4fU0FFRElYMUhtZE0"><abbr>OERs</abbr> in a Google Drive folder</a>.
+        Below is a breakdown of the content in that folder.
+      </p>
+
+      <h3>Week 1:</h3>
+      <p>Link to <a href=""><abbr>OER</abbr> folder on Google Drive</a>.</p>
+      <ul>
+        <li id="accdoc-step-1-01">
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpWjNGZUdfNE1UczA">Introduction and Goals of the Week</a> (Word document).
+        </li>
+        <li id="accdoc-step-1-02">
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpdThXWlFJRUp0LWs">Inclusion in Higher Education</a> (Word document).
+        </li>
+        <li id="accdoc-step-1-03">
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpWFdRaVFUTENfdlU">The role of accessible documents in higher education</a> (Word document).
+        </li>
+        <li id="accdoc-step-1-04">
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpNnNNRFpPVXVyeEE">Daisy - Digital Talking Books</a> (Word document introducing the YouTube video),
+          <a class="nodownloadableoer" href="https://www.youtube.com/watch?v=mZAS3sMSH_8">Daisy - Digital Talking Books (YouTube video)</a>.
+          <!--No transcript-->
+        </li>
+        <li id="accdoc-step-1-05">
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpSlpjQmRGNC00NWs">Accessible Music Scores</a> (Word document introducing the YouTube video),
+          <a class="nodownloadableoer" href="https://www.youtube.com/watch?v=GXHt3CPHDoc">Accessible Music Scores (YouTube video)</a>.
+          <!--No transcript-->
+        </li>
+        <li id="accdoc-step-1-06">
+          <a href="">Easy-to-read language</a> (Word document introducing the video),
+          <a class="nodownloadableoer" href="https://www.youtube.com/watch?v=k76PP90dhp8">What is &ldquo;Easy-to-read language&rdquo; (YouTube)</a>,
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpWkIyQ2VJaHZIMU0">video transcript</a>.
+        </li>
+        <li id="accdoc-step-1-07">
+          <!-- folder: https://drive.google.com/drive/folders/0B3USP1cTKEhpZGZieTJtWDBvTTQ -->
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpdHVfUlVsX3ptZDg">Easy-to-read language in research - the Leisa Project</a> (Word document containing link to and licence for the YouTube video),
+          <a class="nodownloadableoer" href="https://youtu.be/2PbxHOtv26s">Easy-to-read language in research - the Leisa Project (on YouTube)</a>,
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpT2dzOUpjeHJzT1E">captions for the video</a>,
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpWld5aUZyLXNtalE">transcript of the video</a>.
+        </li>
+        <li id="accdoc-step-1-08">
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpU2NQbEs1SEF0NGs">Demands of a Sign Language Interpreter</a> (Word document),
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpN2pVdDZlS0xOMU0">image used in the Word document</a>.
+        </li>
+        <li id="accdoc-step-1-09">
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpWXAzbWRoNF85bkk">Speech-to-text interpretation</a> (Word document),
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpTjBYMjc2V0FUUkU">image used in the Word document</a>.
+        </li>
+        <li id="accdoc-step-1-10">
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpOHNOLTA0STJULTg">Discuss Barriers of our User Stories</a> (Word document).
+        </li>
+      </ul>
+
+      <h3>Week 2:</h3>
+      <p>Link to <a href="https://drive.google.com/drive/folders/0B3USP1cTKEhpblptcm9LZUZfQXc"><abbr>OER</abbr> folder on Google Drive</a>.</p>
+      <ul>
+        <li id="accdoc-step-2-01">
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpSlpyUDRLcHFRa3M">Goals of the Week and Theoretical Foundations</a> (Word document).
+        </li>
+        <li id="accdoc-step-2-02">
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpZHNwSUIzamhuVVU">Useful Features in Microsoft Word</a> (Word document),
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpVVZTQkRQVm5Kd3c">image used in the Word document</a>.
+        </li>
+        <li id="accdoc-step-2-03">
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpZ0VKcjBzZW8xeDQ">Guideline I - Add Document Characteristics</a> (Word document),
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpYjZvdlpIM3hrbjQ">first image in the document</a>,
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpVzdUVFhGRThDbEU">second image in the document</a>.
+        </li>
+        <li id="accdoc-step-2-04">
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpZ3lWNUxZZkZuVE0">Guideline II – Formatting Text and Avoiding Common Mistakes</a> (Word document),
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpbVgyNTRZLXhxRm8">image used in the document</a>.
+        </li>
+        <li id="accdoc-step-2-05">
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpOTJtUWNzbTVyX0U">Guideline III - Use Hyperlinks, Cross-references, Indices</a> (Word document),
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpNzVZdmtjWkk4VGM">first image in the document</a>,
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpY3NJU3dMVll4bUk">second image in the document</a>.
+        </li>
+        <li id="accdoc-step-2-06">
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpQ0NYTEhERzdURFE">Guideline IV - Creating Tables</a> (Word document),
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpaWJycmh6dU83ZlU">first image in the document</a>,
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpNVltNUJ6SEdMU1E">second image in the document</a>.
+        </li>
+        <li id="accdoc-step-2-07">
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpaGVEZVI0VkVWNUk">Guideline V - Using Images and Graphics</a> (Word document),
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpVnVoWm5tc18tYk0">image used in the document</a>.
+        </li>
+        <li id="accdoc-step-2-08">
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpaEZGczFQWmo1Wms">Creating a <abbr>PDF</abbr> document out of Word </a> (Word document),
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpS3hvaWMtd2llc1E">first image in the document</a>,
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpSVdXX2hKekRTWFk">second image in the document</a>,
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpQmhtZlFyZkJ6elE">third image in the document</a>,
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpdHVlSXpiUml5Vkk">fourth image in the document</a>.
+        </li>
+        <li id="accdoc-step-2-09">
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpeVlENkJLT3R2cnM">Check the Accessibility of <abbr>PDF</abbr> with <abbr>PAVE</abbr></a> (Word document),
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpd2N6enRQTVFfazg">image of properties dialog used in the document</a>,
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpeUROWDU1VFM1bzg">issue details image used in the document</a>,
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpYTBwVTloYnhVckU">element type image used in the document</a>.
+        </li>
+        <li id="accdoc-step-2-10">
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpcWMwYkxFLVE0OEU">Find the Fault in a Word Document</a> (Microsoft Word document),
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpbGtLMFpGM2ZNRUk">Example document for accessibility checking exercise</a> (Microsoft DOCX format).
+        </li>
+      </ul>
+
+      <h3>Week 3:</h3>
+      <p>Link to <a href="https://drive.google.com/drive/folders/0B3USP1cTKEhpMnNFaDNpcU4yaTg"><abbr>OER</abbr> folder on Google Drive</a>.</p>
+      <ul>
+        <li id="accdoc-step-3-01">
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpLXZXXzhUYzlMdUk">Goals of the Week</a> (Microsoft Word document).
+        </li>
+        <li id="accdoc-step-3-02">
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpMVBSOTZSMmFUX2M">Useful Features in Microsoft Poewerpoint</a> (Microsoft Word document),
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpYVp0azFka3ZOdW8">first image in the document</a>,
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpNUc4QjhVQmI4QjA">second image in the document</a>,
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpd1RwdS1DSkwzSjg">third image in the document</a>,
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpNER0TzF0a2RSY3c">fourth image in the document</a>.
+        </li>
+        <li id="accdoc-step-3-03">
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpTUd5NktjLWh1VHc">Add Document Characteristics</a> (Microsoft Word document),
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpbUVGMjg2OUpYSEE">first image in the document</a>,
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpZ0dnZm9BdlBsVUU">second image in the document</a>,
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpendOSVV5c0hXTDg">third image in the document</a>.
+        </li>
+        <li id="accdoc-step-3-04">
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpM3UwMlJDclFoRFU">Title Your Slide</a> (Microsoft Word document),
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpSXBVTFpLRG13ckU">first image in the document</a>,
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpZDhNbW4wZUhEQTQ">second image in the document</a>.
+        </li>
+        <li id="accdoc-step-3-05">
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpeWhsbVI0c05JSnc">Checking the Reading Order</a> (Microsoft Word document),
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpeEdSa1ZhYUE0eHc">image used in the document</a>.
+        </li>
+        <li id="accdoc-step-3-06">
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpc3Joakx0STFsUTQ">Using Lists and Hyperlinks</a> (Microsoft Word document),
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpUkZOVkE3eEVqeEU">image used in the document</a>.
+        </li>
+        <li id="accdoc-step-3-07">
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpY2VlVlRDVmpkeFE">Creating Accessible Tables</a> (Microsoft Word document),
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpZnRmN1VkTXFYUnc">first image in the document</a>,
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpLVFvdm1RYlN4YlE">second image in the document</a>,
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpeTJQMTlsRS11cUE">third image in the document</a>,
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpZmNsNVRuTnlQMVk">fourth image in the document</a>.
+        </li>
+        <li id="accdoc-step-3-08">
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpaWZWZ1RaUWkyNjg">Using Images, Charts and Shapes</a> (Microsoft Word document),
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpTzkxcWo5eTF4ckk">first image in the document</a>,
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpTWd2V3ViVkFmNGs">second image in the document</a>,
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpdHhVWEFReEpIa3c">third image in the document</a>.
+        </li>
+        <li id="accdoc-step-3-09">
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpVi1lZC1jTXJBMGs">Using Videos and Animations</a> (Microsoft Word document),
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpQk56RVk5dEw3Nnc">first image in the document</a>,
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpOTM3U1RuT2VQY2c">second image in the document</a>.
+        </li>
+        <li id="accdoc-step-3-10">
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpYTMwWDE3MlV6TjQ">Create a <abbr>PDF</abbr> and Check Its Accessibility</a> (Microsoft Word document).
+        </li>
+        <li id="accdoc-step-3-11">
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpaUlKOVd6VDRuREk">Test Your Knowledge</a> (Microsoft Word document),
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpZHJmaWVwZGM2OUk">chart that can be used in the exercise</a>.
+        </li>
+      </ul>
+
+      <h3>Week 4:</h3>
+      <p>Link to <a href="https://drive.google.com/drive/folders/0B3USP1cTKEhpOU05emtFWjhjNTg"><abbr>OER</abbr> folder on Google Drive</a>.</p>
+      <ul>
+        <li id="accdoc-step-4-01">
+          <a class="possiblyincompleteoer" href="https://drive.google.com/open?id=0B3USP1cTKEhpSF9MenU0V1hoOWc">Introduction to Accessible Images</a> (Microsoft Word document).
+          <!-- folder URL: https://drive.google.com/drive/folders/0B3USP1cTKEhpTXFwb2p0eEg3dmM -->
+        </li>
+        <li id="accdoc-step-4-02">
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpS1lkckJ2RUtxVTA">General Rules to Write Alternative Image Descriptions</a> (Microsoft Word document).
+        </li>
+        <li id="accdoc-step-4-03">
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpMWpJV01uekZGYjA">General Structure of Alternative Image Descriptions</a> (Microsoft Word document).
+        </li>
+        <li id="accdoc-step-4-04">
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpc2VaWTV6bGEweWM">Alternative Descriptions for Charts and Maths</a> (Microsoft Word document).
+        </li>
+        <li id="accdoc-step-4-05">
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpZGVId0hIV1RCeTg">Exercise: Write an Alternative Image Description</a> (Microsoft Word document).
+          <!-- Images in doc not available separately in same folder. Folder URL: https://drive.google.com/drive/folders/0B3USP1cTKEhpa0ZGUFNZT3lydXM -->
+        </li>
+        <li id="accdoc-step-4-06">
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpS0RMYXR1REFJRDg">Challenges to Create Tactile Graphics</a> (Microsoft Word document),
+          <a href="https://www.youtube.com/watch?v=_vIlQFl8-Cw">YouTube video</a>,
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpaGhjWGNYbWg0ODg">transcript of the YouTube video</a>.
+        </li>
+        <li id="accdoc-step-4-07">
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpR1Vvdy1jSTRUSTA">Tactile Drawing with a Geometry Tactile Graphics Kit</a> (Microsoft Word document),
+          <a href="https://www.youtube.com/watch?v=BV9vm9mCBZE">YouTube video</a>,
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpUmgyLUlzUVBsa00">transcript of the YouTube video</a>.
+        </li>
+        <li id="accdoc-step-4-08">
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpQkVoNW5wLUVsV28">Creating Tactile Graphics Cooperatively</a> (Microsoft Word document),
+          <a href="https://www.youtube.com/watch?v=l-6bSkojags">YouTube video</a>,
+          <a href="https://drive.google.com/open?id=0B3USP1cTKEhpTDM2TUF2ZFZaSEU">transcript of the YouTube video</a>.
+        </li>
+        <!--
+        <li id="accdoc-step-4-10">
+          <a href=""></a>,
+          <a href=""></a>,
+          <a href=""></a>.
+        </li>
+        -->
+      </ul>
+
     </section>
   <!-- 
     <section id="accessible-gamification">
