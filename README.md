@@ -5,6 +5,8 @@ See the site at [cstrobbe.GitHub.io/AccessibilityResources/](http://cstrobbe.git
 
 ## Licence(s)
 
+Copyright: Christophe Strobbe, 2015 – 2018.
+
 Licence for the content: Creative Commons [CC BY-SA 4.0](LICENCE.html).
 
 Licence for the background image in the header
