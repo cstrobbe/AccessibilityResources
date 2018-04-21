@@ -23,6 +23,25 @@ a:hover, a:focus {
   text-decoration: underline;
 }
 
+blockquote {
+  margin-left: 0;
+  background-color: #98A8BF;
+  color: #000;
+  padding: 4px 12px;
+  border: 0.1px solid #98A8BF;
+  border-radius: 10px;
+}
+#introquote > p { font-size: 1.1rem; }
+blockquote cite {
+  color: #333;
+  font-size: 0.95rem;
+  display: block;
+  margin-top: 0.5rem;
+}
+blockquote cite:before {
+  content: "\2014 \2009";
+}
+
 header {
   padding: 0;
   background: #5583B5 50% 0 url('./StuttgartBib.jpg') repeat-x; /* old IE fallback */
@@ -124,6 +143,7 @@ h2 {
   font-family: 'Julius Sans One', 'Trebuchet MS', Verdana, sans-serif;
   font-size: 1.8em;
   font-weight: normal;
+  line-height: 1.3em;
 }
 
 p {
