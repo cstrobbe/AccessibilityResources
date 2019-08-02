@@ -5,7 +5,7 @@ See the site at [cstrobbe.GitHub.io/AccessibilityResources/](http://cstrobbe.git
 
 ## Licence(s)
 
-Copyright: Christophe Strobbe, 2015 – 2018.
+Copyright: Christophe Strobbe, 2015 – 2019.
 
 Licence for the content: Creative Commons [CC BY-SA 4.0](LICENCE.html).
 
@@ -24,4 +24,3 @@ in the pull request's description that they make their contribution available un
 
 How to clone this repository on the command line:
     `git clone https://github.com/cstrobbe/AccessibilityResources.git`
-
