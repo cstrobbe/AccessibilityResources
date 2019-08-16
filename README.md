@@ -1,6 +1,6 @@
 # Accessibility Resources
 
-Collection of links related to accessibility (web, mobile, games, ...). 
+Collection of links related to accessibility (web, mobile, desktop, games, ...).
 See the site at [cstrobbe.GitHub.io/AccessibilityResources/](http://cstrobbe.github.io/AccessibilityResources/).
 
 ## Licence(s)
