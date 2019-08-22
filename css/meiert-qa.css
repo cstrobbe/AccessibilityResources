@@ -18,17 +18,29 @@ limitations under the License.
 
 /* Deprecated elements */
 
+acronym,
 applet,
 basefont,
+bgsound,
+big,
+blink,
 center,
 dir,
 font,
+hgroup,
 isindex,
+listing,
+marquee,
 menu,
+nextid,
+noembed,
+plaintext,
 s,
 spacer,
 strike,
-u {
+tt,
+u,
+xmp {
   outline: 2px solid #900 !important;
 }
 
@@ -129,7 +141,7 @@ style:before {
 body:before {
   background: #fff8e7;
   color: #000;
-  content: 'QA check done \2713';
+  content: 'QA check done ✓';
   display: inline;
   font-weight: 700;
 }
@@ -137,5 +149,5 @@ body:before {
 /* Update indicator */
 
 body {
-  background-image: url(https://hell.meiert.org/core/png/qa-1.4.png) !important;
+  background-image: url(https://hell.meiert.org/core/png/qa-1.5.png) !important;
 }
