@@ -1,8 +1,11 @@
 *.bak
-*.marks
+*.draft
+*.bak.html
+*.css~
+*.css~*
 *.html~
 *.html~*
-*.css~*
-backups/CSSZenGarden_2014.7z
+*.js~*
+*.json~*
+*.marks
 *.md~*
-PlainLanguage-WCAG21.md
