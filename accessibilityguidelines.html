@@ -92,6 +92,31 @@
           <li>Lauke, Patrick:
             <a href="https://www.youtube.com/watch?v=I0tghv881ac">These aren't the <abbr>SC</abbr>s you're looking for ... (mis)adventures in <abbr>WCAG</abbr> 2.x interpretation and audits</a>
             (<i class="ytchannel">Patrick Lauke</i> on YouTube, 43 minutes, 04.01.2020).
+            <br />Video recording of a talk at
+            <a href="https://conf.a11yto.com/">#a11yTO Conf</a> in Toronto, 24.10.2019.
+            Patrick Lauke discusses a few success criteria that are often misinterpreted.
+            For example <abbr>SC</abbr> 2.4.6 does not require that a web page contains headings or that labels need to be correctly associated with form controls.
+            Success criterion 3.3.2 does not require that labels are correctly marked up using the <code>label</code> element or properly associated with from controls.
+            Success criterion 2.1.1 does not contain requirements related to which specific keys need to be used to operate something.
+            For example, a button emulated using an <code>a</code> element cannot be activated using the space bar, even though that is standard behaviour for a button, but would still pass <abbr>SC</abbr> 2.1.1.
+            Success criterion 3.2.3 is about the order of the navigation in relation to the rest of the page.
+            Success criterion 1.3.3 does not prohibit the use of colour, shapes etcetera in controls; however, instructions for using those controls must not exclusively rely on these characteristics.
+            <br />Patrick Lauke also discusses &ldquo;cascades of fail&rdquo;, <abbr>i.e.</abbr> when something fails several success criteria.
+            For example, a link containing only an image without an <code>alt</code> attribute fails multiple success criteria. Auditors within the same organisation need to rate this consistently.
+            <!--A &ldquo;speculative cascade of fail&rdquo;-->
+            <br /><abbr>WAG</abbr> is not perfect. Some success criteria appear to be subjective.
+            For example, what is &ldquo;equivalent purpose&rdquo; in <abbr>SC</abbr> 1.1.1? What is &ldquo;conveyed by the presentation&rdquo; in <abbr>SC</abbr> 1.3.1?
+            What is descriptive enough for <abbr>SC</abbr> for 2.4.6?
+            <br />Some success criteria have loopholes.
+            For example, what does &ldquo;visible&rdquo; mean in <abbr>SC</abbr> 2.4.7? According to the letter of the success criterion, a single pixel with a faint colour, would pass.
+            <abbr>WCAG</abbr> 2.1 tried to patch loopholes by adding new <abbr>SC</abbr>s instead of modifying existing ones.
+            <abbr>SC</abbr> 1.4.11 is meant to patch a loophole in <abbr>SC</abbr> 2.4.7, since it applies to the focus state of components, but a single pixel used as a focus indicator would still pass.
+            It also does not cover the contrast between the focused and the unfocused state of controls.
+            <a href="https://www.w3.org/TR/WCAG20-TECHS/F73.html">Failure F73</a> tries to close another loophole by redefining &ldquo;colour&rdquo; in non-normative text.
+            <br />Some success criteria are overly specific and apply only in very specific situations.
+            For example, <abbr>SC</abbr> 1.4.10 (Reflow) is meant to help low-vision users who need to zoom in and should not need to scroll both horizontally and vertically,
+            and also specifies a width in <abbr>CSS</abbr> pixels.
+            <!--35:xx--><abbr>SC</abbr> 1.4.12 (Text spacing) is so specific that it does not always apply.
             <br />See also the
             <a href="https://patrickhlauke.github.io/wcag-interpretation/">slides for &ldquo;These aren't the <abbr>SC</abbr>s you're looking for&hellip;&rdquo;</a>.
             <!--Also on slideshare: https://www.slideshare.net/redux/these-arent-the-scs-youre-looking-for-misadventures-in-wcag-2x-interpretation-and-audits-a11yto-24-october-2019
