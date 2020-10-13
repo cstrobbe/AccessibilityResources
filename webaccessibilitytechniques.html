@@ -588,44 +588,10 @@
           <a href="https://meiert.com/en/blog/breadcrumbs-in-html/">The Curious Case of Breadcrumbs in <abbr>HTML</abbr></a>,
           <i class="blog">Meiert.com</i>, 03.10.2013, revised 12.12.2016.
         </li>
-        <li>Bailey, Eric:
-          <a href="https://css-tricks.com/focusing-on-focus-styles/">Focusing on Focus Styles</a>,
-          <i class="websites"><abbr>CSS</abbr>-Tricks</i>, 29.03.2018.
-          <br />This article discusses <code>:focus</code>, <code>:focus-within</code>,
-          <code>:focus-visible</code> and why removing focus styles causes problems for certain groups of users.
-          The article contains two videos: one of a person using switch control and
-          one showing why a colour-only state change would be inaccessible to people with deuteranopia.
-        </li>
-        <li>Smith, Jared:
-          <a href="https://webaim.org/blog/plague-of-outline-0/">The plague of outline:0</a>,
-          <i class="blog">Web<abbr>AIM</abbr> blog</i>, 07.04.2008.
-        </li>
-        <li>Fields, Jeremy:
-          <a href="https://www.viget.com/articles/managing-focus-styles-without-breaking-accessibility/">Managing :focus styles without breaking accessibility</a>,
-          <i class="website">Viget</i>, 09.07.2014.
-        </li>
-        <li>Geier, Caitlin:
-          <a href="https://www.deque.com/blog/give-site-focus-tips-designing-usable-focus-indicators/">Give Your Site Some Focus! Tips for Designing Useful and Usable Focus Indicators</a>,
-          <i class="blog">Deque blog</i>, 29.06.2016.
-          This article is also relevant to keyboard focus in form fields.
-        </li>
         <li>Wild, Gian:
           <a href="https://www.accessibilityoz.com/2014/02/links-and-accessibility/">Links and accessibility</a>,
           <i class="website">AccessibilityOZ</i> (no date).
           <br />Partly republished on <a href="https://www.sitepoint.com/15-rules-making-accessible-links/" title="'Making Accessible Links' on SitPoint">SitePoint</a> (20.02.2014).
-        </li>
-        <li>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible">:focus-visible</a>,
-          <i class="website"><abbr>MDN</abbr></i>, 02.07.2018.
-          <br />Focus visibility is relevant both to links and to user interface components.
-          This article focuses on form elements and custom elements.
-        </li>
-        <li>Ott, Matthias:
-          <a href="https://matthiasott.com/notes/focus-visible-is-here"><code>:focus-visible</code> Is Here</a>,
-          <i class="blog">Matthias Ott</i>, 10.10.2020.
-          <br />This is an introduction to the
-          <a href="https://drafts.csswg.org/selectors-4/#the-focus-visible-pseudo"><code>:focus-visible</code> pseudo-class introduced in <abbr>CSS</abbr> Selectors Level 4</a>.
-          <!--@@recheck CSSWG link once CSS Selectors Level 4 has reached W3C Rec status.-->
         </li>
         <li>Sethfors, Hampus:
           <a href="https://axesslab.com/skip-links/">Your skip links are broken</a>,
@@ -1951,9 +1917,51 @@
           <a href="https://theblog.adobe.com/best-practices-for-prototyping-keyboard-accessibility/">Best Practices for Prototyping Keyboard Accessibility</a>,
           <i class="blog">Adobe Blog</i>, 24.07.2019.
         </li>
+      </ul>
+
+      <p>Keyboard focus:</p>
+      <ul>
         <li>Lauke, Patrick H.:
           <a href="https://developer.paciellogroup.com/blog/2018/03/focus-visible-and-backwards-compatibility/"><code>:focus-visible</code> and backwards compatibility</a>,
           <i class="blog">The Paciello Group blog</i>, 23.03.2018.
+          <br />Quote:
+          <q>When authors define explicit <code>:focus</code> styles, however, these browser heuristics are ignored.
+          <code>:focus</code> styles are applied whenever the element receives focus, whether it was as a result of a keyboard or mouse/pointer interaction.</q>
+          The <code>:focus-visible</code> pseudo-selector gets around this.
+        </li>
+        <li>Bailey, Eric:
+          <a href="https://css-tricks.com/focusing-on-focus-styles/">Focusing on Focus Styles</a>,
+          <i class="websites"><abbr>CSS</abbr>-Tricks</i>, 29.03.2018.
+          <br />This article discusses <code>:focus</code>, <code>:focus-within</code>,
+          <code>:focus-visible</code> and why removing focus styles causes problems for certain groups of users.
+          The article contains two videos: one of a person using switch control and
+          one showing why a colour-only state change would be inaccessible to people with deuteranopia.
+        </li>
+        <li>Smith, Jared:
+          <a href="https://webaim.org/blog/plague-of-outline-0/">The plague of outline:0</a>,
+          <i class="blog">Web<abbr>AIM</abbr> blog</i>, 07.04.2008.
+        </li>
+        <li>Fields, Jeremy:
+          <a href="https://www.viget.com/articles/managing-focus-styles-without-breaking-accessibility/">Managing :focus styles without breaking accessibility</a>,
+          <i class="website">Viget</i>, 09.07.2014.
+        </li>
+        <li>Geier, Caitlin:
+          <a href="https://www.deque.com/blog/give-site-focus-tips-designing-usable-focus-indicators/">Give Your Site Some Focus! Tips for Designing Useful and Usable Focus Indicators</a>,
+          <i class="blog">Deque blog</i>, 29.06.2016.
+          This article is also relevant to keyboard focus in form fields.
+        </li>
+        <li>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible">:focus-visible</a>,
+          <i class="website"><abbr>MDN</abbr></i>, 02.07.2018.
+          <br />Focus visibility is relevant both to links and to user interface components.
+          This article focuses on form elements and custom elements.
+        </li>
+        <li>Ott, Matthias:
+          <a href="https://matthiasott.com/notes/focus-visible-is-here"><code>:focus-visible</code> Is Here</a>,
+          <i class="blog">Matthias Ott</i>, 10.10.2020.
+          <br />This is an introduction to the
+          <a href="https://drafts.csswg.org/selectors-4/#the-focus-visible-pseudo"><code>:focus-visible</code> pseudo-class introduced in <abbr>CSS</abbr> Selectors Level 4</a>.
+          <!--@@recheck CSSWG link once CSS Selectors Level 4 has reached W3C Rec status.-->
         </li>
       </ul>
 
