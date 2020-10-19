@@ -324,6 +324,10 @@
           <br />According to this page, screen reader support for the elements
           <code>fieldset</code> and <code>legend</code> is still not ideal.
         </li>
+        <li>Garaventa, Bryan:
+          <a href="https://www.levelaccess.com/how-browsers-interact-with-screen-readers-and-where-aria-fits-in-the-mix/">How Browsers Interact with Screen Readers and Where <abbr>ARIA</abbr> Fits in the Mix</a>,
+          <i class="website">Level Access</i>, 02.01.2013.
+        </li>
         <li>Faulkner, Steve:
           <a href="https://developer.paciellogroup.com/blog/2007/11/fieldsets-legends-and-screen-readers/">Fieldsets, Legends and Screen Readers</a>,
           <i class="blog">Paciello Group blog</i>, 22.11.2007.
@@ -817,6 +821,12 @@
         <li>Pickering, Heydon:
           <a href="https://inclusive-components.design/data-tables/">Data Tables</a>,
           <i class="website">Inclusive Components</i>, 31.03.2018.
+          (This article also discusses responsive tables.)
+        </li>
+        <li>
+          <a href="https://webaim.org/techniques/tables/data">Creating Accessible Tables &mdash; Page 2: Data Tables</a>,
+          <i class="website">Web<abbr>AIM</abbr></i>, last updated on 18.09.2017.
+          (This article does not cover responsive tables.)
         </li>
         <li>Faulkner, Steve:
           <a href="https://developer.paciellogroup.com/blog/2019/01/short-note-on-scoping-mechanisms/">Short note on scoping mechanisms</a>,
@@ -853,12 +863,22 @@
           <i class="website">PowerMapper</i>, 20.05.2018.
         </li>
         <li>Roselli, Adrian:
-          <a href="https://adrianroselli.com/2019/02/f87-css-generated-content-and-wcag-conformance.html">F87: <abbr>CSS</abbr> Generated Content and WCAG Conformance</a>,
+          <a href="https://adrianroselli.com/2019/02/f87-css-generated-content-and-wcag-conformance.html">F87: <abbr>CSS</abbr> Generated Content and <abbr>WCAG</abbr> Conformance</a>,
           <i class="blog">Adrian Roselli</i>, 24.02.2019.
         </li>
         <li>Faulkner, Steve:
           <a href="https://codepen.io/stevef/post/super-short-note-on-css-text">Super short note on <abbr>CSS</abbr> text</a>,
           <i class="website">CodePen</i>, 22.07.2019.
+        </li>
+        <li>Roselli, Adrian:
+          <a href="https://adrianroselli.com/2020/10/alternative-text-for-css-generated-content.html">Alternative Text for <abbr>CSS</abbr> Generated Content</a>,
+          <i class="blog">Adrian Roselli</i>, 13.10.2020.
+          <br />The
+          <a href="https://drafts.csswg.org/css-content-3/">September 2020 draft of <abbr>CSS</abbr> Generated Content Module Level 3</a>
+          allows authors to specify a text alternative for an image inserted as <abbr>CSS</abbr>-generated content.
+          This relies on code such as
+          <code>.oneStar::before { content: url(./img/star1.gif) / "One star!"; }</code>.
+          Mid October 2020, browser support for this mechanism is only available in Chrome and other Chromium-based browsers.
         </li>
       </ul>
     </section>
@@ -1300,25 +1320,10 @@
           <a href="https://monzo.com/tone-of-voice/">Our tone of voice</a>,
           <i class="website">Monzo</i> (no date).
         </li>
-        <li>Fass, Simone:
-          <a href="https://simonefass.de/2018/04/22/mehr-barrierefreiheit-im-grafikdesign/" hreflang="de" lang="de">Mehr Barrierefreiheit im Grafikdesign</a>,
-          <i class="blog">Simone Fass</i>, 22.04.2018.
-          The article mentions a few font faces that are good for accessibility: Open Sans, Fira Sans and Neue Frutiger 1450.
+        <li>
+          <a href="https://www.wyliecomm.com/2019/02/readability-formulas/">Measure clarity with readability formulas: How to use Flesch-Kincaid, Gunning Fog indexes</a>,
+          <i class="website">Wylie Communications</i> (no date).
         </li>
-        <li>Fass, Simone:
-          <a href="https://simonefass.de/2017/06/07/leichte-sprache-grundlagen-und-diskussion/" hreflang="de" lang="de">Leichte Sprache: Grundlagen und Diskussion</a>
-          <i class="blog">Simone Fass</i>, 07.06.2017.
-        </li>
-        <li><span lang="de">Bundesministerium für Arbeit und Soziales:
-          <a href="https://www.bmas.de/DE/Service/Medien/Publikationen/a752-leichte-sprache-ratgeber.html" hreflang="de">Leichte Sprache - Ein Ratgeber</a>
-          (April 2014)</span>.<!--@@download-->
-        </li>
-        <li><span lang="de">Kellermann, Gudrun:
-          <a href="http://www.bpb.de/apuz/179341/leichte-und-einfache-sprache-versuch-einer-definition" hreflang="de">Leichte und Einfache Sprache – Versuch einer Definition</a>,
-          <i class="website">Bundeszentrale für politische Bildung</i></span>, 19.02.2014.
-        </li>
-        <!--@@ https://german.stackexchange.com/questions/32312/equivalent-of-globish-in-german -->
-        <!--@@ http://kiw.hs-merseburg.de/index.php/2018/04/06/barrierefreie-typografie-mobil-eine-app-fuer-barrierefreies-design/ -->
         <li>
           <a href="https://easy-to-read.eu/">Easy-to-Read: European Easy-to-Read Guidelines</a>.
         </li>
@@ -1335,6 +1340,20 @@
       </ul>
       <p>Readability of web content in German:</p>
       <ul>
+        <li><span lang="de">Bundesministerium für Arbeit und Soziales:
+          <a href="https://www.bmas.de/DE/Service/Medien/Publikationen/a752-leichte-sprache-ratgeber.html" hreflang="de">Leichte Sprache - Ein Ratgeber</a>
+          (April 2014)</span>.<!--@@download-->
+        </li>
+        <li><span lang="de">Kellermann, Gudrun:
+          <a href="http://www.bpb.de/apuz/179341/leichte-und-einfache-sprache-versuch-einer-definition" hreflang="de">Leichte und Einfache Sprache – Versuch einer Definition</a>,
+          <i class="website">Bundeszentrale für politische Bildung</i></span>, 19.02.2014.
+        </li>
+        <!--@@ https://german.stackexchange.com/questions/32312/equivalent-of-globish-in-german -->
+        <!--@@ http://kiw.hs-merseburg.de/index.php/2018/04/06/barrierefreie-typografie-mobil-eine-app-fuer-barrierefreies-design/ -->
+        <li>Fass, Simone:
+          <a href="https://simonefass.de/2017/06/07/leichte-sprache-grundlagen-und-diskussion/" hreflang="de" lang="de">Leichte Sprache: Grundlagen und Diskussion</a>
+          <i class="blog">Simone Fass</i>, 07.06.2017.
+        </li>
         <li><span lang="de">Morsbach, Jörg:
           <a href="https://www.fronta11y.org/leichte-sprache-schwere-sprache/" hreflang="de">Leichte Sprache – schwere Sprache</a>,
           <i class="website">Fronta11y</i></span>, 16.05.2019.
@@ -1448,6 +1467,11 @@
             </ol>
           </blockquote>
           (The <a href="https://thereadability.group/">Readability Group</a>'s website uses the font face Lustria.)
+        </li>
+        <li>Fass, Simone:
+          <a href="https://simonefass.de/2018/04/22/mehr-barrierefreiheit-im-grafikdesign/" hreflang="de" lang="de">Mehr Barrierefreiheit im Grafikdesign</a>,
+          <i class="blog">Simone Fass</i>, 22.04.2018.
+          The article mentions a few font faces that are good for accessibility: Open Sans, Fira Sans and Neue Frutiger 1450.
         </li>
         <li>Haley, Allan:
           <a href="https://www.fonts.com/content/learning/fontology/level-4/fine-typography/legibility">It’s About Legibility</a>,
@@ -1645,6 +1669,7 @@
         </li>
         <!--Example of scrolling background, 28.10.2019, movement no longer active on 30.09.2020.:
           https://www.humblebundle.com/books/linux-bsd-bookshelf-2019-books
+          Example of animation / background animation that plays automatically (14.10.2020): https://www.gwendolynbrooks.net/
         -->
         <li>Bailey, Eric:
           <a href="https://css-tricks.com/introduction-reduced-motion-media-query/">An Introduction to the Reduced Motion Media Query</a>,
