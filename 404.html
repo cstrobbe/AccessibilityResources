@@ -14,6 +14,17 @@ permalink: /404.html
   <link rel="index" href="/index.html" /><!-- index rel, listed in HTML5 link type extensions: http://microformats.org/wiki/existing-rel-values#HTML5_link_type_extensions -->
   <meta name="robots" content="noindex, nofollow" />
   <meta name="googlebot" content="noindex, nofollow" />
+  <base id="base-url" url="http://cstrobbe.github.io/AccessibilityResources/" />
+  <script language="javascript">
+    let baseElem = document.getElementById("base-url");
+    let currentUrl = document.URL;
+    let onGithub = currentUrl.includes("cstrobbe.github.io");
+    //console.log("Base URL = " + baseElem.getAttribute("url") + " Document URL = " + currentUrl);
+    //console.log("currentUrl includes cstrobbe.github.io: " + onGithub );
+    if (!onGithub) {
+      baseElem.parentNode.removeChild(baseElem);
+    }
+  </script>
 </head>
 <body id="error404">
   <header>
