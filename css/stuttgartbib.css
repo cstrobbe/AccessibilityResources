@@ -42,7 +42,7 @@ blockquote cite:before {
   content: "\2014 \2009";
 }
 
-header {
+header, div.header {
   padding: 0;
   background: #5583B5 50% 0 url('./StuttgartBib.jpg') repeat-x; /* old IE fallback */
   background-position: left;
@@ -173,7 +173,7 @@ pre code strong {
   font-weight: bolder;
 }
 
-footer {
+footer, div.footer {
   border: 1px solid #51739C;
   border-left: 20px solid #51739C;
   padding-left: 10px;
