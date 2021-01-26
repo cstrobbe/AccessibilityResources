@@ -9,3 +9,5 @@
 *.json~*
 *.marks
 *.md~*
+*.html~
+*.xhtml~*
