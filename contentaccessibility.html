@@ -782,19 +782,15 @@
         <q><em>Able Player</em> is a fully accessible cross-browser media player. It uses
         the HTML5 <code>&lt;audio&gt;</code> or <code>&lt;video&gt;</code> element for browsers that support them,
         and (optionally) the JW Player as a fallback for those that don’t.</q>
+        (<a href="https://www.jwplayer.com/">JW Player</a> is available under various pricing models.)
         It also supports YouTube videos (if you provide a YouTube Data <abbr>API</abbr> key). 
         For captions, it supports the Web<abbr>VTT</abbr> format.
-        (<a href="https://www.jwplayer.com/">JW Player</a> is available under various pricing models.)
-        See also
+        Audio descriptions are supported either using the <abbr>VTT</abbr> format (<abbr>i.e.</abbr> a text-based file)
+        or by providing an extra video file:
+        <q>When two videos are available (one with description and one without), both can be delivered together using the same player and users can toggle between the versions.</q>
+        (Accessed 12.02.2021.)
+        <br />See also
         <a href="https://github.com/ableplayer/ableplayer">Able Player's source code repository on GitHub</a>.
-        The code is available under the <abbr>MIT</abbr> licence.
-      </li>
-      <li>
-        <a href="https://plyr.io/">Plyr</a>:
-        <q>A simple, accessible <abbr>HTML</abbr>5 media player by <a href="https://twitter.com/sam_potts">@sam_potts</a> from <a href="https://twitter.com/selz">@selz</a></q>.
-        This is a player for both video files and for videos streamed from YouTube or Vimeo.
-        For captions, it supports the <abbr>VTT</abbr> format. See the
-        <a href="https://github.com/selz/plyr">source code repository on GitHub</a>.
         The code is available under the <abbr>MIT</abbr> licence.
       </li>
       <li>
@@ -805,19 +801,38 @@
         For Vimeo videos, you will need the plugin
         <a href="https://github.com/videojs/videojs-vimeo">videojs-vimeo</a>.
         Video.js itself is available under the Apache License 2.0; the two plugins are available under the <abbr>MIT</abbr> License.
-        <br />See also the blog post 
+        The
+        <a href="https://github.com/ICTASolutions/videojs-described-video">Described Video plugin for videojs</a>
+        adds a button to the Video.js player that allows users to switch between different versions of a video.
+        <br />See also the blog post
         <a href="https://www.3playmedia.com/blog/video-jss-approach-to-video-player-accessibility/">Video.js&#039;s Approach to Video Player Accessibility</a>
-        (<i class="blog">3PlayMedia blog</i>, 30.04.2015).
+        (<i class="blog">3PlayMedia blog</i>, 30.04.2015, updated on 03.06.2019).
       </li>
-      <li>Nomensa:
-        <a href="https://github.com/nomensa/Accessible-Media-Player">Accessible Media Player</a>.
-        The code is available under the <abbr lang="en-US" title="GNU General Public License">GPL</abbr> version 3 licence.
+      <li>
+        <a href="https://plyr.io/">Plyr</a>:
+        <q>A simple, accessible <abbr>HTML</abbr>5 media player by <a href="https://twitter.com/sam_potts">@sam_potts</a> from <a href="https://twitter.com/selz">@selz</a></q>.
+        This is a player for both video files and for videos streamed from YouTube or Vimeo.
+        For captions, it supports the <abbr>VTT</abbr> format. See the
+        <a href="https://github.com/selz/plyr">source code repository on GitHub</a>.
+        The code is available under the <abbr>MIT</abbr> licence.
       </li>
       <li>PayPal:
         <a href="https://github.com/paypal/accessible-html5-video-player">Accessible <abbr>HTML</abbr>5 Video Player</a>.
         It requires direct links to video files; it does not work with links to YouTube or Vimeo videos.
         For captions, it supports the <abbr>VTT</abbr> format.
+        For audio description, it appears to provide support only through a <abbr>VTT</abbr> descriptions track
+        (see <a href="https://github.com/paypal/accessible-html5-video-player/pull/125/files#diff-eaf9c01c6072cc88add5de8ec378c233R386">pull request #125: Multiple Text Track Support</a>).
         The code is available under the <abbr>BSD</abbr> 3-clause licence.
+      </li>
+      <li>
+        <a href="https://source.ind.ie/project/video-player">Universal Video Player</a>
+        is an accessible video player with support for captions and screen reader accessibility.
+        The code has not been updated since 2016.
+      </li>
+      <li>Nomensa:
+        <a href="https://github.com/nomensa/Accessible-Media-Player">Accessible Media Player</a>.
+        The code is available under the <abbr lang="en-US" title="GNU General Public License">GPL</abbr> version 3 licence
+        but has not been updated since 2015. (Accessed 12.02.2021.)
       </li>
       <!--<li><del datetime="2020-11-08">Vision Australia:
         <a href="http://www.visionaustralia.org/digital-access-youtube">Accessible YouTube player</a>.
