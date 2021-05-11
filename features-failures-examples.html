@@ -55,7 +55,7 @@
     </p>
     <section>
       <h2>Pages Featuring Various Accessibility Issues</h2>
-      <p>Low contrast:</p>
+      <h3>Low Contrast</h3>
       <ul>
         <li>Yellow text on white background (button in cookie pop-up), white text on yellow background (breadcrumb trail):
           <a href="https://rp-online.de/politik/deutschland/bundesrechnungshof-kritisiert-krankenhausplanung-und-fordert-grundgesetzaenderung_aid-53386317" hreflang="de" lang="de">Immer mehr Krankenhäusern droht Insolvenz</a>
@@ -103,29 +103,21 @@
           <br />Light gray text on a white background.
         </li>
       </ul>
-      <p>Frames:</p>
+
+      <h3>Nested Tables</h3>
       <ul>
         <li>
-          <a href="https://docs.oracle.com/javase/7/docs/api/">Java™ Platform, Standard Edition 7 <abbr>API</abbr> Specification: Overview (Java Platform <abbr>SE</abbr> 7)</a>
-          (generated with javadoc; last accessed 24.01.2021).
+          <a href="https://www.itu.int/rec/T-REC-V.18/en">V.18 : Operational and interworking requirements for DCEs operating in the text telephone mode</a>,
+          <i class="website">International Telecommunications Union (<abbr>ITU</abbr>)</i> (accessed on 17.03.2021).
         </li>
         <li>
-          <a href="https://help.eclipse.org/2020-09/index.jsp">Eclipse documentation</a>
-          (outdated version; last accessed 24.01.2021).
-        </li>
-        <li>
-          <a href="http://www.rilke.de/index.html" hreflang="de" lang="de">rilke.de</a> (last accessed 24.01.2021).
-        </li>
-        <li>
-          <a href="http://www.enenuru.net/html/main_html/mainframe.htm">enenuru.net</a> (last accessed 24.01.2021).
-        </li>
-        <li>
-          <a href="http://titus.fkidg1.uni-frankfurt.de/indexe.htm" hreflang="de" lang="de"><abbr>TITUS</abbr>: Thesaurus Indogermanischer Text- und Sprachmaterialien</a>.
-        </li>
-        <li><a href="http://www.wereldbibliotheek.nl/" hreflang="nl" lang="nl">Wereldbibliotheek</a> (accessed on 22.03.2021).
+          <a href="https://www.itu.int/rec/T-REC-G.722/e">G.722 : 7 kHz audio-coding within 64 kbit/s</a>,
+          <i class="website">International Telecommunications Union (<abbr>ITU</abbr>)</i> (accessed on 17.03.2021).
         </li>
       </ul>
-      <p>Animated background:</p>
+
+      <h3>Animations and Animated Background</h3>
+      <p>These animations constitute an issue because they run longer than a few seconds and cannot be paused or hidden by the users.</p>
       <ul>
         <li>
           <a href="https://myprobe.de/">Myprobe</a>: animated background using an <code>iframe</code> that loads a page containing a <code>canvas</code> element.
@@ -150,18 +142,18 @@
           <a href="https://www.ethicalsystems.org/">Ethical Systems</a> (last accessed 24.01.2021).
         </li>
         <li>Animated logo (top left) and e-mail image (bottom centre):
-          <a href="http://axl.cefan.ulaval.ca/index.html" hreflang="fr" lang="fr">L'aménagement linguistique dans le monde: page d'accueil</i>
+          <a href="http://axl.cefan.ulaval.ca/index.html" hreflang="fr" lang="fr">L'aménagement linguistique dans le monde: page d'accueil</a>
         </li>
         <li><a href="http://www.maupassantiana.fr/Filmographie/Maupassant%20passeur%20d'images.htm" hreflang="fr" lang="fr">Maupassant, le passeur d’images</a>.
           (Animated GIF at the bottom; web page created with "Microsoft Word 11. Accessed on 12.04.2021.)
         </li>
       </ul>
-      <p>Flashes:</p>
+      <h3>Flashes or Flashing Content</h3>
       <ul>
         <li><a href="https://www.theyuniversity.net/usefulidioms">Useful Idioms</a>,
         <i class="website">The YUNiversity</i>: flashes in the image for the idiom &ldquo;put out the fire&rdquo; (accessed on 09.04.2021).
       </ul>
-      <p>Autoplaying video (with audio):</p>
+      <h3>Autoplaying Video (with Audio)</h3>
       <ul>
         <li><a href="https://getadacomply.com/">AdaComply</a>:
           automatically playing video that warns against
@@ -169,33 +161,68 @@
           Other accessibility issues on this page include empty heading elements, and images with the the attribute <code>alt="Default Alt Tag for this page"</code>.
         </li>
       </ul>
-      <p>Invisible keyboard focus:</p>
+      <h3>Invisible or Barely Visible Keyboard Focus</h3>
       <ul>
         <li>
           <a href="https://www.skulima.de/" hreflang="de" lang="de">SKULIMA Wissenschaftliche Versandbuchhandlung</a>:
           the fly-out menus on the left don't open on keyboard focus but can be tabbed through. Since the menus remain closed, the keyboard focus is invisible inside the menus.
         </li>
+        <li><a href="http://www.worldofdante.org/">World of Dante</a>:
+          <code>dl</code> element (with <code>id="imap"</code>) that uses a background image; inside this list,
+          the <code>dt</code> element contains an absolute positioned <code>a</code> element with a background image.
+        </li>
       </ul>
-      <p>Live updates:</p>
+      <h3>Live Updates</h3>
       <ul>
         <li>
           <a href="https://markets.businessinsider.com/news/stocks/china-ranked-96th-out-of-100-countries-in-covid-data-transparency-index-1029959305?op=1">China ranked 96th out of 100 countries in Covid data transparency index</a>,
           <i class="Markets Insider"></i>, 12.01.2021. See the live updates on futures, gold and oil at the top of the page.
         </li>
       </ul>
-      <p>Linktext that is not meaningful:</p>
+      <h3>Linktext That Is Not Meaningful</h3>
       <ul>
         <li><a href="https://www.halleonardbooks.com/">Hal Leonard</a>:
           <q>If you're looking for Backbeat Books, Amadeus Press, Applause Theatre &amp; Cinema Books, or Limelight Editions, <a href="https://rowman.com/" target="_blank">click here</a>.</q>
         </li>
       </ul>
-      <p>Invisible or barely visible tab focus:</p>
+
+      <h3>Frames</h3>
+      <p>Frames, implemented using the elements
+        <a href="https://www.w3.org/TR/html401/present/frames.html#edef-FRAMESET"><code>frameset</code></a> and
+        <a href="https://www.w3.org/TR/html401/present/frames.html#edef-FRAME"><code>frame</code></a>,
+        were once of feature of <abbr>HTML</abbr> 4.
+        <a href="https://www.w3.org/TR/html50/obsolete.html#non-conforming-features"><abbr>HTML</abbr> 5.0 declared these elements non-conforming</a>,
+        but they don't necessarily consitute of violation of <abbr>WCAG</abbr> 2.0 or 2.1.
+      </p>
       <ul>
-        <li><a href="http://www.worldofdante.org/">World of Dante</a>:
-        <code>dl</code> element (with <code>id="imap"</code>) that uses a background image; inside this list,
-        the <code>dt</code> element contains an absolute positioned <code>a</code> element with a background image.
+        <li>
+          <a href="https://docs.oracle.com/javase/7/docs/api/">Java™ Platform, Standard Edition 7 <abbr>API</abbr> Specification: Overview (Java Platform <abbr>SE</abbr> 7)</a>
+          (generated with javadoc; last accessed 24.01.2021).
+        </li>
+        <li>
+          <a href="https://help.eclipse.org/2020-09/index.jsp">Eclipse documentation</a>
+          (outdated version; last accessed 24.01.2021).
+        </li>
+        <li>
+          <a href="http://www.rilke.de/index.html" hreflang="de" lang="de">rilke.de</a> (last accessed 24.01.2021).
+        </li>
+        <li>
+          <a href="http://www.enenuru.net/html/main_html/mainframe.htm">enenuru.net</a> (last accessed 24.01.2021).
+        </li>
+        <li>
+          <a href="http://titus.fkidg1.uni-frankfurt.de/indexe.htm" hreflang="de" lang="de"><abbr>TITUS</abbr>: Thesaurus Indogermanischer Text- und Sprachmaterialien</a>.
+        </li>
+        <li><a href="http://www.wereldbibliotheek.nl/" hreflang="nl" lang="nl">Wereldbibliotheek</a> (accessed on 22.03.2021).
+        </li>
       </ul>
-      <p>Marquee:</p>
+
+      <h3>Marquee</h3>
+      <p>The <code>marquee</code> element was never part of
+        <a href="https://www.w3.org/TR/2018/SPSD-html32-20180315/"><abbr>HTML</abbr> 3.2</a> or
+        <a href="https://www.w3.org/TR/html401/"><abbr>HTML</abbr> 4.01</a>, and
+        <a href="https://www.w3.org/TR/html50/obsolete.html#the-marquee-element-0"><abbr>HTML</abbr> 5.0 listed <code>marquee</code> as obsolete</a>.
+        Nevertheless, the element is still supported by browsers and can still be found on current websites.
+      </p>
       <ul>
         <li>
           <a href="https://www.bundesregierung.de/breg-de/themen/coronavirus" hreflang="de" lang="de">Coronavirus in Deutschland</a>,
@@ -241,17 +268,6 @@
           marquee in the page header (<span lang="de">&laquo;Aktuell&rquo;) (access on 05.04.2021).
         </li>
       </ul>
-      <p>Nested tables:</p>
-      <ul>
-        <li>
-          <a href="https://www.itu.int/rec/T-REC-V.18/en">V.18 : Operational and interworking requirements for DCEs operating in the text telephone mode</a>,
-          <i class="website">International Telecommunications Union (<abbr>ITU</abbr>)</i> (accessed on 17.03.2021).
-        </li>
-        <li>
-          <a href="https://www.itu.int/rec/T-REC-G.722/e">G.722 : 7 kHz audio-coding within 64 kbit/s</a>,
-          <i class="website">International Telecommunications Union (<abbr>ITU</abbr>)</i> (accessed on 17.03.2021).
-        </li>
-      </ul>
       <!--Example pages:
         * with old-fashioned pop-up menu: http://www.alanwood.net/unicode/cjk_unified_ideographs.html
         * noscript element (visible with NoScript enabled in the browser): http://www.apress.com/us/book/9781484219157 & https://communities.ca.com/ideas/235735203 etc etc.
@@ -269,6 +285,7 @@
 
     <section>
       <h2>Pages Featuring Various Accessibility Features or Tools</h2>
+      <p>Externally developed toolbars or overlays:</p>
       <ul>
         <li>
           <a href="https://www.atbar.org/"><abbr>AT</abbr>bar</a>: developed at the University of Southampton.
@@ -281,16 +298,19 @@
             <li>
               <a href="https://www.gmb.org.uk/accessibility-tools">Accessibility tools (<abbr>GMB</abbr> Union)</a> (resize-font icon to the left of the social media links).
             </li>
+            <li>
+              <a href="https://accessibe.com/product">accessiBe</a>.
+              Commercial product. Note that its claim of full compliance is contradicted by the fact that making a website accessible is not a process that can be fully automated.
+            </li>
           </ul>
         </li>
+      </ul>
+      <p>Widgets for contrast, background colour, font size or a combination of these:</p>
+      <ul>
         <li>
           <a href="https://acb.org/adp/">The Audio Description Project</a>,
           <i class="website">American Council of the Blind</i> (no date; accessed on 23.03.2021).
           <br />This site has a widget for &ldquo;Larger Font&rdquo;, &ldquo;Reverse Colors&rdquo; and &ldquo;Large Font, Reverse&rdquo;.
-        </li>
-        <li>
-          <a href="https://accessibe.com/product">accessiBe</a>.
-          Commercial product. Note that its claim of full compliance is contradicted by the fact that making a website accessible is not a process that can be fully automated.
         </li>
         <li>Setting a different background colour (for dyslexia or Irlen synrome):
           <ul>
