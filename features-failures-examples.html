@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en-GB" xml:lang="en-GB" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <title>Examples of Failures and Features | Accessibility Resources</title>
+  <link rel="stylesheet" type="text/css" media="screen" href="css/stuttgartbib.css" title="default" />
+  <link rel="alternate stylesheet" type="text/css" media="screen" href="css/verdemoderna.css" title="alternative stylesheet (green)" />
+  <link rel="alternate stylesheet" type="text/css" media="screen" href="css/meiert-qa.css" title="QA stylesheet" />
+  <link rel="index" href="index.html" /><!-- index rel, listed in HTML5 link type extensions: http://microformats.org/wiki/existing-rel-values#HTML5_link_type_extensions -->
+  <link rel="top" href="index.html" title="Accessibility Resources home page" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="googlebot" content="noindex, nofollow" />
+</head>
+
+<body>
+  <header>
+    <h1><span class="h1txt">Examples of Failures and Features</span></h1>
+  </header>
+
+  <nav>
+    <h2>Navigation</h2>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="designforall.html">Design for All</a></li>
+      <li><a href="personas.html">Personas</a></li>
+      <li><a href="WebAppAccessibilityResources.html">Web Applications</a></li>
+      <li><a href="webaccessibilitytechniques.html">Web Accessibility Techniques</a></li>
+      <li><a href="WebAccessibilityTools.html">Web Accessibility Tools</a></li>
+      <li><a href="elearning.html">Accessibility in e-Learning</a></li>
+      <li><a href="contentmanagement.html">Content Management Systems</a></li>
+      <li><a href="MobileAccessibilityResources.html">Mobile Accessibility</a></li>
+      <li><a href="LinuxAccessibilityResources.html">Linux Accessibility</a></li>
+      <li><a href="GUIAccessibilityResources.html"><abbr>GUI</abbr> Toolkit Accessibility</a></li>
+      <li><a href="accessibilityguidelines.html">Accessibility Guidelines </a></li>
+      <li><a href="contentaccessibility.html">Content Accessibility</a></li>
+      <li><a href="GameAccessibilityResources.html">Game Accessibility</a></li>
+      <li><a href="crowdsourcing.html" title="Crowdsourcing &amp; Human-Based Computation">Crowdsourcing</a></li>
+      <li><a href="assistivetechnology.html">Assistive Technology</a></li>
+      <li><a href="tts.html"><abbr title="Text-to-speech software">TTS</abbr></a></li>
+      <li><a href="accessibilityforusers.html">Accessibility for Computer Users</a></li>
+      <li><a href="body-of-knowledge-certificates.html">Accessibility Body of Knowledge and Certificates</a></li>
+      <li><a href="terminology.html">Terminology</a></li>
+      <li><a href="social-legal.html">Social and Legal Aspects</a></li>
+      <li class="active"><a aria-current="page" href="features-failures-examples.html">Failure Examples</a></li>
+      <li><a href="miscellaneous-links.html">Miscellaneous Links</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <p>This page contains lists of pages and websites that either exhibit specific accessibility issues (which cause non-compliance)
+      or specific accessibility features that are in and of themselves insufficient to reach compliance.
+      The page is not intended as a hall of shame but as a quarry from which accessibility advocates and lecturers can retrieve examples of specific accessibility issues.
+      Obviously, the links go out of date when the referenced pages get updated in a way that eliminates the issue; for this reason, the access dates are also given.
+    </p>
+    <section>
+      <h2>Pages Featuring Various Accessibility Issues</h2>
+      <p>Low contrast:</p>
+      <ul>
+        <li>Yellow text on white background (button in cookie pop-up), white text on yellow background (breadcrumb trail):
+          <a href="https://rp-online.de/politik/deutschland/bundesrechnungshof-kritisiert-krankenhausplanung-und-fordert-grundgesetzaenderung_aid-53386317" hreflang="de" lang="de">Immer mehr Krankenhäusern droht Insolvenz</a>
+          (accessed 24.01.2021).
+        </li>
+        <li><a href="https://www.german-conferences.de/kiwi/de/2402" hreflang="de" lang="de"><abbr>DAAD</abbr>-Kompetenzzentrum Internationale Wissenschaftskooperation (<abbr>KIWI</abbr>):
+          Wissenschaftskooperationen zwischen „anything goes“ und „roten Linien“ – Zusammenarbeit unter komplexen Rahmenbedingungen gestalten</a>:
+          low contrasst due to light green text on a white background (<span style="color: #afc800; background-color: white;">sample text; contrast ratio: 1.89:1<span>).
+          Also no meaningful <code>title</code> element (<span lang="de">Programm</span>)
+          and first heading represented by an image containing text with just the alt text &ldquo;Header&rdquo;. (Accessed on 11.05.2021.)
+         </li>
+        <li>Grey on white, green on white:
+          <a href="https://www.gesuendernet.de/gesundheit/gesunde-ernaehrung/item/1443-tee-gesundheit-aus-der-tasse.html" hreflang="de" lang="de">Tee - Gesundheit aus der Tasse - GesuenderNet</a>
+          (accessed 24.01.2021).
+        </li>
+        <li>
+          <a href="https://store.lawindustries.co.uk/">Law Industries</a>:
+          menu on the left: gray text on black background.
+        </li>
+        <li>
+          <a href="https://www.skulima.de/sachgebiete/germanistik.html" hreflang="de" lang="de">Germanistik - SKULIMA Wissenschaftliche Versandbuchhandlung</a>:
+          background colour of fly-out menus for <span lang="de">Germanistik</span> (yellow), <span lang="de">Slavistik</span>,
+          <span lang="de">Sprach- und Literaturwissenschaften</span> (orange): low contrast with the white text.
+        </li>
+        <li>
+          <a href="https://www.winter-verlag.de/en/programm/fachgebiete/" hreflang="de">Winter Verlag: Fachgebiete New Publications</a>:
+          see colour contrast on hover over certain links in the sidebar on the left: Indogermanistik, Orientalistik, Ethnologie, Musicology.
+        </li>
+        <li>
+          <a href="https://totalanalysis.com/Covid19/TAIndex">Covid Data Transparency Index (<abbr>CDTI</abbr>)</a>,
+          <i class="website">TotalAnalysis</i>.
+          <br />The main table has a black background with columns that use various colours for the text. The contrasts look weak but pass the contrast test:
+          &ldquo;Transparency&rdquo;: <code>#ff8000</code> (contrast ratio: 8.34:1),
+          &ldquo;Management&rdquo;: <code>#f672a7</code> (contrast ratio: 7.88:1),
+          &ldquo;Usage&rdquo;: <code>#ff66ff</code> (contrast ratio: 8.60:1),
+          &ldquo;Coverage&rdquo;: <code>#4fc6e1</code> (contrast ratio: 10.50:1).
+        </li>
+        <li>
+          <a href="http://mural.uv.es/madelro/narrat2.html">Narrativa Inglesa II</a>:
+          blue links on a background using a blue repeating background image.
+        </li>
+        <li>Thorkelson, Eli:
+          <a href="https://decasia.org/academic_culture/2009/02/20/steve-fuller-on-bad-writing/">Steve Fuller on bad writing</a>,
+          <i class="blog">decasia</i>, 20.02.2009.
+          <br />Light gray text on a white background.
+        </li>
+      </ul>
+      <p>Frames:</p>
+      <ul>
+        <li>
+          <a href="https://docs.oracle.com/javase/7/docs/api/">Java™ Platform, Standard Edition 7 <abbr>API</abbr> Specification: Overview (Java Platform <abbr>SE</abbr> 7)</a>
+          (generated with javadoc; last accessed 24.01.2021).
+        </li>
+        <li>
+          <a href="https://help.eclipse.org/2020-09/index.jsp">Eclipse documentation</a>
+          (outdated version; last accessed 24.01.2021).
+        </li>
+        <li>
+          <a href="http://www.rilke.de/index.html" hreflang="de" lang="de">rilke.de</a> (last accessed 24.01.2021).
+        </li>
+        <li>
+          <a href="http://www.enenuru.net/html/main_html/mainframe.htm">enenuru.net</a> (last accessed 24.01.2021).
+        </li>
+        <li>
+          <a href="http://titus.fkidg1.uni-frankfurt.de/indexe.htm" hreflang="de" lang="de"><abbr>TITUS</abbr>: Thesaurus Indogermanischer Text- und Sprachmaterialien</a>.
+        </li>
+        <li><a href="http://www.wereldbibliotheek.nl/" hreflang="nl" lang="nl">Wereldbibliotheek</a> (accessed on 22.03.2021).
+        </li>
+      </ul>
+      <p>Animated background:</p>
+      <ul>
+        <li>
+          <a href="https://myprobe.de/">Myprobe</a>: animated background using an <code>iframe</code> that loads a page containing a <code>canvas</code> element.
+        </li>
+        <li>
+          <a href="https://psychoslinux.gitlab.io/">psychoslinux.gitlab.io</a> (background video; last accessed 24.01.2021).
+        </li>
+        <li>
+          <a href="https://websemantics.uk/tools/font-size-conversion-pixel-point-em-rem-percent/">Font size conversion px-pt-em-rem-percent</a>
+          <i class="website">webSemantics</i> (snowflakes, on 10.12.2020; not when accessed on 24.01.2021).
+        </li>
+      </ul>
+      <p>Animated <abbr title="Graphics Interchange Format">GIF</abbr> were very popular in the late 1990s and early 2000s but have become
+        less common on websites (except social media). See for example
+        <a href="https://11points.com/11-best-old-school-animated-gifs/">11 Best Old School Animated GIFs</a> (by Sam Greenspan, 2008, updated in 2018),
+        the archive at <a href="http://www.textfiles.com/underconstruction/">textfiles.com</a>,<!--see also https://www.vice.com/en/article/9akenz/this-guy-compiled-every-under-construction-gif-from-the-90s -->
+        and <a href="https://gifcities.org/">GifCities</a>.
+        <!--"The Art of the Subtle Animated GIF": https://www.designdpi.com/news/the-art-of-the-subtle-animated-gif/ -->
+      </p>
+      <ul>
+        <li>Animated logo:
+          <a href="https://www.ethicalsystems.org/">Ethical Systems</a> (last accessed 24.01.2021).
+        </li>
+        <li>Animated logo (top left) and e-mail image (bottom centre):
+          <a href="http://axl.cefan.ulaval.ca/index.html" hreflang="fr" lang="fr">L'aménagement linguistique dans le monde: page d'accueil</i>
+        </li>
+        <li><a href="http://www.maupassantiana.fr/Filmographie/Maupassant%20passeur%20d'images.htm" hreflang="fr" lang="fr">Maupassant, le passeur d’images</a>.
+          (Animated GIF at the bottom; web page created with "Microsoft Word 11. Accessed on 12.04.2021.)
+        </li>
+      </ul>
+      <p>Flashes:</p>
+      <ul>
+        <li><a href="https://www.theyuniversity.net/usefulidioms">Useful Idioms</a>,
+        <i class="website">The YUNiversity</i>: flashes in the image for the idiom &ldquo;put out the fire&rdquo; (accessed on 09.04.2021).
+      </ul>
+      <p>Autoplaying video (with audio):</p>
+      <ul>
+        <li><a href="https://getadacomply.com/">AdaComply</a>:
+          automatically playing video that warns against
+          <q>greedy lawyers and shady individuals who are taking business owners to the cleaners with a bunch of frivolous lawsuits aimed to get those same lawyers a quick payday</q>.
+          Other accessibility issues on this page include empty heading elements, and images with the the attribute <code>alt="Default Alt Tag for this page"</code>.
+        </li>
+      </ul>
+      <p>Invisible keyboard focus:</p>
+      <ul>
+        <li>
+          <a href="https://www.skulima.de/" hreflang="de" lang="de">SKULIMA Wissenschaftliche Versandbuchhandlung</a>:
+          the fly-out menus on the left don't open on keyboard focus but can be tabbed through. Since the menus remain closed, the keyboard focus is invisible inside the menus.
+        </li>
+      </ul>
+      <p>Live updates:</p>
+      <ul>
+        <li>
+          <a href="https://markets.businessinsider.com/news/stocks/china-ranked-96th-out-of-100-countries-in-covid-data-transparency-index-1029959305?op=1">China ranked 96th out of 100 countries in Covid data transparency index</a>,
+          <i class="Markets Insider"></i>, 12.01.2021. See the live updates on futures, gold and oil at the top of the page.
+        </li>
+      </ul>
+      <p>Linktext that is not meaningful:</p>
+      <ul>
+        <li><a href="https://www.halleonardbooks.com/">Hal Leonard</a>:
+          <q>If you're looking for Backbeat Books, Amadeus Press, Applause Theatre &amp; Cinema Books, or Limelight Editions, <a href="https://rowman.com/" target="_blank">click here</a>.</q>
+        </li>
+      </ul>
+      <p>Invisible or barely visible tab focus:</p>
+      <ul>
+        <li><a href="http://www.worldofdante.org/">World of Dante</a>:
+        <code>dl</code> element (with <code>id="imap"</code>) that uses a background image; inside this list,
+        the <code>dt</code> element contains an absolute positioned <code>a</code> element with a background image.
+      </ul>
+      <p>Marquee:</p>
+      <ul>
+        <li>
+          <a href="https://www.bundesregierung.de/breg-de/themen/coronavirus" hreflang="de" lang="de">Coronavirus in Deutschland</a>,
+          <i class="website">Bundesregierung</i>, (accessed on 25.05.2020). Marquee with a pause button.
+        </li>
+        <li>
+          <a href="https://www.finanznachrichten.de/nachrichten-2020-11/51366215-belgien-kritisiert-deutsche-corona-weihnachtsregeln-016.htm" hreflang="de" lang="de">Belgien kritisiert deutsche Corona-Weihnachtsregeln</a>,
+          <i class="website">FinanzNachrichten.de</i>, 28.11.2020. "Ticker" labelled <span lang="de">Ad hoc-Mitteilungen</span>; uses <code>&lt;div class="js-marque"&gt;</code> and pauses on hover.
+          (Last verified on 25.02.2021.)
+        </li>
+        <li>
+          <a href="https://businessam.be/belgie-start-op-5-januari-met-vaccineren-3/" hreflang="nl" lang="nl">België start op 5 januari met vaccineren</a>,
+          <i class="website">Business <abbr>AM</abbr></i>, 02.12.2020. Stock exchange ticker at the top of the page; uses <code>&lt;div class="o-marquee js-marquee"&gt;</code>.
+          (Last verified on 25.02.2021.)
+        </li>
+        <li>
+          <a href="https://www.officemuseum.com/">Early Office Museum</a>: this website has a marquee ánd animated <abbr>GIFs</abbr>.
+          (Last verified on 25.02.2021.)
+        </li>
+        <li>
+          <a href="https://cat.eduroam.de/">eduroam Configuration Assistant Tool</a>: uses a <code>marquee</code> element that alternates its direction.
+          <!--Text: "Der Dienst cat.eduroam.de wird am 30. Juni 2021 eingestellt, nutzen Sie bitte cat.eduroam.org!" -->
+          (Last verified on 25.02.2021.)
+        </li>
+        <li>
+          <a href="http://www.sixwives.info/doublet.htm">Doublet</a>: <code>marquee</code> element at the bottom of the page.
+          (Last verified on 25.02.2021.)
+        </li>
+        <li>
+          <a href="https://gript.ie/ireland-suspends-astrazeneca-vaccine-as-norway-investigates-blood-clots/">Ireland suspends AstraZeneca vaccine as Norway investigates blood clots</a>.
+          (Accessed on 20.03.2021.)
+        </li>
+        <li>Wackett, Mike:
+          <a href="https://theloadstar.com/warning-to-ocean-carriers-dont-use-canal-crisis-to-price-gouge-customers/">Warning to ocean carriers: don't use canal crisis to 'price-gouge customers'</a>,
+          <i class="website">The Loadstar</i>, 30.03.2021 (accessed on 31.03.2021).
+        </li>
+        <li>
+          <a href="https://www.officemuseum.com/">Early Office Museum</a>:
+          uses marquee and animated GIFs (accessed on 31.03.2021).
+        </li>
+        <li>
+          <a href="http://culturmag.de/crimemag/peter-munder-200-jahre-fontane-teil-2/116986" hreflang="de" lang="de">Peter Münder: 200 Jahre Fontane (Teil 2)</a>:
+          marquee in the page header (<span lang="de">&laquo;Aktuell&rquo;) (access on 05.04.2021).
+        </li>
+      </ul>
+      <p>Nested tables:</p>
+      <ul>
+        <li>
+          <a href="https://www.itu.int/rec/T-REC-V.18/en">V.18 : Operational and interworking requirements for DCEs operating in the text telephone mode</a>,
+          <i class="website">International Telecommunications Union (<abbr>ITU</abbr>)</i> (accessed on 17.03.2021).
+        </li>
+        <li>
+          <a href="https://www.itu.int/rec/T-REC-G.722/e">G.722 : 7 kHz audio-coding within 64 kbit/s</a>,
+          <i class="website">International Telecommunications Union (<abbr>ITU</abbr>)</i> (accessed on 17.03.2021).
+        </li>
+      </ul>
+      <!--Example pages:
+        * with old-fashioned pop-up menu: http://www.alanwood.net/unicode/cjk_unified_ideographs.html
+        * noscript element (visible with NoScript enabled in the browser): http://www.apress.com/us/book/9781484219157 & https://communities.ca.com/ideas/235735203 etc etc.
+        * Pressing pagedown button takes you to the next article instead of scrolling down (02.12.2020): https://www.euronews.com/2020/12/01/us-attorney-general-william-barr-says-no-widespread-election-fraud-disputing-trump
+        * two head elements, each containing a title element (02.12.2020): https://dev.to/rly
+        * on hover, page pans, so button moves away from mouse: https://www.payot-rivages.fr/
+        * empty title element:
+          - (12.01.2021: "Reliable Sources" / "Tell us what happened") https://view.newsletters.cnn.com/messages/16104260848347cd1650aacd3/raw
+        * h1 element: "T H E   C A N T E R B U R Y   T A L E S" : http://www.librarius.com/index.html
+        * NCERT / National Council of Educational Research & Training: visible skip links, "Screen Reader Access", contrast widgets: https://ncert.nic.in/index.php?ln=
+            Screen Reader Access: https://ncert.nic.in/screen-reader.php
+        * "Home"-link (SVG pictogram not marked as decorative): https://tas2580.net/
+      -->
+    </section>
+
+    <section>
+      <h2>Pages Featuring Various Accessibility Features or Tools</h2>
+      <ul>
+        <li>
+          <a href="https://www.atbar.org/"><abbr>AT</abbr>bar</a>: developed at the University of Southampton.
+        </li>
+        <li>Recite:
+          <ul>
+            <li>
+              <a href="https://london.ac.uk/">University of London</a> (&ldquo;Accessibility Tools&rdquo; in the top right corner).
+            </li>
+            <li>
+              <a href="https://www.gmb.org.uk/accessibility-tools">Accessibility tools (<abbr>GMB</abbr> Union)</a> (resize-font icon to the left of the social media links).
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://acb.org/adp/">The Audio Description Project</a>,
+          <i class="website">American Council of the Blind</i> (no date; accessed on 23.03.2021).
+          <br />This site has a widget for &ldquo;Larger Font&rdquo;, &ldquo;Reverse Colors&rdquo; and &ldquo;Large Font, Reverse&rdquo;.
+        </li>
+        <li>
+          <a href="https://accessibe.com/product">accessiBe</a>.
+          Commercial product. Note that its claim of full compliance is contradicted by the fact that making a website accessible is not a process that can be fully automated.
+        </li>
+        <li>Setting a different background colour (for dyslexia or Irlen synrome):
+          <ul>
+            <li>
+              <a href="https://irlen.com/">Irlen Institute</a>: 11 different background colours,
+              but the chosen background colour is not remembered when navigating to another page.
+            </li>
+            <li>
+              <a href="https://www.irlendyslexia.com/">Irlen Diagnostic Clinic Newcastle</a>: 12 different background colours.
+            </li>
+            <li>
+              <a href="https://www.dyslexiadaily.com/">Dyslexia Dailey</a>: 9 different background colours.
+              (The site also has Recite.)
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    <!--
+    <section>
+      <h2></h2>
+      <ul>
+        <li>
+          <a href=""></a>,
+          <i class=""></i>,
+        </li>
+        <li>
+          <a href=""></a>
+          (<i class="ytchannel"></i> on YouTube, minutes, ).
+        </li>
+        <li>
+          <i class="booktitle"></i>.
+          <a href=""><abbr>ISBN</abbr> </a>.
+        </li>
+        <li>
+          <a href=""></a>
+        </li>
+      </ul>
+    </section>
+    -->
+  </main>
+  <footer>
+    <p id="licence">
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License Attribution-ShareAlike" style="border-width:0" src="img/cc-licence-by-sa-88x31.png" /></a>
+      <br />
+      <span class="sitename"><a href="http://cstrobbe.github.io/AccessibilityResources/">Accessibility Resources</a></span>
+      by
+      <a href="https://github.com/cstrobbe">Christophe Strobbe</a>
+      is licensed under a
+      <a lang="en-US" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+    </p>
+  </footer>
+</body>
+</html>
