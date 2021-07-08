@@ -192,6 +192,41 @@
           Looks like how not to do it for accessibility (relies on text boxes and shapes; does not use Word's form elements).
       -->
 
+    <h4>Microsoft Word Forms</h4>
+    <ul>
+      <li>Page, Ted:
+        <a href="https://accessible-digital-documents.com/blog/you-cant-make-microsoft-word-forms-accessible-enough/">You can't make Microsoft Word forms accessible (enough) …</a>,
+        <i class="website">Accessible Digital Documents</i>, 29.09.2019.
+      </li>
+      <li>
+        <a href="https://www.youtube.com/watch?v=9_C28xDfWAo" lang="en-AU">Creating accessible forms in <abbr>MS</abbr> Word (<abbr>PC</abbr> version)</a>
+        (<i class="ytchannel">Adrian Cooke</i> on YouTube, 24 minutes, 12.03.2021).
+        <br />This tutorial explains a number of accessibility practices that are not related to fields (for example, heading styles and the heading hierarchy in the Navigation pane)
+        before moving on to forms as such (alsmost 10 minutes into the video).
+        Forms are created using legacy fields. Fields are given a name (under &ldquo;Bookmark&rdquo;) using a camel-case version of the visual label.
+        The &ldquo;Status Bar text&rdquo; is what will become visible on the status bar when a field receives focus and gets read out by a screen reader.
+        The content of the &ldquo;Status Bar text&rdquo; is based on the visible label.<!--12:35: Recommends duplicating the status bar text in the Help Key text?? 13:15: Does the same for "Your last name"-->
+        <!--12:55: Changes Status Bar text to "Your first name" whereas the visual label says "First name". 13:10: Similar pattern for "Last name" / "Your last name"-->
+        (<!--13:33-->For the field with the visual label &ldquo;Email&rdquo;, the author chooses &ldquo;Your College email&rdquo; as Status Bar text. It is not clear, why the visible label is not more specific.
+        <!--14:00 Restrict editing; shows the effect of enabling protection: focus moves to the first editable field-->
+        Similarly, 20 minutes into the video, a large text field is given the visible label &ldquo;Describe your project&rdquo; and the Status Bar text &ldquo;Provide a paragraph that describes your project&rdquo;.)
+        Almost 21 minutes into the video, the author shows how to create a style for a text area (as opposed to a short text input field.
+        The video does not explain how to make sure that headings and instructions are read out when a screen reader users fills in the form in protected mode.
+      </li>
+     </ul>
+    <!--other resources in chronological order:
+      * "Microsoft Word - Create Form (Office 2007/2010/2013/2016)", Amir Parmar, 18 minutes, 30.10.2013: https://www.youtube.com/watch?v=M01PujJqMV8
+        This video demonstrates the (newer) Content Controls and some of the ActiveX controls, which are not fully accessible.
+        The video also shows how to arrange some of the controls in columns and how to insert lines using shapes (instead of styles).
+        It shows how to group all the fields in the document and how to restrict editing.
+      * "Anleitung Formularfelder", IKA, 7 minutes, 30.11.2016: https://www.youtube.com/watch?v=5s7Wd5xb-HU
+        Shows how to add the developer tools to the ribbon.
+        Uses legacy text input fields for the first four fields and (2:40) the checkbox from the legacy tools for some other fields.
+        (3:30) Uses the drop-down list from the legacy tools. Each time the choice between the new controls and the legacy controls is the document's layour rather than accessibility.
+        (5:30) Show how to restrict editing: deactivate "Entwurfsmodus", then "Bearbeitung einschränken".
+        Accessibility is not discussed.
+    -->
+
     <h3>Microsoft PowerPoint</h3>
     <ul>
       <li>
