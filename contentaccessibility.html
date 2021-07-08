@@ -213,7 +213,37 @@
         Almost 21 minutes into the video, the author shows how to create a style for a text area (as opposed to a short text input field.
         The video does not explain how to make sure that headings and instructions are read out when a screen reader users fills in the form in protected mode.
       </li>
-     </ul>
+      <li>
+        <a href="https://www.youtube.com/watch?v=XDgYnlXx1U0" lang="en-US">Word 2013 &amp; 2016: Creating Accessible Word Forms</a>
+        (<i class="ytchannel">Governors Committee on People with Disabilities</i> on YouTube, 10 minutes, 08.11.2016).
+        <br />This short tutorial recommends using the legacy form tools.
+        It recommends renaming a field's &ldquo;Bookmark&rdquo;<!--German: Textmarke--> to a camel-case version of the visual form field label.
+        The &ldquo;Status Bar text&rdquo; becomes visible in the status bar [when the document is tabbed through in protected mode] and is spoke by JAWS.
+        The length of the field is limited to 128 characters. Abbreviations should be spelled out, for example, &ldquo;date of birth&rdquo; for &ldquo;date of birth&rdquo;.
+        <br />In a drop-down list, the first option becomes the default value, so it may make sense to set &ldquo;Pick one&rdquo; as the first value
+        <!--6:00-->JAWS will say &ldquo;has F1 Key help&rdquo; if a field has associated help text (<abbr>i.e.</abbr> after reading the status bar text).
+        The length of this help text is limited to 254 characters; this text should only be used if the help text prompt is not clear by itself.
+        <!--6:50-->Forms also contain instructions. To make sure these are read out, the video recommends inserting a checkbox after the instructions,
+        reducing its size to 1pt and setting help text for that checkbox (<abbr>i.e.</abbr> &ldquo;Info&rdquo; followed by the text of the visual instructions
+        (shortened if necessary). In some cases, more than one checkbox may be needed.
+        <br /><!--9:10-->The status bar text for the last form field should contain the words &ldquo;End of form&rdquo;.
+        Otherwise, screen reader users will hit the <kbd>Tab</kbd> key and return to the top of the form.
+        As a last step, the form can be locked to protect it, allowing only filling in the form.
+      </li>
+      <li>
+        <a href="https://doccenter.freedomscientific.com/doccenter/archives/Training/accessible-forms-in-word.htm">Creating Accessible Forms in Microsoft Word</a>,
+        <i class="website">Freedom Scientific</i>, updated on 25.04.2013 (accessed on 06.07.2021).
+        <br />This document was last updated in 2013. It contains the following note:
+        <q>There are several new form controls called "content controls" that are available in Word 2007 - 2013 for creating form fields. At the present time, JAWS does not work with forms created with the newer content controls.
+        Microsoft is aware of this and they are working towards a better solution. Therefore, these instructions show you how to use legacy controls within Word to create accessible forms.</q>
+        (The issue is also mentioned in the <a href="https://support.freedomscientific.com/Training/accessible-forms-in-word.htm">2011 version of &ldquo;Creating Accessible Forms in Microsoft Word&rdquo;</a>.)
+      </li>
+      <li>
+        <a href="https://answers.microsoft.com/en-us/msoffice/forum/all/making-fillable-forms-accessible-for-screen/89b4a659-64cf-446a-b5d0-737a1838a379">Making Fillable Forms Accessible for Screen Readers</a>,
+        <i class="website">Microsoft Community</i>, 03.01.2019.
+        <br />See especially the answer by KarenMcCall1 (08.01.2019).
+      </li>
+    </ul>
     <!--other resources in chronological order:
       * "Microsoft Word - Create Form (Office 2007/2010/2013/2016)", Amir Parmar, 18 minutes, 30.10.2013: https://www.youtube.com/watch?v=M01PujJqMV8
         This video demonstrates the (newer) Content Controls and some of the ActiveX controls, which are not fully accessible.
@@ -225,6 +255,11 @@
         (3:30) Uses the drop-down list from the legacy tools. Each time the choice between the new controls and the legacy controls is the document's layour rather than accessibility.
         (5:30) Show how to restrict editing: deactivate "Entwurfsmodus", then "Bearbeitung einschränken".
         Accessibility is not discussed.
+      * "Formulare in Word: Formularfelder zum Ausfüllen erstellen – Word-Tutorial", Dominik Bößl, 5 minutes, 11.11.2018: https://www.youtube.com/watch?v=0vmq7TiEUTY
+        Show how to enable "Entwicklertools". Uses the new Content Controls.
+      * "Tutorial | Word-Formulare (Vorversionen) erstellen", Franz Muigg / Dipl. Betriebswirt, 12 minutes, 28.12.2018: https://www.youtube.com/watch?v=IdoqaOsx1mE
+        Inserts an image with caring about alternative text. Tables to group form controls; asterisk for required form fields, Untertitel/Subtitle style used inside table.
+        Combines cells in a row. Instructions about required fields are positioned below the form instead of above it.
     -->
 
     <h3>Microsoft PowerPoint</h3>
