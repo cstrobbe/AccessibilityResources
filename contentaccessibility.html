@@ -231,6 +231,16 @@
         As a last step, the form can be locked to protect it, allowing only filling in the form.
       </li>
       <li>
+        <a href="https://www.youtube.com/watch?v=dzpj5CwyYOU" lang="en-US">Creating Accessible Microsoft Word 2010 Documents: Word Forms</a>
+        (<i class="ytchannel">Governors Committee on People with Disabilities</i> on YouTube, 6 minutes, 10.08.2012).
+        <br />This short tutorial dates from 2012 and is therefore partially outdated. It recommends using Word's legacy form controls (in a table layout)
+        and points out that ActiveX controls and Content Controls don't work properly with assistive technologies.
+        ZoomText does not always track Word checkboxes, forms with columns do not tab properly in a protected form,
+        and radio buttons and other form elements may not work correctly with various assistive technologies.
+        <br />The video gives recommendations on the &ldquo;Status Bar text&rdquo;, which should begin with the word &ldquo;Info:&rdquo; and match the visual prompt.
+        In addition, the &ldquo;Status Bar text&rdquo; should contain the phrase &ldquo;end of form&rdquo;.
+      </li>
+      <li>
         <a href="https://doccenter.freedomscientific.com/doccenter/archives/Training/accessible-forms-in-word.htm">Creating Accessible Forms in Microsoft Word</a>,
         <i class="website">Freedom Scientific</i>, updated on 25.04.2013 (accessed on 06.07.2021).
         <br />This document was last updated in 2013. It contains the following note:
@@ -249,6 +259,11 @@
         This video demonstrates the (newer) Content Controls and some of the ActiveX controls, which are not fully accessible.
         The video also shows how to arrange some of the controls in columns and how to insert lines using shapes (instead of styles).
         It shows how to group all the fields in the document and how to restrict editing.
+      * "Protect parts of a Word document", Simona Millham, 3 minutes, 20.04.2015: https://www.youtube.com/watch?v=BSfUx7S9umU
+        Not about forms. Create sections in the document; also right-click on the status bar to make sure Sections are displayed in it.
+        Then go to Review -> Restrict Editing -> Check "Allow only this type of editing in the document",
+        choose "Filling in forms" from the drop-down list, then click "Select sections" and make sure that the sections you want to protect have the checkbox activated,
+        whereas the editable sections have their checkbox deactivated.
       * "Anleitung Formularfelder", IKA, 7 minutes, 30.11.2016: https://www.youtube.com/watch?v=5s7Wd5xb-HU
         Shows how to add the developer tools to the ribbon.
         Uses legacy text input fields for the first four fields and (2:40) the checkbox from the legacy tools for some other fields.
@@ -260,6 +275,25 @@
       * "Tutorial | Word-Formulare (Vorversionen) erstellen", Franz Muigg / Dipl. Betriebswirt, 12 minutes, 28.12.2018: https://www.youtube.com/watch?v=IdoqaOsx1mE
         Inserts an image with caring about alternative text. Tables to group form controls; asterisk for required form fields, Untertitel/Subtitle style used inside table.
         Combines cells in a row. Instructions about required fields are positioned below the form instead of above it.
+      * "How To Create Fillable Forms In Microsoft Word (Create HR Template Forms) Part 1", Sharon Smith, 6 minutes, 17.09.2019: https://www.youtube.com/watch?v=YktZ3B-tyqs
+        Uses legacy tools. This video completely ignores accessibility (and does not explain how to enable the deveveloper tools).
+      * "Make Fillable Forms in MS Word - Content Control Form Fields Part 2", Sharon Smith, 7 minutes, 12.02.2020: https://www.youtube.com/watch?v=n_Ni_fj-158
+        This video does not use the legacy tools but the Content Control form fields. You should not mix legacy form fields with Content Control form fields.
+      * "Auto Expand Text Box With Borders in Word (Incident Report Fillable Form Example)", Sharon Smith, 5 minutes, 17.03.2020: https://www.youtube.com/watch?v=GgV0SKF0o_U
+        This video uses Content Control form fields. Enter '=rand(x,y)' to generate random text in MS Word: x paragraphs of y sentences each.
+      * Catrin Böttcher: "DOCUNIZE™ Office Tipps: Word Formulare – Die neuen Inhaltssteuerelemente nutzen", DOCUNIZE, 31 minutes, 19.06.2020: https://www.youtube.com/watch?v=TyIfiHOP778
+        Webinar about using the new Content Controls. 3:00: Add tab/Registerkarte "Entwickertools". 6:30: Tables to layout form elements. (...)
+      * "So verwendest du Formulare in Microsoft Word - MacOS und Windows", Anne Müller, 8 minutes, 10.01.2021: https://www.youtube.com/watch?v=j8zhkZpMdLY
+        This video first shows how to add form fields using Word for MacOS (Office 365?) and then on Windows using the Conten Controls (instead of the legacy controls).
+        (On MacOS, users don't have choice between Content Controls, legacy controls and ActiveX controls; visually, the controls look like legacy controls.)
+        The video also shows how to restrict editing for a form (in Word for Windows, not MacOS).
+      * "Word- Vorlagen und Formulare erstellen", HiwidarTaskiran, 12 minutes, 16.02.2021: https://www.youtube.com/watch?v=wUPQMysJpWE
+        Uses watermarks (Wasserzeichen), which are not accessible to screen reader users. Also uses the Content Controls.
+      * "Formularfelder verwenden", Rudi Roposa, 9 minutes, 05.01.2019: https://www.youtube.com/watch?v=N6Y8eNa7jDg
+        Preparation for the ECDL exam, for which you should use legacy form controls instead of the newer Content Controls.
+        2:95: string of spaces as default value for a drop-down list??
+        6:15: Restrict editing.
+        8:50: "Hilfetext" / "Status Bar text"; not for every form field and does not match visible label.
     -->
 
     <h3>Microsoft PowerPoint</h3>
