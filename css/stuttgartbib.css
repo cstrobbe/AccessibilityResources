@@ -1,5 +1,9 @@
 @import url("righthand_floating_navigation_layout.css");
 
+p.site-moved-warning { border: 2px solid red; padding: 5px;
+  font-size: 1.5em;
+}
+
 html {
   padding: 0;
   margin: 0;
