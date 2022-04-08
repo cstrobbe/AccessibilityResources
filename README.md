@@ -1,5 +1,7 @@
 # Accessibility Resources
 
+**This repo has moved to [GitLab](https://gitlab.com/cstrobbe/AccessibilityResources).**
+
 Collection of links related to accessibility (web, mobile, desktop, games, ...).
 See the site at [cstrobbe.GitHub.io/AccessibilityResources/](http://cstrobbe.github.io/AccessibilityResources/).
 
