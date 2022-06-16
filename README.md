@@ -1,12 +1,21 @@
 # Accessibility Resources
 
-**This repo has moved to [GitLab](https://gitlab.com/cstrobbe/AccessibilityResources).**
+**This repo has moved to [GitLab](https://gitlab.com/cstrobbe/AccessibilityResources).** The copy on GitHub has been archived.
+
+(Process: unpublish website by renaming the branch `gh-pages` to `github-pages`. After this, GitHub recommends running the following commands to update a local copy:
+
+    git branch -m gh-pages github-pages
+    git fetch origin
+    git branch -u origin/github-pages github-pages
+    git remote set-head origin -a
+
+)
 
 Collection of links related to accessibility (web, mobile, desktop, games, ...).
 
 ## Licence(s)
 
-Copyright: Christophe Strobbe, 2015 – 2020.
+Copyright: Christophe Strobbe, 2015 – 2022.
 
 Licence for the content: Creative Commons [CC BY-SA 4.0](LICENCE.html).
 
